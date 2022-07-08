@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="payment-core:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>payment-core</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="payment-core-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="payment-core:war exploded" />
+    </root>
+  </artifact>
+</component>
