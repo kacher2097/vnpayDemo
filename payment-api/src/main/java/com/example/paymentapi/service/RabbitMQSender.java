@@ -56,16 +56,16 @@ public class RabbitMQSender {
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             try {
                 if (delivery.getProperties().getCorrelationId().equals(corrId)) {
-                response.offer(new String(delivery.getBody(), "UTF-8"));
+                    response.offer(new String(delivery.getBody(), "UTF-8"));
 //                    stringBuilder.append(new String(delivery.getBody(), "UTF-8"));
                 }
 
             } catch (RuntimeException e) {
-                throw new RequestException("010","RabbitMQ fail");
+                throw new RequestException("010", "RabbitMQ fail");
             }
         };
 
-        String ctag = channel.basicConsume(replyQueueName, false, deliverCallback , consumerTag -> {
+        String ctag = channel.basicConsume(replyQueueName, false, deliverCallback, consumerTag -> {
         });
 
         String result = response.take();

@@ -11,62 +11,57 @@ import com.google.common.hash.Hashing;
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import redis.clients.jedis.Jedis;
 
 import java.nio.charset.StandardCharsets;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
 @Service
 public class PaymentServiceImpl implements IPaymentService {
 
-    //TODO: xuat file log
     private final YAMLConfig yamlConfig;
-    private final RedisTemplate<String, Object> redisTemplate;
     private final Gson gson;
 
-    private static Logger log = LoggerFactory.getLogger(PaymentServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(PaymentServiceImpl.class);
     //Constructor Injection
-    public PaymentServiceImpl(YAMLConfig yamlConfig, RedisTemplate<String, Object> redisTemplate, Gson gson) {
+    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson) {
         this.yamlConfig = yamlConfig;
-        this.redisTemplate = redisTemplate;
         this.gson = gson;
     }
 
     @Override
-    public void setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult) throws RequestException {
+    public void validateRequest(PaymentRequest paymentRequest, BindingResult bindingResult) throws RequestException {
         checkAllValidate(paymentRequest, bindingResult);
+    }
+
+    public boolean checkTokenKey(PaymentRequest paymentRequest) throws RequestException{
         RedisPool jedisPool = new RedisPool();
-        try (Jedis jedis = jedisPool.getJedis()) {
-            jedis.setex("key", 10000, "payment request");
-            // do operations with jedis resource
-//            jedis.hset("", "", paymentRequest);
-//            @Override
-//            public void put(String key, Object value) {
-//                String jsonValue = gson.toJson(value);
-//                this.jedis.hset(this.cacheName, key, jsonValue);
-//            }
+        GetTime getTime = new GetTime();
+        String bankCode = paymentRequest.getBankCode();
+        String tokenKey = paymentRequest.getTokenKey();
+        try {
+            Jedis jedis = jedisPool.getJedis();
+            String jsonValue = gson.toJson(paymentRequest);
 
+            boolean checkKeyExist = jedis.exists(tokenKey);
+            log.info("Key exist? {}", checkKeyExist);
+
+            jedis.hset(tokenKey , bankCode, jsonValue);
+            jedis.expire(tokenKey, getTime.getTimeExpire());
+
+            long ttl = jedis.ttl(tokenKey);
+            log.info("Expire time is: {} ", ttl);
+            if(ttl > 0 && checkKeyExist){
+                return false;
+            }
+            return true;
+        }catch (RuntimeException e){
+            log.error("Connect to Redis fail! ");
+            throw new RequestException("0032", "Connect to Redis fail");
         }
-        long timeRemaining = ChronoUnit.SECONDS.between( LocalDateTime.now() , LocalDate.now().atTime(LocalTime.MAX));
-        //redisTemplate.opsForList().leftPush("key1", paymentRequest);
-        log.info(" Set request data to Redis with data: {} ", paymentRequest);
-        redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
-
-        log.debug("Time token key is valid: {}", timeRemaining);
-        redisTemplate.expire(paymentRequest.getTokenKey(), timeRemaining, TimeUnit.SECONDS);
-        log.info("Data push to redis: {} ", (PaymentRequest) redisTemplate.opsForHash().get(paymentRequest.getBankCode()
-                , paymentRequest.getTokenKey()));
-//        PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
-//        log.info("[{}]", gson.toJson(paymentRequest1));
     }
 
     public void checkAllValidate(PaymentRequest paymentRequest, BindingResult bindingResult) throws RequestException {
@@ -82,28 +77,24 @@ public class PaymentServiceImpl implements IPaymentService {
         if (!checkSumSHA256(paymentRequest, privateKey)) {
             throw new RequestException("03", "Check sum error");
         }
-
+        if(!checkTokenKey(paymentRequest)){
+            throw new RequestException("015", "Token key is exist in day");
+        }
         if(!checkDateRequest(paymentRequest)){
             throw new RequestException("13", "Pay date is invalid");
         }
 
-//        if(!checkValidAmount(paymentRequest)){
-//            throw new RequestException("14", "Real amount is invalid");
-//        }
+        if(!checkValidAmount(paymentRequest)){
+            throw new RequestException("14", "Real amount is invalid");
+        }
     }
 
     public boolean checkValidAmount(PaymentRequest paymentRequest){
-        if(paymentRequest.getRealAmount() > paymentRequest.getDebitAmount()){
-            return true;
-        }
-        return false;
+        return paymentRequest.getRealAmount() > paymentRequest.getDebitAmount();
     }
     public boolean checkDateRequest(PaymentRequest paymentRequest){
         GetTime getTime = new GetTime();
-        if(getTime.checkValidTimeFormat(paymentRequest.getPayDate())){
-            return true;
-        }
-        return false;
+        return getTime.checkValidTimeFormat(paymentRequest.getPayDate());
     }
 
     public String getPrivateKeyByBankCode(PaymentRequest paymentRequest) {

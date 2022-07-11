@@ -12,6 +12,10 @@ banks:
       privateKey: abyukmnh
       ips:
 
+    - bankCode: 11055
+      privateKey: lkjlk
+      ips:
+
 app:
   message: Message has been sent Successfully..
 spring:

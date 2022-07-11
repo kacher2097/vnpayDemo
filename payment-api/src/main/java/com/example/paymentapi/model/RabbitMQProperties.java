@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RabbitMQModel {
+public class RabbitMQProperties {
     private String userName;
     private String password;
     private String queue;

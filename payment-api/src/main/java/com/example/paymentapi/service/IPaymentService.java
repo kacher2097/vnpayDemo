@@ -4,5 +4,5 @@ import com.example.paymentapi.model.PaymentRequest;
 import org.springframework.validation.BindingResult;
 
 public interface IPaymentService {
-    void setDataRequestToRedis(PaymentRequest paymentRequest,BindingResult bindingResult);
+    void validateRequest(PaymentRequest paymentRequest,BindingResult bindingResult);
 }
