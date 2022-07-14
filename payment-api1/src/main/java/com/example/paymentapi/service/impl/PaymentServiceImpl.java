@@ -14,17 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class PaymentServiceImpl implements IPaymentService {
 
-    //TODO: xuat file log
     private final YAMLConfig yamlConfig;
     private final RedisTemplate<String, Object> redisTemplate;
     private final Gson gson;
@@ -41,21 +35,12 @@ public class PaymentServiceImpl implements IPaymentService {
     public void setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult){
         try {
             checkAllValidate(paymentRequest, bindingResult);
-            long timeRemaining = ChronoUnit.SECONDS.between( LocalDateTime.now() , LocalDate.now().atTime(LocalTime.MAX));
-            //redisTemplate.opsForList().leftPush("key1", paymentRequest);
             log.info(" Set request data to Redis with data: {} ", paymentRequest);
             redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
 
-            log.info("Time token key is valid: {}", timeRemaining);
-            //redisTemplate.expire(paymentRequest.getTokenKey(),timeRemaining);
-
-            boolean isExpired = Boolean.TRUE.equals(redisTemplate.expire(paymentRequest.getTokenKey(), timeRemaining, TimeUnit.SECONDS));
-            log.info("isExpired: {} ", isExpired);
-
-            //redisTemplate.opsForList().leftPush("key1", paymentRequest);
-            log.info("Put request data to Redis");
-            PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
-            log.info("[{}]", gson.toJson(paymentRequest1));
+            PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
+                    get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
+            log.info("Data to redis: [{}]", gson.toJson(paymentRequest1));
         }catch (RequestException requestException){
             throw new RequestException("11", "Connect to redis fail");
         }

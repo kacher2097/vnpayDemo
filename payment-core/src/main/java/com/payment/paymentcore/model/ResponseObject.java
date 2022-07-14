@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 public class ResponseObject {
     private String code;
     private String message;
-//    private int responseId;
-//    private String checkSum;
-//    private String addValue;
+    private int responseId;
+    private String checkSum;
+    private String addValue;
 
 }

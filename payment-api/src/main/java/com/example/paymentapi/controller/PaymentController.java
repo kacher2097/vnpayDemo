@@ -5,6 +5,8 @@ import com.example.paymentapi.model.PaymentRequest;
 import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
 import com.example.paymentapi.service.RabbitMQSender;
+import com.example.paymentapi.util.Convert;
+import com.example.paymentapi.util.MessageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -38,6 +40,7 @@ public class PaymentController {
     public ResponseEntity<ResponseObject> sendRequest(@RequestBody @Valid PaymentRequest paymentRequest,
                                                         BindingResult bindingResult) {
         final String responseId = UUID.randomUUID().toString();
+        MessageResponse messageResponse = new MessageResponse();
         try {
 
             log.info("Begin sendRequest() ");
@@ -46,12 +49,13 @@ public class PaymentController {
             log.info(" Requesting data payment to RabbitMQ {}", paymentRequest);
             String response = rabbitMQSender.call(paymentRequest);
 
-            log.info(" Response from api partner: {}" , response );
+            log.info("Response: {}" , response );
 
-            log.info("Send request success");
-            return ResponseEntity.status(HttpStatus.OK).body(
-                    new ResponseObject("00", "Send request success", responseId, "", "")
-            );
+            log.info("Send request success and receive response success");
+            RequestException requestException = Convert.convertJsonMessageToObject2(response);
+
+            return messageResponse.bodyResponse(requestException.getCode(), requestException.getMessage()
+                    , responseId, "", "");
 
         } catch (RequestException e) {
             log.error("Send request fail");

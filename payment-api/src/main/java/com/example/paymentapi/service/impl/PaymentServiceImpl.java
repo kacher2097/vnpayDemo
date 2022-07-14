@@ -40,6 +40,7 @@ public class PaymentServiceImpl implements IPaymentService {
     public boolean checkTokenKey(PaymentRequest paymentRequest) throws RequestException{
         RedisPool jedisPool = new RedisPool();
         GetTime getTime = new GetTime();
+        log.info("Check Valid of Token key with payment request: {}", paymentRequest);
         String bankCode = paymentRequest.getBankCode();
         String tokenKey = paymentRequest.getTokenKey();
         try {
@@ -58,7 +59,7 @@ public class PaymentServiceImpl implements IPaymentService {
                 return false;
             }
             return true;
-        }catch (RuntimeException e){
+        }catch (RequestException e){
             log.error("Connect to Redis fail! ");
             throw new RequestException("0032", "Connect to Redis fail");
         }
@@ -90,7 +91,7 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     public boolean checkValidAmount(PaymentRequest paymentRequest){
-        return paymentRequest.getRealAmount() > paymentRequest.getDebitAmount();
+        return paymentRequest.getRealAmount() < paymentRequest.getDebitAmount();
     }
     public boolean checkDateRequest(PaymentRequest paymentRequest){
         GetTime getTime = new GetTime();

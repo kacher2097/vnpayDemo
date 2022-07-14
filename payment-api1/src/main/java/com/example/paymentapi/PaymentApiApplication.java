@@ -10,7 +10,6 @@ public class PaymentApiApplication {
     private static final Logger log = LogManager.getLogger(PaymentApiApplication.class);
 
     public static void main(String[] args) {
-        log.info("Info: {} / {} = {}");
         SpringApplication.run(PaymentApiApplication.class, args);
     }
 

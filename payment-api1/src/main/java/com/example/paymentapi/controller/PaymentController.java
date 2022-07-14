@@ -4,6 +4,7 @@ import com.example.paymentapi.exception.RequestException;
 import com.example.paymentapi.model.PaymentRequest;
 import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -16,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+@Slf4j
 @RestController
 @RequestMapping(path = "/request/send")
 public class PaymentController {
 
-    private static final Logger log = LogManager.getLogger(PaymentController.class);
     private final IPaymentService ipaymentService;
     //Constructor Injection
     public PaymentController(IPaymentService ipaymentService) {
@@ -39,6 +40,7 @@ public class PaymentController {
             );
 
         } catch (RequestException e) {
+            log.error("Send request fail with message: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     new ResponseObject(e.getCode(), e.getMessage()));
         }

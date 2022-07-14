@@ -25,21 +25,21 @@ public class RabbitMQSender {
     private static Logger log = LoggerFactory.getLogger(RabbitMQSender.class);
     private final RabbitMQConfig rabbitMQConfig;
 
-//    private String rpcQueue = "queue.rpc";
-
-//    public void send(PaymentRequest paymentRequest){
-//        rabbitTemplate.convertAndSend(exchange, routingKey, paymentRequest);
-//    }
-
     public RabbitMQSender(RabbitMQConfig rabbitMQConfig) throws IOException, TimeoutException {
         this.rabbitMQConfig = rabbitMQConfig;
+    }
+
+    public Channel connectToRabbitMQ() throws IOException, TimeoutException, RequestException {
+        Channel channel = rabbitMQConfig.getChannel();
+        String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
+
+        return channel;
     }
 
     public String call(PaymentRequest paymentRequest) throws IOException, InterruptedException, TimeoutException {
         Channel channel = rabbitMQConfig.getChannel();
         String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
         final String corrId = UUID.randomUUID().toString();
-        StringBuilder stringBuilder = new StringBuilder();
 
         String replyQueueName = channel.queueDeclare().getQueue();
         AMQP.BasicProperties props = new AMQP.BasicProperties
@@ -50,14 +50,13 @@ public class RabbitMQSender {
 
         log.info("correlationId {} ", corrId);
         String message = Convert.convertObjToString(paymentRequest);
+
         channel.basicPublish("", rpcQueue, props, message.getBytes("UTF-8"));
-        log.info("send to: {} ", props);
         final BlockingQueue<String> response = new ArrayBlockingQueue<>(1);
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             try {
                 if (delivery.getProperties().getCorrelationId().equals(corrId)) {
                     response.offer(new String(delivery.getBody(), "UTF-8"));
-//                    stringBuilder.append(new String(delivery.getBody(), "UTF-8"));
                 }
 
             } catch (RuntimeException e) {
@@ -69,6 +68,7 @@ public class RabbitMQSender {
         });
 
         String result = response.take();
+
         channel.basicCancel(ctag);
         return result;
     }

@@ -181,3 +181,316 @@
 [INFO ] 08-07-2022 14:54:45 [pool-3-thread-4] RabbitMQConfig - replyProps: #contentHeader<basic>(content-type=null, content-encoding=null, headers=null, delivery-mode=null, priority=null, correlation-id=75d8f4ef-2adc-4c42-91b8-99c7d7ede43e, reply-to=null, expiration=null, message-id=null, timestamp=null, type=null, user-id=null, app-id=null, cluster-id=null)
 [INFO ] 08-07-2022 14:54:45 [pool-3-thread-4] RabbitMQConfig - response: [79, 75]
 [INFO ] 08-07-2022 14:54:45 [pool-3-thread-4] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 11-07-2022 09:23:24 [main] RabbitMQConfig -  [x] Awaiting RPC requests
+[INFO ] 11-07-2022 09:24:54 [pool-3-thread-4] RabbitMQConfig - getCorrelationId: dc33d430-bb61-40d0-b8c2-6668333612a8
+[INFO ] 11-07-2022 09:24:54 [pool-3-thread-4] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:24:56 [pool-3-thread-4] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:24:56 [pool-3-thread-4] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 11-07-2022 09:25:12 [pool-3-thread-5] RabbitMQConfig - getCorrelationId: 690a0c3c-913e-4f98-a38b-a6dbf4232df6
+[INFO ] 11-07-2022 09:25:12 [pool-3-thread-5] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:25:12 [pool-3-thread-5] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:25:12 [pool-3-thread-5] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 2
+[INFO ] 11-07-2022 09:46:34 [pool-3-thread-6] RabbitMQConfig - getCorrelationId: d5c53007-1ea9-4a5c-8db9-c986f4fde6f2
+[INFO ] 11-07-2022 09:46:34 [pool-3-thread-6] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:46:34 [pool-3-thread-6] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:46:34 [pool-3-thread-6] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 3
+[INFO ] 11-07-2022 09:46:45 [pool-3-thread-7] RabbitMQConfig - getCorrelationId: 63b7de47-6a7a-43b3-aa72-c214ac71bb7e
+[INFO ] 11-07-2022 09:46:45 [pool-3-thread-7] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:46:45 [pool-3-thread-7] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:46:45 [pool-3-thread-7] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 4
+[INFO ] 11-07-2022 09:49:42 [pool-3-thread-8] RabbitMQConfig - getCorrelationId: 9065bbc4-4164-492d-a8bb-beb758b39d10
+[INFO ] 11-07-2022 09:49:42 [pool-3-thread-8] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:49:42 [pool-3-thread-8] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:49:42 [pool-3-thread-8] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 5
+[INFO ] 11-07-2022 09:50:08 [pool-3-thread-9] RabbitMQConfig - getCorrelationId: a161b430-9774-4407-b201-1e2e68ee4842
+[INFO ] 11-07-2022 09:50:08 [pool-3-thread-9] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:50:08 [pool-3-thread-9] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:50:08 [pool-3-thread-9] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 6
+[INFO ] 11-07-2022 09:56:02 [pool-3-thread-10] RabbitMQConfig - getCorrelationId: 2257f6b2-3941-40d4-a1d0-e2a00da7203a
+[INFO ] 11-07-2022 09:56:02 [pool-3-thread-10] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:56:02 [pool-3-thread-10] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:56:02 [pool-3-thread-10] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 7
+[INFO ] 11-07-2022 09:56:12 [pool-3-thread-11] RabbitMQConfig - getCorrelationId: 038957dd-a7f3-4002-85b0-9fe0e5c9f334
+[INFO ] 11-07-2022 09:56:12 [pool-3-thread-11] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:56:12 [pool-3-thread-11] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:56:12 [pool-3-thread-11] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 8
+[INFO ] 11-07-2022 09:56:22 [pool-3-thread-12] RabbitMQConfig - getCorrelationId: 04b09815-14d9-4a7e-8c6b-50cab08b794e
+[INFO ] 11-07-2022 09:56:22 [pool-3-thread-12] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"31805c2493c639ef10bbb5a4975846784970066bfb16Ec16a03b119d21bf12c0","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 09:56:22 [pool-3-thread-12] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 09:56:22 [pool-3-thread-12] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 9
+[INFO ] 11-07-2022 10:13:08 [pool-3-thread-13] RabbitMQConfig - getCorrelationId: 2cc93cd6-4201-4a24-8775-d9b6b93200dd
+[INFO ] 11-07-2022 10:13:08 [pool-3-thread-13] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 10:13:08 [pool-3-thread-13] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 10:13:08 [pool-3-thread-13] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 10
+[INFO ] 11-07-2022 10:13:31 [pool-3-thread-14] RabbitMQConfig - getCorrelationId: dd8c2006-9398-44aa-97e6-4f33d874fbd8
+[INFO ] 11-07-2022 10:13:31 [pool-3-thread-14] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 10:13:31 [pool-3-thread-14] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 10:13:31 [pool-3-thread-14] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 11
+[INFO ] 11-07-2022 10:16:01 [pool-3-thread-15] RabbitMQConfig - getCorrelationId: 4eca1b57-d20b-4890-9fb1-c4e5e7c5383a
+[INFO ] 11-07-2022 10:16:01 [pool-3-thread-15] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 10:16:01 [pool-3-thread-15] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 10:16:01 [pool-3-thread-15] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 12
+[INFO ] 11-07-2022 10:18:50 [pool-3-thread-16] RabbitMQConfig - getCorrelationId: 0511d464-7601-4965-869a-830fb81886f2
+[INFO ] 11-07-2022 10:18:50 [pool-3-thread-16] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 10:18:50 [pool-3-thread-16] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 10:18:50 [pool-3-thread-16] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 13
+[INFO ] 11-07-2022 10:18:58 [pool-3-thread-17] RabbitMQConfig - getCorrelationId: f62f4e1a-c78a-4e59-a3d9-7b63387e8913
+[INFO ] 11-07-2022 10:18:58 [pool-3-thread-17] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 10:18:58 [pool-3-thread-17] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 10:18:58 [pool-3-thread-17] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 14
+[INFO ] 11-07-2022 15:44:58 [pool-3-thread-18] RabbitMQConfig - getCorrelationId: 9808af64-46cf-4507-91a9-91ca2704e9a9
+[INFO ] 11-07-2022 15:44:58 [pool-3-thread-18] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:44:58 [pool-3-thread-18] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:44:58 [pool-3-thread-18] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 15
+[INFO ] 11-07-2022 15:50:13 [pool-3-thread-19] RabbitMQConfig - getCorrelationId: d7eaa1a7-e295-4af3-b26f-33acbf122ce2
+[INFO ] 11-07-2022 15:50:13 [pool-3-thread-19] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:50:13 [pool-3-thread-19] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:50:13 [pool-3-thread-19] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 16
+[INFO ] 11-07-2022 15:50:25 [pool-3-thread-20] RabbitMQConfig - getCorrelationId: 0d67f4d0-1bdf-44ad-866f-247710883df5
+[INFO ] 11-07-2022 15:50:25 [pool-3-thread-20] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"1601353776839FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:50:25 [pool-3-thread-20] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:50:25 [pool-3-thread-20] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 17
+[INFO ] 11-07-2022 15:53:25 [pool-3-thread-21] RabbitMQConfig - getCorrelationId: fbfb5b79-7242-4199-8857-f6fd3f0729b7
+[INFO ] 11-07-2022 15:53:25 [pool-3-thread-21] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"160135377683dsf9FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:53:25 [pool-3-thread-21] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:53:25 [pool-3-thread-21] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 18
+[INFO ] 11-07-2022 15:55:19 [pool-3-thread-22] RabbitMQConfig - getCorrelationId: 186ba6cf-8a64-4b16-a4ab-1721a11955f7
+[INFO ] 11-07-2022 15:55:19 [pool-3-thread-22] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"160135377683dsf9FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:55:19 [pool-3-thread-22] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:55:19 [pool-3-thread-22] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 19
+[INFO ] 11-07-2022 15:56:01 [pool-3-thread-23] RabbitMQConfig - getCorrelationId: 9e239c07-d16c-4e7a-b3a5-92996fedaf83
+[INFO ] 11-07-2022 15:56:01 [pool-3-thread-23] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"160135377683dsf9FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:56:01 [pool-3-thread-23] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:56:01 [pool-3-thread-23] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 20
+[INFO ] 11-07-2022 15:56:23 [pool-3-thread-24] RabbitMQConfig - getCorrelationId: e9f600cf-0c93-4f0b-b4c0-ba8caf1b74f0
+[INFO ] 11-07-2022 15:56:23 [pool-3-thread-24] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"160135377683dsf9FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:56:23 [pool-3-thread-24] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:56:23 [pool-3-thread-24] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 21
+[INFO ] 11-07-2022 15:56:54 [pool-3-thread-25] RabbitMQConfig - getCorrelationId: efd79485-289f-4b92-8d77-8f27146017e8
+[INFO ] 11-07-2022 15:56:54 [pool-3-thread-25] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"160135377683dsf9FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 15:56:54 [pool-3-thread-25] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 15:56:54 [pool-3-thread-25] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 22
+[INFO ] 11-07-2022 16:01:16 [pool-3-thread-26] RabbitMQConfig - getCorrelationId: d0980400-4234-429f-8814-4d84520bc8ae
+[INFO ] 11-07-2022 16:01:16 [pool-3-thread-26] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"160135377683dsf9FT19310rh6P129234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 16:01:17 [pool-3-thread-26] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 16:01:17 [pool-3-thread-26] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 23
+[INFO ] 11-07-2022 16:26:34 [pool-3-thread-3] RabbitMQConfig - getCorrelationId: 748bf004-c664-4ab8-b1c0-ab8365c29133
+[INFO ] 11-07-2022 16:26:34 [pool-3-thread-3] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"16013537576dsfc83dg2988234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 16:26:34 [pool-3-thread-3] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 16:26:34 [pool-3-thread-3] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 24
+[INFO ] 11-07-2022 16:30:43 [pool-3-thread-4] RabbitMQConfig - getCorrelationId: cb9ff005-b214-4405-a70f-0799b02408f1
+[INFO ] 11-07-2022 16:30:43 [pool-3-thread-4] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"16013537576dsfc83dg2988234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 16:30:43 [pool-3-thread-4] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 16:30:43 [pool-3-thread-4] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 25
+[INFO ] 11-07-2022 16:31:10 [pool-3-thread-5] RabbitMQConfig - getCorrelationId: d5188cc2-e2bb-4f08-9128-5e53e872c59b
+[INFO ] 11-07-2022 16:31:10 [pool-3-thread-5] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"16013537576dsfc83dg2988234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 16:31:10 [pool-3-thread-5] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 16:31:10 [pool-3-thread-5] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 26
+[INFO ] 11-07-2022 16:41:44 [pool-3-thread-6] RabbitMQConfig - getCorrelationId: 5ed85c3b-f401-47b0-b153-02d0e1c6d61a
+[INFO ] 11-07-2022 16:41:44 [pool-3-thread-6] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":13100.0,"promotionCode":"11","tokenKey":"16013537576dsfc83dg2988234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 11-07-2022 16:41:44 [pool-3-thread-6] RabbitMQConfig - response: Status response: 200
+[INFO ] 11-07-2022 16:41:44 [pool-3-thread-6] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 27
+[INFO ] 12-07-2022 08:17:47 [main] RabbitMQConfig -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 08:17:53 [pool-3-thread-4] RabbitMQConfig - getCorrelationId: 80174d12-a5a8-40c1-9c62-b05d295895b6
+[INFO ] 12-07-2022 08:17:53 [pool-3-thread-4] RabbitMQConfig - Receive Message: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"16013537576dsfc83dg2988234","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 08:17:55 [pool-3-thread-4] RabbitMQConfig - response: Status response: 200
+[INFO ] 12-07-2022 08:17:55 [pool-3-thread-4] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 12-07-2022 10:22:36 [main] RabbitMQConfig -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 10:23:06 [pool-3-thread-4] RabbitMQConfig - getCorrelationId: b0632a2d-8675-4db1-be8c-efa62704989c
+[INFO ] 12-07-2022 10:23:06 [pool-3-thread-4] RabbitMQConfig - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"16013537576dsfc83dg29882343","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 10:23:07 [pool-3-thread-4] RabbitMQConfig - Insert into DB fail
+[INFO ] 12-07-2022 10:23:07 [pool-3-thread-4] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 12-07-2022 10:24:21 [main] RabbitMQConfig -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 10:24:38 [pool-3-thread-4] RabbitMQConfig - getCorrelationId: 93ac7fe3-6598-42dd-b312-4de96c5fd1ee
+[INFO ] 12-07-2022 10:24:38 [pool-3-thread-4] RabbitMQConfig - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"16013537576ds3dg29882343","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 10:24:39 [pool-3-thread-4] RabbitMQConfig - Insert into DB fail
+[INFO ] 12-07-2022 10:24:39 [pool-3-thread-4] RabbitMQConfig - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 12-07-2022 10:25:57 [main] RabbitMQConfig -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 10:26:12 [pool-3-thread-4] RabbitMQConfig - getCorrelationId: 0b900ac4-0689-41a0-8da2-23c24f41d23b
+[INFO ] 12-07-2022 10:26:12 [pool-3-thread-4] RabbitMQConfig - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"16013537576d6s3dg29882343","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 11:19:52 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 11:20:03 [pool-3-thread-4] RabbitMQService - getCorrelationId: 0a2e1fec-178f-49d5-96d4-a7ef1471baef
+[INFO ] 12-07-2022 11:20:03 [pool-3-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160135375576d6s3dg29882343","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 11:20:04 [pool-3-thread-4] RabbitMQService - Insert into DB fail
+[INFO ] 12-07-2022 11:20:04 [pool-3-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 12-07-2022 11:21:42 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 11:22:08 [pool-3-thread-4] RabbitMQService - getCorrelationId: 5fd9cf62-4ed6-486b-a83d-efa17f41380a
+[INFO ] 12-07-2022 11:22:08 [pool-3-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"1601388999343","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 11:22:09 [pool-3-thread-4] RabbitMQService - Insert into DB fail
+[INFO ] 12-07-2022 11:22:09 [pool-3-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 12-07-2022 11:22:41 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 11:22:50 [pool-3-thread-4] RabbitMQService - getCorrelationId: 674a2702-2a4d-405c-9e6d-592a62312895
+[INFO ] 12-07-2022 11:22:50 [pool-3-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"16013889993ww43","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 11:49:04 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 11:49:16 [pool-3-thread-4] RabbitMQService - getCorrelationId: cef5bf5a-60be-4028-84ec-f2ff9e5f12db
+[INFO ] 12-07-2022 11:49:16 [pool-3-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"16013889993wwerw43","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 11:49:17 [pool-3-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 12-07-2022 11:49:18 [pool-3-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 12-07-2022 11:49:18 [pool-3-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 12-07-2022 11:53:24 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 12-07-2022 11:53:34 [pool-3-thread-4] RabbitMQService - getCorrelationId: 3cecf91e-1481-4ec3-ad90-2e6da15167ee
+[INFO ] 12-07-2022 11:53:34 [pool-3-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf39993wwerw43","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 12-07-2022 11:53:35 [pool-3-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 12-07-2022 11:53:37 [pool-3-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 12-07-2022 11:53:37 [pool-3-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 13-07-2022 10:38:04 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 10:38:43 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 11:14:05 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 14:14:01 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 14:14:36 [pool-4-thread-4] RabbitMQService - getCorrelationId: 0afa35b1-24a2-4574-84bd-fe3415d15038
+[INFO ] 13-07-2022 14:14:36 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf39993wwerw43","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 14:14:36 [pool-4-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 13-07-2022 14:32:05 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 14:32:28 [pool-4-thread-4] RabbitMQService - getCorrelationId: b77dc6d6-10c2-4c98-930b-5868c08e89bb
+[INFO ] 13-07-2022 14:32:28 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf39993wwer67yrew43","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 14:32:28 [pool-4-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 13-07-2022 14:38:22 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 14:39:15 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 14:39:21 [pool-4-thread-4] RabbitMQService - getCorrelationId: 103aa515-f953-4318-b52d-d7ea305911f7
+[INFO ] 13-07-2022 14:39:22 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er67yrew4300","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 14:39:23 [pool-4-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 14:39:24 [pool-4-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 14:39:24 [pool-4-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 13-07-2022 14:55:17 [pool-4-thread-5] RabbitMQService - getCorrelationId: 2aa061a2-3386-4228-bb86-2ce643049681
+[INFO ] 13-07-2022 14:55:17 [pool-4-thread-5] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er67yrew43001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 14:55:17 [pool-4-thread-5] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 14:55:17 [pool-4-thread-5] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 14:55:17 [pool-4-thread-5] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 2
+[INFO ] 13-07-2022 15:06:28 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 15:06:53 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 15:07:25 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 15:07:36 [pool-4-thread-4] RabbitMQService - getCorrelationId: d6330cd4-230f-4a51-b97c-023355da4456
+[INFO ] 13-07-2022 15:07:36 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er456df623001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 15:08:06 [pool-4-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 15:08:19 [pool-4-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 15:08:19 [pool-4-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 13-07-2022 15:08:37 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 15:08:44 [pool-4-thread-4] RabbitMQService - getCorrelationId: 1ee7fabd-2f7b-4789-90dc-433b1fec8bd3
+[INFO ] 13-07-2022 15:08:44 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er456df62d3001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 15:09:07 [pool-4-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 15:09:11 [pool-4-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 15:09:47 [pool-4-thread-4] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 1
+[INFO ] 13-07-2022 15:10:05 [pool-4-thread-5] RabbitMQService - getCorrelationId: bcaaca3a-34a9-4487-97e1-522575d26fab
+[INFO ] 13-07-2022 15:10:05 [pool-4-thread-5] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er456df62d30801","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 15:10:09 [pool-4-thread-5] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 15:10:09 [pool-4-thread-5] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 15:10:09 [pool-4-thread-5] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 2
+[INFO ] 13-07-2022 15:10:25 [pool-4-thread-6] RabbitMQService - getCorrelationId: db8db923-353d-4959-9a53-021cfe8b4812
+[INFO ] 13-07-2022 15:10:25 [pool-4-thread-6] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er456df6df2d30801","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 15:10:29 [pool-4-thread-6] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 15:10:29 [pool-4-thread-6] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 15:10:29 [pool-4-thread-6] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 3
+[INFO ] 13-07-2022 15:10:47 [pool-4-thread-7] RabbitMQService - getCorrelationId: 43a38c40-dd1e-4364-ad46-71a4fef358ee
+[INFO ] 13-07-2022 15:10:47 [pool-4-thread-7] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er456df6df2d3086701","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 15:10:51 [pool-4-thread-7] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 15:10:51 [pool-4-thread-7] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 15:10:51 [pool-4-thread-7] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 4
+[INFO ] 13-07-2022 15:19:41 [pool-4-thread-8] RabbitMQService - getCorrelationId: 96f40b02-c300-4e31-af49-0b09bfbe2392
+[INFO ] 13-07-2022 15:19:41 [pool-4-thread-8] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hf3er456df6df2d30867001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 15:19:44 [pool-4-thread-8] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 15:19:44 [pool-4-thread-8] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 15:19:44 [pool-4-thread-8] RabbitMQService - delivery.getEnvelope().getDeliveryTag(): 5
+[INFO ] 13-07-2022 16:22:49 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 16:23:08 [pool-4-thread-4] RabbitMQService - getCorrelationId: 4ea547d5-9f10-4944-ad34-d5e8cf939cf4
+[INFO ] 13-07-2022 16:23:08 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdf2d30867001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 16:23:09 [pool-4-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 16:23:10 [pool-4-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 16:32:24 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 16:32:37 [pool-4-thread-4] RabbitMQService - getCorrelationId: eabf0aad-0787-4d4f-8b25-1db4acff5ef5
+[INFO ] 13-07-2022 16:32:37 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdf2d3086f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[ERROR] 13-07-2022 16:32:39 [pool-4-thread-4] PaymentDAO - Insert into DB has exception: {}
+java.sql.SQLException: No value specified for parameter 6
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:396) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.0.jar:?]
+	at com.payment.paymentcore.DAO.PaymentDAO.addPaymentRequest(PaymentDAO.java:61) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.lambda$sendAndReceiveMessage$0(RabbitMQService.java:68) ~[classes/:?]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:587) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+[INFO ] 13-07-2022 16:33:02 [pool-4-thread-5] RabbitMQService - getCorrelationId: aa13a3bd-8e06-4f94-a89f-b6906340e8ef
+[INFO ] 13-07-2022 16:33:02 [pool-4-thread-5] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff2d3086f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[ERROR] 13-07-2022 16:33:02 [pool-4-thread-5] PaymentDAO - Insert into DB has exception: {}
+java.sql.SQLException: No value specified for parameter 6
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:396) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.0.jar:?]
+	at com.payment.paymentcore.DAO.PaymentDAO.addPaymentRequest(PaymentDAO.java:61) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.lambda$sendAndReceiveMessage$0(RabbitMQService.java:68) ~[classes/:?]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:587) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+[INFO ] 13-07-2022 16:33:55 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 16:34:03 [pool-4-thread-4] RabbitMQService - getCorrelationId: 0eb8a519-f5f2-43e5-9f4e-ee8483739f69
+[INFO ] 13-07-2022 16:34:03 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff2fd3086f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[ERROR] 13-07-2022 16:34:05 [pool-4-thread-4] PaymentDAO - Insert into DB has exception: {}
+java.sql.SQLIntegrityConstraintViolationException: Column 'pay_date' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.0.jar:?]
+	at com.payment.paymentcore.DAO.PaymentDAO.addPaymentRequest(PaymentDAO.java:61) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.lambda$sendAndReceiveMessage$0(RabbitMQService.java:68) ~[classes/:?]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:587) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+[INFO ] 13-07-2022 16:34:43 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 16:34:49 [pool-4-thread-4] RabbitMQService - getCorrelationId: 0393e92b-aea8-4b42-8c7a-e8da818a44f5
+[INFO ] 13-07-2022 16:34:49 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff2dffd3086f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[ERROR] 13-07-2022 16:34:50 [pool-4-thread-4] PaymentDAO - Insert into DB has exception: {}
+java.sql.SQLIntegrityConstraintViolationException: Column 'pay_date' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.0.jar:?]
+	at com.payment.paymentcore.DAO.PaymentDAO.addPaymentRequest(PaymentDAO.java:61) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.lambda$sendAndReceiveMessage$0(RabbitMQService.java:68) ~[classes/:?]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:587) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+[INFO ] 13-07-2022 16:37:32 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 13-07-2022 16:37:40 [pool-4-thread-4] RabbitMQService - getCorrelationId: 39e9b7c7-746f-4d79-b0d5-db3bb41d2fbb
+[INFO ] 13-07-2022 16:37:40 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff2dffd30ff86f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 16:37:42 [pool-4-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 16:37:42 [pool-4-thread-4] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 17:02:11 [pool-4-thread-5] RabbitMQService - getCorrelationId: 5c966bf7-07b6-4fbf-ad32-4beb1579b79e
+[INFO ] 13-07-2022 17:02:11 [pool-4-thread-5] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff2dffd30ffff86f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 17:02:11 [pool-4-thread-5] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 17:02:12 [pool-4-thread-5] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 13-07-2022 17:04:10 [pool-4-thread-6] RabbitMQService - getCorrelationId: 756f1091-2b1b-418b-b860-fa14bb2c3429
+[INFO ] 13-07-2022 17:04:10 [pool-4-thread-6] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff89ff86f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 13-07-2022 17:04:10 [pool-4-thread-6] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 13-07-2022 17:04:10 [pool-4-thread-6] RabbitMQService - response from partner api:  Status response from partner api: 200
+[INFO ] 14-07-2022 08:24:22 [main] RabbitMQService -  [x] Awaiting RPC requests
+[INFO ] 14-07-2022 08:26:06 [pool-4-thread-4] RabbitMQService - getCorrelationId: 10064b6b-5a63-4bbe-a53a-5be8ad86642f
+[INFO ] 14-07-2022 08:26:06 [pool-4-thread-4] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment4","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff89ff86f7001","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 14-07-2022 08:26:07 [pool-4-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 14-07-2022 08:26:08 [pool-4-thread-4] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 14-07-2022 08:26:58 [pool-4-thread-5] RabbitMQService - getCorrelationId: 1d5b93bd-4fd2-4c9f-b095-ad4c7cdd8764
+[INFO ] 14-07-2022 08:26:58 [pool-4-thread-5] RabbitMQService - Receive Message from queue: {"apiID":"Restpayment9","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hdff89ff86f7088701","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 14-07-2022 08:26:58 [pool-4-thread-5] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 14-07-2022 08:26:58 [pool-4-thread-5] RabbitMQService - response from partner api:  Status response 200

@@ -31,7 +31,7 @@ public class RMQPool {
         return instance;
     }
 
-    private RabbitMQModel readConfigFile(){
+    public RabbitMQModel readConfigFile() throws PaymentException{
         Properties properties = new Properties();
         InputStream inputStream = null;
         RabbitMQModel rabbitMQModel = new RabbitMQModel();
@@ -53,6 +53,8 @@ public class RMQPool {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }catch (PaymentException e){
+            throw new PaymentException("34", "Read config file RabbitMQ fail");
         } finally {
             // close objects
             try {
@@ -67,26 +69,31 @@ public class RMQPool {
     }
 
     private boolean awakeConnection() throws IOException, TimeoutException {
-        RabbitMQModel rabbitMQModel = new RabbitMQModel();
-        rabbitMQModel = readConfigFile();
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setUsername(rabbitMQModel.getUserName());
-        factory.setPassword(rabbitMQModel.getPassword());
-        factory.setHost(rabbitMQModel.getHost());
-        factory.setPort(rabbitMQModel.getPort());
+        try{
+            RabbitMQModel rabbitMQModel = new RabbitMQModel();
+            rabbitMQModel = readConfigFile();
+            ConnectionFactory factory = new ConnectionFactory();
+            factory.setUsername(rabbitMQModel.getUserName());
+            factory.setPassword(rabbitMQModel.getPassword());
+            factory.setHost(rabbitMQModel.getHost());
+            factory.setPort(rabbitMQModel.getPort());
 
-        connection = factory.newConnection();
-        if (channels != null) {
-            channels.clear();
+            connection = factory.newConnection();
+            if (channels != null) {
+                channels.clear();
 
-        } else {
-            channels = new ArrayList<Channel>();
+            } else {
+                channels = new ArrayList<Channel>();
+            }
+            for (int i = 0; i < readConfigFile().getMaxChannel() ; i++) {
+                spawnChannel();
+            }
+
+            return true;
+        }catch (PaymentException e){
+            throw new PaymentException("46", "Awake Connection fail");
         }
-        for (int i = 0; i < readConfigFile().getMaxChannel() ; i++) {
-            spawnChannel();
-        }
 
-        return true;
     }
 
     private void spawnChannel() throws IOException {
@@ -103,7 +110,7 @@ public class RMQPool {
                     channels.wait(readConfigFile().getTimeOut());
 
                 } catch (InterruptedException e) {
-                    throw new PaymentException("", "Get channel is time out");
+                    throw new PaymentException("78", "Get channel is time out");
                 }
                 if (channels.size() == 0) {
                     spawnChannel();

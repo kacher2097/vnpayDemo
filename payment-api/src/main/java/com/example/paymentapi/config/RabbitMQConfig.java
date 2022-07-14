@@ -26,12 +26,12 @@ public class RabbitMQConfig {
         awakeConnection();
     }
 //
-//    public static RabbitMQConfig getInstance() throws IOException, TimeoutException {
-//        if (instance == null) {
-//            instance = new RabbitMQConfig();
-//        }
-//        return instance;
-//    }
+    public static RabbitMQConfig getInstance() throws IOException, TimeoutException {
+        if (instance == null) {
+            instance = new RabbitMQConfig();
+        }
+        return instance;
+    }
 
     public RabbitMQProperties readConfigFile(){
         Properties properties = new Properties();
