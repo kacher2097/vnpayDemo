@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class Main {
-
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
     private static final RabbitMQService rabbitMQService;
 
     static {

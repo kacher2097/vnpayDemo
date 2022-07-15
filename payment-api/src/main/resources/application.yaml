@@ -16,16 +16,5 @@ banks:
       privateKey: lkjlk
       ips:
 
-app:
-  message: Message has been sent Successfully..
-spring:
-  rabbitmq:
-    host: localhost
-    username: guest
-    password: guest
-    port: 49153
-    exchange: payment.exchange
-    queue: queue.payment
-    routingkey: payment.routingkey
 server:
   port: 9091

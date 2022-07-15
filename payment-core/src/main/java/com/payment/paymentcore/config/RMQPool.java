@@ -100,7 +100,6 @@ public class RMQPool {
         Channel channel = connection.createChannel();
         channel.queueDeclare(readConfigFile().getQueue(), true, false, false, null);
         channels.add(channel);
-
     }
 
     public Channel getChannel() throws IOException, TimeoutException {

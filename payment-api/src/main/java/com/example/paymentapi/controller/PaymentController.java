@@ -49,9 +49,7 @@ public class PaymentController {
             log.info(" Requesting data payment to RabbitMQ {}", paymentRequest);
             String response = rabbitMQSender.call(paymentRequest);
 
-            log.info("Response: {}" , response );
-
-            log.info("Send request success and receive response success");
+            log.info("Send request success and receive response success with result: {}", response);
             RequestException requestException = Convert.convertJsonMessageToObject2(response);
 
             return messageResponse.bodyResponse(requestException.getCode(), requestException.getMessage()
@@ -59,9 +57,11 @@ public class PaymentController {
 
         } catch (RequestException e) {
             log.error("Send request fail");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    new ResponseObject(e.getCode(), e.getMessage(), responseId, "", ""));
+            return messageResponse.bodyResponse(e.getCode(), e.getMessage()
+                    , responseId, "", "");
+
         } catch (IOException | InterruptedException | TimeoutException e) {
+            log.error("has ex:",e);
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(
                     new ResponseObject("1111", e.getMessage(), responseId, "", "")
             );

@@ -3,42 +3,32 @@ package com.example.paymentapi.service;
 import com.example.paymentapi.config.RabbitMQConfig;
 import com.example.paymentapi.exception.RequestException;
 import com.example.paymentapi.model.PaymentRequest;
-import com.example.paymentapi.service.impl.PaymentServiceImpl;
 import com.example.paymentapi.util.Convert;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.rabbitmq.client.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Value;
+import com.rabbitmq.client.AMQP;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.DeliverCallback;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeoutException;
 
 @Service
+@Slf4j
 public class RabbitMQSender {
-    private static Logger log = LoggerFactory.getLogger(RabbitMQSender.class);
     private final RabbitMQConfig rabbitMQConfig;
 
-    public RabbitMQSender(RabbitMQConfig rabbitMQConfig) throws IOException, TimeoutException {
+    public RabbitMQSender(RabbitMQConfig rabbitMQConfig) {
         this.rabbitMQConfig = rabbitMQConfig;
-    }
-
-    public Channel connectToRabbitMQ() throws IOException, TimeoutException, RequestException {
-        Channel channel = rabbitMQConfig.getChannel();
-        String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
-
-        return channel;
     }
 
     public String call(PaymentRequest paymentRequest) throws IOException, InterruptedException, TimeoutException {
         Channel channel = rabbitMQConfig.getChannel();
         String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
+
         final String corrId = UUID.randomUUID().toString();
 
         String replyQueueName = channel.queueDeclare().getQueue();
@@ -51,12 +41,14 @@ public class RabbitMQSender {
         log.info("correlationId {} ", corrId);
         String message = Convert.convertObjToString(paymentRequest);
 
-        channel.basicPublish("", rpcQueue, props, message.getBytes("UTF-8"));
+        log.info("Send message to queue {} with data: {}", rpcQueue, message);
+        channel.basicPublish("", rpcQueue, props, message.getBytes(StandardCharsets.UTF_8));
         final BlockingQueue<String> response = new ArrayBlockingQueue<>(1);
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             try {
                 if (delivery.getProperties().getCorrelationId().equals(corrId)) {
-                    response.offer(new String(delivery.getBody(), "UTF-8"));
+                    log.info("get body from server: ", delivery.getBody());
+                    response.offer(new String(delivery.getBody(), StandardCharsets.UTF_8));
                 }
 
             } catch (RuntimeException e) {
@@ -68,7 +60,6 @@ public class RabbitMQSender {
         });
 
         String result = response.take();
-
         channel.basicCancel(ctag);
         return result;
     }

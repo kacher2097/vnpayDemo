@@ -1,5 +1,6 @@
 package com.example.paymentapi.config;
 
+import com.example.paymentapi.model.Bank;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

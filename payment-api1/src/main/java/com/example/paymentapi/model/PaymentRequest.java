@@ -3,6 +3,7 @@ package com.example.paymentapi.model;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -14,10 +15,10 @@ public class PaymentRequest implements Serializable {
     @NotNull
     private String apiID;
 
-    @NotBlank
+    @NotEmpty
     private String mobile;
 
-    @NotBlank
+    @NotEmpty
     private String bankCode;
 
     @NotBlank

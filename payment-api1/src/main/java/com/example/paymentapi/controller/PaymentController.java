@@ -28,11 +28,12 @@ public class PaymentController {
         this.ipaymentService = ipaymentService;
     }
 
+    //TODO khong xu li bat exception
     @PostMapping
     public ResponseEntity<ResponseObject> sendRequest(@RequestBody @Valid PaymentRequest paymentRequest,
                                                         BindingResult bindingResult) {
         try {
-            log.info("Begin sendRequest() ");
+            log.info("Begin sendRequest() with data {}", paymentRequest);
             ipaymentService.setDataRequestToRedis(paymentRequest,bindingResult);
             log.info("Send request success");
             return ResponseEntity.status(HttpStatus.OK).body(
@@ -40,7 +41,7 @@ public class PaymentController {
             );
 
         } catch (RequestException e) {
-            log.error("Send request fail with message: {}", e.getMessage());
+            log.error("Send request fail with message: {}", e.getMessage()); //TODO errorcode > message
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     new ResponseObject(e.getCode(), e.getMessage()));
         }

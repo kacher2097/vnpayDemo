@@ -4,17 +4,14 @@ import com.google.gson.Gson;
 import com.payment.paymentcore.model.PaymentRequest;
 
 public class Convert {
+    private static final Gson gson = new Gson();
+
     public static String convertObjToString(Object clsObj) {
         //convert object  to string json
-        Gson gson = new Gson();
-        String jsonSender = new Gson().toJson(clsObj);
-        return jsonSender;
+        return gson.toJson(clsObj);
     }
 
-    public static PaymentRequest convertJsonMessageToObject(String message){
-        Gson gson = new Gson();
-        PaymentRequest paymentRequest = gson.fromJson(message, PaymentRequest.class);
-
-        return paymentRequest;
+    public static PaymentRequest convertJsonMessageToObject(String message) {
+        return gson.fromJson(message, PaymentRequest.class);
     }
 }

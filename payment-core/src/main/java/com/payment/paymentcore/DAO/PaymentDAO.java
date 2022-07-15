@@ -3,25 +3,14 @@ package com.payment.paymentcore.DAO;
 import com.payment.paymentcore.config.HikariCPResource;
 import com.payment.paymentcore.model.PaymentRequest;
 import com.payment.paymentcore.util.PaymentException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+@Slf4j
 public class PaymentDAO {
-//    private static PaymentDAO instance;
-
-//    public static PaymentDAO getInstance() {
-//        if (instance == null) {
-//            instance = new PaymentDAO();
-//        }
-//        return instance;
-//    }
-
-    private static final Logger log = LogManager.getLogger(PaymentDAO.class);
 
     public PaymentDAO() {
     }
@@ -55,12 +44,13 @@ public class PaymentDAO {
 
             prepareStatement.execute();
 
-        } catch (SQLException e) {
+        } catch (ExceptionInInitializerError e) {
             log.error("Insert into DB has exception: {}", e);
             throw new PaymentException("67", "Connect to MySQL fail!");
-        }catch (PaymentException e){
-            throw new PaymentException("43", "Insert Payment request to DB fail!");
         }
+//        }catch (PaymentException e){
+//            throw new PaymentException("43", "Insert Payment request to DB fail!");
+//        }
         return true;
     }
 

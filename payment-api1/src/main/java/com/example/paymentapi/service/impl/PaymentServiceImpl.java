@@ -24,6 +24,7 @@ public class PaymentServiceImpl implements IPaymentService {
     private final Gson gson;
 
     private static final Logger log = LogManager.getLogger(PaymentServiceImpl.class);
+
     //Constructor Injection
     public PaymentServiceImpl(YAMLConfig yamlConfig, RedisTemplate<String, Object> redisTemplate, Gson gson) {
         this.yamlConfig = yamlConfig;
@@ -32,16 +33,18 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     @Override
-    public void setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult){
+    public void setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult) {
+        checkAllValidate(paymentRequest, bindingResult);
         try {
-            checkAllValidate(paymentRequest, bindingResult);
-            log.info(" Set request data to Redis with data: {} ", paymentRequest);
+            //TODO dang nhan loi chung connect redis fail
+
+            log.info(" Hset to Redis with data: {} ", paymentRequest);
             redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
 
             PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
                     get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
-            log.info("Data to redis: [{}]", gson.toJson(paymentRequest1));
-        }catch (RequestException requestException){
+            log.info("Check data put into Redis: [{}]", gson.toJson(paymentRequest1));
+        } catch (RequestException requestException) {
             throw new RequestException("11", "Connect to redis fail");
         }
     }
@@ -56,8 +59,9 @@ public class PaymentServiceImpl implements IPaymentService {
             throw new RequestException("02", "Not have Bank Code in YAML file");
         }
 
+        //FIXED - 15072022
         if (!checkSumSHA256(paymentRequest, privateKey)) {
-            throw new RequestException("03", "Check sum error");
+            throw new RequestException("03", "Checksum error because one or more fields are change");
         }
     }
 
@@ -65,8 +69,12 @@ public class PaymentServiceImpl implements IPaymentService {
         log.info("Begin getPrivateKey() with Data Payment Request: {}", paymentRequest);
         List<Bank> lstBank = yamlConfig.getAllBanks();
         String bankCode = paymentRequest.getBankCode();
+
+        //TODO thay doi dung for bang case
+        lstBank.contains(bankCode);
         for (Bank item : lstBank) {
-            if (item.getBankCode().equalsIgnoreCase(bankCode)) {
+
+            if (bankCode.equalsIgnoreCase(item.getBankCode())) {
                 log.info("End getPrivateKeyByBankCode() Have Bank Code in YAML file");
                 return item.getPrivateKey();
             }
@@ -93,10 +101,18 @@ public class PaymentServiceImpl implements IPaymentService {
         return stringBuilder;
     }
 
+    /**
+     *
+     * @param paymentRequest
+     * @param privateKey
+     * @return true if valid
+     */
     public boolean checkSumSHA256(PaymentRequest paymentRequest, String privateKey) {
         log.info(" Begin checkSumSHA256() with data payment request {}", paymentRequest);
+
+        //FIXED
         String sha256hex = Hashing.sha256()
-                .hashString(this.getStringToHash(paymentRequest, privateKey), StandardCharsets.UTF_8)
+                .hashString(this.getStringToHash(paymentRequest, privateKey).toString(), StandardCharsets.UTF_8)
                 .toString();
 
         log.info("Check sum SHA256:[{}] ", sha256hex);
@@ -105,7 +121,7 @@ public class PaymentServiceImpl implements IPaymentService {
             return true;
         }
 
-        log.error("checkSumSHA256() Checksum error");
+        log.error("checkSumSHA256() Checksum error because one or more fields are change");
         return false;
     }
 

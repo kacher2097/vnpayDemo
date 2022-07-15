@@ -20,17 +20,10 @@ public class RabbitMQConfig {
     private static final String FILE_CONFIG = "\\config\\rabbitmq-config.properties";
     private Connection connection;
     private List<Channel> channels;
-    private static RabbitMQConfig instance;
 
+    //TODO phai co connection pool đã có channel pool
     public RabbitMQConfig() throws IOException, TimeoutException {
         awakeConnection();
-    }
-//
-    public static RabbitMQConfig getInstance() throws IOException, TimeoutException {
-        if (instance == null) {
-            instance = new RabbitMQConfig();
-        }
-        return instance;
     }
 
     public RabbitMQProperties readConfigFile(){
@@ -76,7 +69,9 @@ public class RabbitMQConfig {
         factory.setHost(rabbitMQProperties.getHost());
         factory.setPort(rabbitMQProperties.getPort());
 
+
         connection = factory.newConnection();
+
         if (channels != null) {
             channels.clear();
 

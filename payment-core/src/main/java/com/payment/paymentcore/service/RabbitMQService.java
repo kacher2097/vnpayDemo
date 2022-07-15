@@ -25,13 +25,23 @@ public class RabbitMQService {
         return instance;
     }
 
+    private static final RMQPool rmqPool;
+
+    static {
+        try {
+            rmqPool = RMQPool.getInstance();
+        } catch (IOException | TimeoutException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public Channel connectToRabbitMQ() throws IOException, TimeoutException, PaymentException {
-        RMQPool rmqPool = new RMQPool();
+        //RMQPool rmqPool = new RMQPool();
         String rpcQueue = rmqPool.readConfigFile().getQueue();
         try {
             Channel channel = rmqPool.getChannel();
             channel.queueDeclare(rpcQueue, true, false, false, null);
-            channel.queuePurge(rpcQueue);
+            //channel.queuePurge(rpcQueue);
             channel.basicQos(1);
             return channel;
         }catch (PaymentException e){
@@ -40,10 +50,9 @@ public class RabbitMQService {
         }
     }
 
-
     public void sendAndReceiveMessage() throws IOException, TimeoutException {
-        RMQPool rmqPool = new RMQPool();
-        String rpcQueue = rmqPool.readConfigFile().getQueue();
+//        RMQPool rmqPool = new RMQPool();
+//        String rpcQueue = rmqPool.readConfigFile().getQueue();
         try {
             Channel channel = this.connectToRabbitMQ();
             log.info(" [x] Awaiting RPC requests");
@@ -77,12 +86,12 @@ public class RabbitMQService {
                     } else {
                         log.info("Insert into DB fail");
                         responseToClient = Convert.convertObjToString(new PaymentException("95",
-                                "Insert into DB fail" ));
+                                "Insert into DB fail"));
                     }
 
                 } catch (PaymentException e) {
                     responseToClient =  Convert.convertObjToString(new PaymentException(e.getCode(), e.getMessage()));
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     responseToClient =  Convert.convertObjToString(new PaymentException("55", e.getMessage()));
                 } finally {
                     channel.basicPublish("", delivery.getProperties().getReplyTo(), replyProps,
@@ -95,7 +104,7 @@ public class RabbitMQService {
                     }
                 }
             };
-            channel.basicConsume(rpcQueue, false, deliverCallback, (consumerTag -> {
+            channel.basicConsume(rmqPool.readConfigFile().getQueue(), false, deliverCallback, (consumerTag -> {
             }));
 
             // Wait and be prepared to consume the message from RPC client.

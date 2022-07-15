@@ -1,4 +1,4 @@
-package com.example.paymentapi.config;
+package com.example.paymentapi.model;
 
 import lombok.Data;
 
