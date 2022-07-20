@@ -35,18 +35,13 @@ public class PaymentServiceImpl implements IPaymentService {
     @Override
     public void setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult) {
         checkAllValidate(paymentRequest, bindingResult);
-        try {
-            //TODO dang nhan loi chung connect redis fail
 
-            log.info(" Hset to Redis with data: {} ", paymentRequest);
-            redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
+        log.info(" Hset to Redis with data: {} ", paymentRequest);
+        redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
 
-            PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
-                    get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
-            log.info("Check data put into Redis: [{}]", gson.toJson(paymentRequest1));
-        } catch (RequestException requestException) {
-            throw new RequestException("11", "Connect to redis fail");
-        }
+        PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
+                get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
+        log.info("Check data put into Redis: [{}]", gson.toJson(paymentRequest1));
     }
 
     public void checkAllValidate(PaymentRequest paymentRequest, BindingResult bindingResult) throws RequestException {
@@ -59,7 +54,7 @@ public class PaymentServiceImpl implements IPaymentService {
             throw new RequestException("02", "Not have Bank Code in YAML file");
         }
 
-        //FIXED - 15072022
+        //True if checksum success
         if (!checkSumSHA256(paymentRequest, privateKey)) {
             throw new RequestException("03", "Checksum error because one or more fields are change");
         }
@@ -71,9 +66,7 @@ public class PaymentServiceImpl implements IPaymentService {
         String bankCode = paymentRequest.getBankCode();
 
         //TODO thay doi dung for bang case
-        lstBank.contains(bankCode);
         for (Bank item : lstBank) {
-
             if (bankCode.equalsIgnoreCase(item.getBankCode())) {
                 log.info("End getPrivateKeyByBankCode() Have Bank Code in YAML file");
                 return item.getPrivateKey();
@@ -102,7 +95,6 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     /**
-     *
      * @param paymentRequest
      * @param privateKey
      * @return true if valid
@@ -115,8 +107,8 @@ public class PaymentServiceImpl implements IPaymentService {
                 .hashString(this.getStringToHash(paymentRequest, privateKey).toString(), StandardCharsets.UTF_8)
                 .toString();
 
-        log.info("Check sum SHA256:[{}] ", sha256hex);
-        if (sha256hex.equalsIgnoreCase(paymentRequest.getCheckSum())) {
+        log.info(" SHA256 from request: [{}] ", sha256hex);
+        if (paymentRequest.getCheckSum().equalsIgnoreCase(sha256hex)) {
             log.info("checkSumSHA256() Checksum success");
             return true;
         }

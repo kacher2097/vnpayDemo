@@ -6,6 +6,7 @@ import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
 import com.example.paymentapi.service.RabbitMQSender;
 import com.example.paymentapi.util.Convert;
+import com.example.paymentapi.util.ErrorCode;
 import com.example.paymentapi.util.MessageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,41 +31,39 @@ public class PaymentController {
     private final IPaymentService ipaymentService;
     private final RabbitMQSender rabbitMQSender;
 
+    private final ErrorCode errorCode;
+
     //Constructor Injection
-    public PaymentController(IPaymentService ipaymentService, RabbitMQSender rabbitMQSender) {
+    public PaymentController(IPaymentService ipaymentService, RabbitMQSender rabbitMQSender, ErrorCode errorCode) {
         this.ipaymentService = ipaymentService;
         this.rabbitMQSender = rabbitMQSender;
+        this.errorCode = errorCode;
     }
 
     @PostMapping
     public ResponseEntity<ResponseObject> sendRequest(@RequestBody @Valid PaymentRequest paymentRequest,
-                                                        BindingResult bindingResult) {
+                                                      BindingResult bindingResult) {
         final String responseId = UUID.randomUUID().toString();
-        MessageResponse messageResponse = new MessageResponse();
+        log.info("Begin send request with data: {}", paymentRequest);
         try {
 
-            log.info("Begin sendRequest() ");
+            log.info("Validate request with data {} ", paymentRequest);
             ipaymentService.validateRequest(paymentRequest, bindingResult);
 
             log.info(" Requesting data payment to RabbitMQ {}", paymentRequest);
             String response = rabbitMQSender.call(paymentRequest);
 
-            log.info("Send request success and receive response success with result: {}", response);
-            RequestException requestException = Convert.convertJsonMessageToObject2(response);
-
-            return messageResponse.bodyResponse(requestException.getCode(), requestException.getMessage()
-                    , responseId, "", "");
+            return new MessageResponse().bodyResponse(responseId, response);
 
         } catch (RequestException e) {
-            log.error("Send request fail");
-            return messageResponse.bodyResponse(e.getCode(), e.getMessage()
+            log.error("Send request fail with error code: {}", e.getCode());
+            return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.readErrorDescriptionFile(e.getCode())
                     , responseId, "", "");
 
         } catch (IOException | InterruptedException | TimeoutException e) {
-            log.error("has ex:",e);
-            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(
-                    new ResponseObject("1111", e.getMessage(), responseId, "", "")
-            );
+            log.error("Code have exception {} :", e);
+            return new MessageResponse().bodyErrorResponse("10101", e.getMessage()
+                    , responseId, "", "");
         }
     }
 }

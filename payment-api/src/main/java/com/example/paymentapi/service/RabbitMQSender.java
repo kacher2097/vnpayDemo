@@ -26,6 +26,7 @@ public class RabbitMQSender {
     }
 
     public String call(PaymentRequest paymentRequest) throws IOException, InterruptedException, TimeoutException {
+        log.info("Begin call to rabbitmq with data {} ", paymentRequest);
         Channel channel = rabbitMQConfig.getChannel();
         String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
 
@@ -47,7 +48,6 @@ public class RabbitMQSender {
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             try {
                 if (delivery.getProperties().getCorrelationId().equals(corrId)) {
-                    log.info("get body from server: ", delivery.getBody());
                     response.offer(new String(delivery.getBody(), StandardCharsets.UTF_8));
                 }
 

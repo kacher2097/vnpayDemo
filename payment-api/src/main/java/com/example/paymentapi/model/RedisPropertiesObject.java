@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RedisPropertiesObject {
     private int maxTotal;
+    private int minIdle;
     private int maxIdle;
     private int maxWait;
     private boolean testOnBorrow;

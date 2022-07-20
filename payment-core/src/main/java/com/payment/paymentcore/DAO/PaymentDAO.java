@@ -12,10 +12,20 @@ import java.sql.SQLException;
 @Slf4j
 public class PaymentDAO {
 
+    private static PaymentDAO instance;
+
     public PaymentDAO() {
     }
 
+    public static PaymentDAO getInstance(){
+        if(instance == null){
+            instance = new PaymentDAO();
+        }
+        return instance;
+    }
+
     public boolean addPaymentRequest(PaymentRequest paymentRequest) throws PaymentException, SQLException {
+        log.info("Begin add payment request into database with data: {}", paymentRequest);
         String sqlAdd = SQLQuery.addRequestQuery();
         try (Connection conn = HikariCPResource.getConnection();
              PreparedStatement prepareStatement = conn.prepareStatement(sqlAdd)) {
@@ -43,14 +53,11 @@ public class PaymentDAO {
             prepareStatement.setInt(19, paymentRequest.getAddValue().getPayMethodMMS());
 
             prepareStatement.execute();
-
+            log.info("Execute query success");
         } catch (ExceptionInInitializerError e) {
             log.error("Insert into DB has exception: {}", e);
             throw new PaymentException("67", "Connect to MySQL fail!");
         }
-//        }catch (PaymentException e){
-//            throw new PaymentException("43", "Insert Payment request to DB fail!");
-//        }
         return true;
     }
 

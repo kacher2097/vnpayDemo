@@ -1,6 +1,7 @@
 package com.example.paymentapi.config;
 
 import com.example.paymentapi.model.RedisPropertiesObject;
+import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -10,20 +11,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+@Configuration
 public class RedisPool {
 
     private static JedisPool pool;
 
+    static {
+        initPool();
+    }
+
     private static void initPool() {
         JedisPoolConfig config = new JedisPoolConfig();
         RedisPropertiesObject redisPropertiesObject = readConfigFile();
+        config.setMinIdle(redisPropertiesObject.getMinIdle());
         config.setMaxTotal(redisPropertiesObject.getMaxTotal());
         config.setMaxIdle(redisPropertiesObject.getMaxIdle());
         config.setTestOnBorrow(true);
         config.setBlockWhenExhausted(true);
         config.setMaxWaitMillis(redisPropertiesObject.getMaxWait());
 
-        pool = new JedisPool(config, redisPropertiesObject.getRedisHost(), redisPropertiesObject.getRedisPort(), 1000 * 2);
+        pool = new JedisPool(config, redisPropertiesObject.getRedisHost(),
+                redisPropertiesObject.getRedisPort(), 1000 * 2);
     }
 
     public static RedisPropertiesObject readConfigFile(){
@@ -39,7 +47,7 @@ public class RedisPool {
             properties.load(inputStream);
 
             // get property by name
-            //TODO set min
+            redisPropertiesObject.setMaxIdle(Integer.parseInt(properties.getProperty("min_idle")));
             redisPropertiesObject.setMaxIdle(Integer.parseInt(properties.getProperty("max_idle")));
             redisPropertiesObject.setMaxTotal(Integer.parseInt(properties.getProperty("max_total")));
             redisPropertiesObject.setMaxWait(Integer.parseInt(properties.getProperty("max_wait")));
@@ -60,11 +68,6 @@ public class RedisPool {
             }
         }
         return redisPropertiesObject;
-    }
-
-
-    static {
-        initPool();
     }
 
     public Jedis getJedis() {

@@ -11,3 +11,7 @@ banks:
     - bankCode: 970445
       privateKey: abyukmnh
       ips:
+
+    - bankCode: 11049
+      privateKey: nmker
+      ips:

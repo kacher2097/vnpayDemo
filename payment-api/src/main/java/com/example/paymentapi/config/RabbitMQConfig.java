@@ -21,6 +21,8 @@ public class RabbitMQConfig {
     private Connection connection;
     private List<Channel> channels;
 
+    private List<Connection> connections;
+
     //TODO phai co connection pool đã có channel pool
     public RabbitMQConfig() throws IOException, TimeoutException {
         awakeConnection();
@@ -61,14 +63,14 @@ public class RabbitMQConfig {
         return rabbitMQProperties;
     }
 
-    private boolean awakeConnection() throws IOException, TimeoutException {
+    //TODO giai phong channel neu khong dung den
+    private void awakeConnection() throws IOException, TimeoutException {
         RabbitMQProperties rabbitMQProperties = readConfigFile();
         com.rabbitmq.client.ConnectionFactory factory = new ConnectionFactory();
         factory.setUsername(rabbitMQProperties.getUserName());
         factory.setPassword(rabbitMQProperties.getPassword());
         factory.setHost(rabbitMQProperties.getHost());
         factory.setPort(rabbitMQProperties.getPort());
-
 
         connection = factory.newConnection();
 
@@ -81,8 +83,6 @@ public class RabbitMQConfig {
         for (int i = 0; i < readConfigFile().getMaxChannel() ; i++) {
             spawnChannel();
         }
-
-        return true;
     }
 
     private void spawnChannel() throws IOException {

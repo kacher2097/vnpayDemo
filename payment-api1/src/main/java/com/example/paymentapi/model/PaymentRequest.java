@@ -10,57 +10,70 @@ import java.io.Serializable;
 @Data
 public class PaymentRequest implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     @NotNull
+    @NotEmpty
     private String apiID;
 
+    @NotNull
     @NotEmpty
     private String mobile;
 
+    @NotNull
     @NotEmpty
     private String bankCode;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String accountNo;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String payDate;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String additionalData;
 
     @NotNull
     private double debitAmount;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String respCode;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String respDesc;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String traceTransfer;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String messageType;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String checkSum;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String orderCode;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String userName;
 
     @NotNull
     private double realAmount;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String promotionCode;
 
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String tokenKey;
 
 }
