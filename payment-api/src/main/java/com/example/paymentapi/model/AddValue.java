@@ -3,30 +3,18 @@ package com.example.paymentapi.model;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
-
+@Data
 public class AddValue implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
+    @NotNull
+    @NotEmpty
     private String payMethod;
 
+    @NotNull
     private int payMethodMMS;
 
-    public String getPayMethod() {
-        return payMethod;
-    }
-
-    public int getPayMethodMMS() {
-        return payMethodMMS;
-    }
-
-    public void setPayMethod(String payMethod) {
-        this.payMethod = "01";
-    }
-
-    public void setPayMethodMMS(int payMethodMMS) {
-        this.payMethodMMS = 01;
-    }
 }

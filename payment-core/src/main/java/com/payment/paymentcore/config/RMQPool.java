@@ -1,6 +1,7 @@
 package com.payment.paymentcore.config;
 
 import com.payment.paymentcore.model.RabbitMQModel;
+import com.payment.paymentcore.util.ErrorCode;
 import com.payment.paymentcore.util.PaymentException;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -54,7 +55,7 @@ public class RMQPool {
         } catch (IOException e) {
             e.printStackTrace();
         }catch (PaymentException e){
-            throw new PaymentException("34", "Read config file RabbitMQ fail");
+            throw new PaymentException(ErrorCode.READ_CONFIG_RABBITMQ_FAIL);
         } finally {
             // close objects
             try {

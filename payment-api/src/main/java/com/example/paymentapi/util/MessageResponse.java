@@ -8,6 +8,16 @@ import org.springframework.http.ResponseEntity;
 
 @Slf4j
 public class MessageResponse {
+
+    private ErrorCode errorCode;
+
+    public MessageResponse() {
+
+    }
+    public MessageResponse(ErrorCode errorCode) {
+        this.errorCode = errorCode;
+    }
+
     public ResponseEntity<ResponseObject> bodyResponse(String responseId, String response) {
         try {
             if(response != null){
@@ -20,13 +30,14 @@ public class MessageResponse {
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    new ResponseObject("0125", "Receive response have exception: " + e
+                    new ResponseObject(ErrorCode.SYSTEM_MAINTENANCE,
+                            errorCode.readErrorDescriptionFile(ErrorCode.SYSTEM_MAINTENANCE)
                             , responseId, "", "")
             );
         }
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                new ResponseObject("0120", "Response from server is null"
+                new ResponseObject(ErrorCode.NULL_RESPONSE, errorCode.readErrorDescriptionFile(ErrorCode.NULL_RESPONSE)
                         , responseId, "", "")
         );
     }

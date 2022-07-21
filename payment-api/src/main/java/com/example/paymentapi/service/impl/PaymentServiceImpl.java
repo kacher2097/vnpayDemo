@@ -1,25 +1,24 @@
 package com.example.paymentapi.service.impl;
 
-import com.example.paymentapi.model.Bank;
 import com.example.paymentapi.config.RedisPool;
 import com.example.paymentapi.config.YAMLConfig;
 import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.model.Bank;
 import com.example.paymentapi.model.PaymentRequest;
-import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
 import com.example.paymentapi.util.ErrorCode;
-import com.example.paymentapi.util.GetTime;
 import com.google.common.hash.Hashing;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import redis.clients.jedis.Jedis;
 
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 
@@ -32,35 +31,28 @@ public class PaymentServiceImpl implements IPaymentService {
 
     private final RedisPool redisPool;
 
-    private final ErrorCode errorCode;
-
     //Constructor Injection
-    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool, ErrorCode errorCode) {
+    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool) {
         this.yamlConfig = yamlConfig;
         this.gson = gson;
         this.redisPool = redisPool;
-        this.errorCode = errorCode;
     }
 
     @Override
     public void validateRequest(PaymentRequest paymentRequest, BindingResult bindingResult) throws RequestException {
-//        errorCode.readErrorDescriptionFile()
-        ResponseObject responseObject = new ResponseObject();
-
-//        responseObject.setCode();
         if (bindingResult.hasErrors()) {
             log.error("One or more field request is empty or null");
-            throw new RequestException("01", "One or more field request is empty or null");
+            throw new RequestException(ErrorCode.NULL_REQUEST);
         }
 
         String privateKey = getPrivateKeyByBankCode(paymentRequest);
         if (privateKey == null) {
-            throw new RequestException("02", "Not have Bank Code in YAML file");
+            throw new RequestException(ErrorCode.NOT_HAVE_PRIVATE_KEY);
         }
 
         //True if checksum success
         if (!checkSumSHA256(paymentRequest, privateKey)) {
-            throw new RequestException("03", "Check sum error cause one or more fields are change");
+            throw new RequestException(ErrorCode.CHECK_SUM_ERROR);
         }
 
         //True if Token key not exist on day
@@ -70,19 +62,17 @@ public class PaymentServiceImpl implements IPaymentService {
 
         //True if pay date have right format
         if(!checkValidTimeFormat(paymentRequest.getPayDate())){
-            log.info("Pay date format is invalid");
-            throw new RequestException("13", "Pay date is invalid");
+            throw new RequestException(ErrorCode.INVALID_DATE_FORMAT);
         }
 
         //True if real amount <= debit amount
         if(!checkValidAmount(paymentRequest)){
             log.info("Real amount is invalid (amount > debit amount)");
-            throw new RequestException("14", "Real amount is invalid");
+            throw new RequestException(ErrorCode.INVALID_AMOUNT);
         }
     }
 
     public boolean checkTokenKey(PaymentRequest paymentRequest) throws RequestException{
-        GetTime getTime = new GetTime();
         String bankCode = paymentRequest.getBankCode();
         String tokenKey = paymentRequest.getTokenKey();
         log.info("Begin check valid of Token key {}", tokenKey);
@@ -97,7 +87,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
             jedis.hset(tokenKey , bankCode, jsonValue);
             log.info("Data put to redis: {}", jsonValue);
-            jedis.expire(tokenKey, getTime.getTimeExpire());
+            jedis.expire(tokenKey, this.getTimeExpire());
 
             long ttl = jedis.ttl(tokenKey);
             log.info("Expire time is: {} seconds", ttl);
@@ -109,17 +99,19 @@ public class PaymentServiceImpl implements IPaymentService {
             return true;
         }catch (RequestException e){
             log.error("Connect to Redis fail! ");
-            throw new RequestException("0032", "Connect to Redis fail");
+            throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
         }
+    }
+
+    public long getTimeExpire() {
+        LocalDateTime now1 = LocalDateTime.now();
+        LocalDateTime endOfDate = now1.toLocalDate().atTime(LocalTime.MAX);
+        return ChronoUnit.SECONDS.between(now1, endOfDate);
     }
 
     public boolean checkValidAmount(PaymentRequest paymentRequest){
         return paymentRequest.getRealAmount() < paymentRequest.getDebitAmount();
     }
-//    public boolean checkDateRequest(PaymentRequest paymentRequest){
-//        GetTime getTime = new GetTime();
-//        return getTime.checkValidTimeFormat(paymentRequest.getPayDate());
-//    }
 
     public String getPrivateKeyByBankCode(PaymentRequest paymentRequest) {
         log.info("Begin getPrivateKey() with Data Payment Request: {}", paymentRequest);
@@ -173,6 +165,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
         Date date;
         try {
+
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
             date = dateFormat.parse(time);
             if(time.equals(dateFormat.format(date))){
@@ -180,7 +173,8 @@ public class PaymentServiceImpl implements IPaymentService {
             }
 
         }catch (Exception e) {
-            throw new RequestException("12", "Format date time invalid");
+            log.info("Pay date format is invalid");
+            throw new RequestException(ErrorCode.INVALID_DATE_FORMAT);
         }
 
         return false;

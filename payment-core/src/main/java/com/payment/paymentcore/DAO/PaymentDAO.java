@@ -2,6 +2,7 @@ package com.payment.paymentcore.DAO;
 
 import com.payment.paymentcore.config.HikariCPResource;
 import com.payment.paymentcore.model.PaymentRequest;
+import com.payment.paymentcore.util.ErrorCode;
 import com.payment.paymentcore.util.PaymentException;
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,7 +57,7 @@ public class PaymentDAO {
             log.info("Execute query success");
         } catch (ExceptionInInitializerError e) {
             log.error("Insert into DB has exception: {}", e);
-            throw new PaymentException("67", "Connect to MySQL fail!");
+            throw new PaymentException(ErrorCode.CONNECT_DB_FAIL);
         }
         return true;
     }

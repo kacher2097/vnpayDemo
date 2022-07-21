@@ -5,12 +5,10 @@ import com.example.paymentapi.model.PaymentRequest;
 import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
 import com.example.paymentapi.service.RabbitMQSender;
-import com.example.paymentapi.util.Convert;
 import com.example.paymentapi.util.ErrorCode;
 import com.example.paymentapi.util.MessageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,12 +55,14 @@ public class PaymentController {
 
         } catch (RequestException e) {
             log.error("Send request fail with error code: {}", e.getCode());
-            return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.readErrorDescriptionFile(e.getCode())
+            return new MessageResponse().bodyErrorResponse(e.getCode(),
+                    errorCode.readErrorDescriptionFile(e.getCode())
                     , responseId, "", "");
 
         } catch (IOException | InterruptedException | TimeoutException e) {
-            log.error("Code have exception {} :", e);
-            return new MessageResponse().bodyErrorResponse("10101", e.getMessage()
+            log.error("Code have exception {} :", e.toString());
+            return new MessageResponse(errorCode).bodyErrorResponse(ErrorCode.CODE_EXCEPTION,
+                    errorCode.readErrorDescriptionFile(ErrorCode.CODE_EXCEPTION) + e.getMessage()
                     , responseId, "", "");
         }
     }

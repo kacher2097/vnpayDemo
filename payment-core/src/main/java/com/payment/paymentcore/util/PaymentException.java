@@ -10,4 +10,8 @@ import lombok.NoArgsConstructor;
 public class PaymentException extends RuntimeException {
     private String code;
     private String message;
+
+    public PaymentException(String code){
+        this.code = code;
+    }
 }
