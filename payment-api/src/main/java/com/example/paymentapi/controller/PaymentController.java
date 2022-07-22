@@ -28,7 +28,6 @@ public class PaymentController {
     private static final Logger log = LoggerFactory.getLogger(PaymentController.class);
     private final IPaymentService ipaymentService;
     private final RabbitMQSender rabbitMQSender;
-
     private final ErrorCode errorCode;
 
     //Constructor Injection

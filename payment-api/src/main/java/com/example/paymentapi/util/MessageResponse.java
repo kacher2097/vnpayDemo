@@ -20,7 +20,7 @@ public class MessageResponse {
 
     public ResponseEntity<ResponseObject> bodyResponse(String responseId, String response) {
         try {
-            if(response != null){
+            if(response != null && !response.isEmpty()){
                 log.info("Send request success and receive response success with result: {}", response);
                 RequestException requestException = Convert.convertJsonMessageToObject2(response);
 

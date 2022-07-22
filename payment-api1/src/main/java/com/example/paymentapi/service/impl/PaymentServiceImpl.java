@@ -3,13 +3,16 @@ package com.example.paymentapi.service.impl;
 import com.example.paymentapi.config.Bank;
 import com.example.paymentapi.config.YAMLConfig;
 import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.handle.MessageResponse;
 import com.example.paymentapi.model.PaymentRequest;
+import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
 import com.google.common.hash.Hashing;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
@@ -33,15 +36,37 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     @Override
-    public void setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult) {
-        checkAllValidate(paymentRequest, bindingResult);
+    public ResponseEntity<ResponseObject> setDataRequestToRedis(PaymentRequest paymentRequest, BindingResult bindingResult) {
 
-        log.info(" Hset to Redis with data: {} ", paymentRequest);
-        redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
+        try {
+            checkAllValidate(paymentRequest, bindingResult);
+            log.info(" Hset to Redis with data: {} ", paymentRequest);
+            redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
 
-        PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
-                get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
-        log.info("Check data put into Redis: [{}]", gson.toJson(paymentRequest1));
+            PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
+                    get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
+            log.info("Check data put into Redis: [{}]", gson.toJson(paymentRequest1));
+
+            return MessageResponse.bodyResponse("00", "Send request success");
+
+        } catch (RequestException e){
+            return MessageResponse.bodyResponseError(e.getCode(), e.getMessage());
+        }
+
+//        if (!checkAllValidate(paymentRequest, bindingResult)) {
+//            return MessageResponse.bodyResponseError("", "");
+//        } else {
+//            log.info(" Hset to Redis with data: {} ", paymentRequest);
+//            redisTemplate.opsForHash().put(paymentRequest.getBankCode(), paymentRequest.getTokenKey(), paymentRequest);
+//
+//            PaymentRequest paymentRequest1 = (PaymentRequest) redisTemplate.opsForHash().
+//                    get(paymentRequest.getBankCode(), paymentRequest.getTokenKey());
+//            log.info("Check data put into Redis: [{}]", gson.toJson(paymentRequest1));
+//
+//
+//            return MessageResponse.bodyResponse("", "");
+//        }
+
     }
 
     public void checkAllValidate(PaymentRequest paymentRequest, BindingResult bindingResult) throws RequestException {

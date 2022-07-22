@@ -20,9 +20,9 @@ public class ErrorCode {
     public static final String INVALID_DATE_FORMAT = "05";
     public static final String INVALID_AMOUNT = "06";
     public static final String CHECK_SUM_ERROR = "07";
-    public static final String CONNECT_REDIS_FAIL = "51";
-    public static final String CONNECT_RABBITMQ_FAIL = "52";
-    public static final String CONNECT_DB_FAIL = "53";
+    public static final String READ_CONFIG_RABBITMQ_FAIL = "32";
+    public static final String CONNECT_REDIS_FAIL = "33";
+    public static final String CONNECT_RABBITMQ_FAIL = "34";
     public static final String CODE_EXCEPTION = "54";
 
     private static final String FILE_CONFIG = "\\config\\error-description.properties";

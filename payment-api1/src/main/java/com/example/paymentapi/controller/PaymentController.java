@@ -1,14 +1,9 @@
 package com.example.paymentapi.controller;
 
-import com.example.paymentapi.exception.RequestException;
-import com.example.paymentapi.handle.MessageResponse;
 import com.example.paymentapi.model.PaymentRequest;
 import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,16 +28,16 @@ public class PaymentController {
     @PostMapping
     public ResponseEntity<ResponseObject> sendRequest(@RequestBody @Valid PaymentRequest paymentRequest,
                                                       BindingResult bindingResult) {
-        try {
-            log.info("Begin sendRequest() with data {}", paymentRequest);
-            ipaymentService.setDataRequestToRedis(paymentRequest, bindingResult);
-            log.info("Send request success with code: {}", "00");
-            return new MessageResponse().bodyResponse("00", "Send request and put data to Redis success");
-
-
-        } catch (RequestException e) {
-            log.error("Send request fail with code: {}", e.getCode());
-            return new MessageResponse().bodyResponse(e.getCode(), e.getMessage());
-        }
+//        try {
+//            log.info("Begin sendRequest() with data {}", paymentRequest);
+            return ipaymentService.setDataRequestToRedis(paymentRequest, bindingResult);
+            //log.info("Send request success with code: {}", "00");
+//            return new MessageResponse().bodyResponse("00", "Send request and put data to Redis success");
+//
+//
+//        } catch (RequestException e) {
+//            log.error("Send request fail with code: {}", e.getCode());
+//            return new MessageResponse().bodyResponse(e.getCode(), e.getMessage());
+//        }
     }
 }

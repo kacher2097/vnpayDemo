@@ -6,6 +6,16 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ErrorCode {
+
+    public static ErrorCode instance;
+
+    public static ErrorCode getInstance(){
+        if(instance == null){
+            instance = new ErrorCode();
+        }
+        return instance;
+    }
+
     public static final String SEND_BAD_REQUEST = "01";
     public static final String REQUEST_SUCCESS = "00";
     public static final String SYSTEM_MAINTENANCE = "96";
@@ -15,10 +25,12 @@ public class ErrorCode {
 
     public static final String READ_CONFIG_REDIS_FAIL = "31";
     public static final String READ_CONFIG_RABBITMQ_FAIL = "32";
-    public static final String CONNECT_REDIS_FAIL = "51";
-    public static final String CONNECT_RABBITMQ_FAIL = "52";
+    public static final String CONNECT_REDIS_FAIL = "33";
+    public static final String CONNECT_RABBITMQ_FAIL = "34";
+    public static final String CREATE_CHANNEL_RABBITMQ_FAIL = "35";
     public static final String CONNECT_DB_FAIL = "53";
-    public static final String CODE_EXCEPTION = "54";
+    public static final String SQL_EXCEPTION = "55";
+    public static final String INSERT_INTO_DB_FAIL = "56";
 
     private static final String FILE_CONFIG = "\\config\\error-description.properties";
     public String readErrorDescriptionFile(String code){

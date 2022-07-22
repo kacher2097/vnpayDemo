@@ -47,7 +47,7 @@ public class RedisPool {
             properties.load(inputStream);
 
             // get property by name
-            redisPropertiesObject.setMaxIdle(Integer.parseInt(properties.getProperty("min_idle")));
+            redisPropertiesObject.setMinIdle(Integer.parseInt(properties.getProperty("min_idle")));
             redisPropertiesObject.setMaxIdle(Integer.parseInt(properties.getProperty("max_idle")));
             redisPropertiesObject.setMaxTotal(Integer.parseInt(properties.getProperty("max_total")));
             redisPropertiesObject.setMaxWait(Integer.parseInt(properties.getProperty("max_wait")));

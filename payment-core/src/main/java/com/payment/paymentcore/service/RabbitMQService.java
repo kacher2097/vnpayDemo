@@ -4,6 +4,7 @@ import com.payment.paymentcore.DAO.PaymentDAO;
 import com.payment.paymentcore.config.RMQPool;
 import com.payment.paymentcore.model.PaymentRequest;
 import com.payment.paymentcore.util.Convert;
+import com.payment.paymentcore.util.ErrorCode;
 import com.payment.paymentcore.util.PaymentException;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
@@ -29,11 +30,13 @@ public class RabbitMQService {
 
     private static final RMQPool rmqPool;
     private static final PaymentDAO paymentDao;
+    private static final ErrorCode errorCode;
 
     static {
         try {
             rmqPool = RMQPool.getInstance();
             paymentDao = PaymentDAO.getInstance();
+            errorCode = ErrorCode.getInstance();
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException(e);
         }
@@ -48,40 +51,9 @@ public class RabbitMQService {
             return channel;
         } catch (PaymentException e) {
             log.error("Create channel fail");
-            throw new PaymentException("77", "Create channel RabbitMQ fail");
+            throw new PaymentException(ErrorCode.CREATE_CHANNEL_RABBITMQ_FAIL, "Create channel RabbitMQ fail");
         }
     }
-
-//    public String messageToClient(String message) throws SQLException {
-//        String responseToClient = "";
-//        PaymentService paymentService = new PaymentService();
-////        String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
-//        log.info("Receive message from queue: " + message);
-//
-//        PaymentRequest paymentRequest = Convert.convertJsonMessageToObject(message);
-//        try {
-//            if (paymentDao.addPaymentRequest(paymentRequest)) {
-//
-//                log.info("insert to DB success => send to api and get response");
-//                String response = " Status response " + paymentService.sendApi(paymentRequest);
-//                log.info("response from partner api: {}", response);
-//
-//                //Convert response from api partner to JSON string for send response to client
-//                responseToClient = Convert.convertObjToString(new PaymentException("00",
-//                        "Response from partner api:" + response));
-//
-//            } else {
-//                log.info("Insert into DB fail");
-//                //Convert response  & exception from api partner to JSON string for send response to client
-//                responseToClient = Convert.convertObjToString(new PaymentException("95",
-//                        "Insert into DB fail"));
-//            }
-//        } catch (SQLException e) {
-//
-//        }
-//        //true if execute query success
-//        return responseToClient;
-//    }
 
     public void sendAndReceiveMessage() {
         try {
@@ -113,25 +85,27 @@ public class RabbitMQService {
                         log.info("response from partner api: {}", response);
 
                         //Convert response from api partner to JSON string for send response to client
-                        responseToClient = Convert.convertObjToString(new PaymentException("00",
+                        responseToClient = Convert.convertObjToString(new PaymentException(ErrorCode.REQUEST_SUCCESS,
                                 "Response from partner api:" + response));
 
                     } else {
                         log.info("Insert into DB fail");
                         //Convert response  & exception from api partner to JSON string for send response to client
-                        responseToClient = Convert.convertObjToString(new PaymentException("95",
+                        responseToClient = Convert.convertObjToString(new PaymentException(ErrorCode.INSERT_INTO_DB_FAIL,
                                 "Insert into DB fail"));
                     }
 
                 } catch (PaymentException e) {
                     log.error("Payment exception with error code : {}", e.getCode());
                     //Convert response & exception from api partner to JSON string for send response to client
-                    responseToClient = Convert.convertObjToString(new PaymentException(e.getCode(), e.getMessage()));
+                    responseToClient = Convert.convertObjToString(new PaymentException(e.getCode(),
+                            errorCode.readErrorDescriptionFile(e.getCode())));
 
                 } catch (SQLException e) {
                     //Convert response  & exception from api partner to JSON string for send response to client
                     log.error("SQL exception {}", e);
-                    responseToClient = Convert.convertObjToString(new PaymentException("55", e.getMessage()));
+                    responseToClient = Convert.convertObjToString(new PaymentException(ErrorCode.SQL_EXCEPTION,
+                            errorCode.readErrorDescriptionFile(ErrorCode.SQL_EXCEPTION)));
                 } finally {
                     log.info("Publish response to client with data: {}", responseToClient);
                     channel.basicPublish("", delivery.getProperties().getReplyTo(), replyProps,

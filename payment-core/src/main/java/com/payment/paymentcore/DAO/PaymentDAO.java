@@ -18,8 +18,8 @@ public class PaymentDAO {
     public PaymentDAO() {
     }
 
-    public static PaymentDAO getInstance(){
-        if(instance == null){
+    public static PaymentDAO getInstance() {
+        if (instance == null) {
             instance = new PaymentDAO();
         }
         return instance;
