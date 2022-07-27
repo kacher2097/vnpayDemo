@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="DEBUG">
     <Properties>
-        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
-        <Property name="APP_LOG_ROOT">c:/temp/logs</Property>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} %p %m%n</Property>
+        <Property name="APP_LOG_ROOT">./logs</Property>
     </Properties>
     <Appenders>
         <Console name="LogToConsole" target="SYSTEM_OUT">
@@ -11,24 +11,37 @@
         <File name="LogToFile" fileName="logs/app-xml.log">
             <PatternLayout pattern="[%-5level] %d{dd-MM-yyyy HH:mm:ss} [%t] %c{1} - %msg%n"/>
         </File>
-        <RollingFile name="error" fileName="error/error.log"
+        <File name="ERROR-FILE" fileName="logs/error.log"
                      filePattern="${APP_LOG_ROOT}/error-%d{yyyy-MM-dd}-%i.log">
             <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <PatternLayout pattern="[%-5level] %d{dd-MM-yyyy HH:mm:ss} [%t] %c{1} - %msg%n"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="10MB" />
             </Policies>
             <DefaultRolloverStrategy max="10"/>
-        </RollingFile>
+        </File>
+        <File name="INFO-FILE" fileName="logs/info.log"
+                     filePattern="${APP_LOG_ROOT}/info-%d{yyyy-MM-dd}-%i.log">
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%-5level] %d{dd-MM-yyyy HH:mm:ss} [%t] %c{1} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </File>
     </Appenders>
+
     <Loggers>
         <Logger name="com.payment.paymentcore" level="info" additivity="false">
             <AppenderRef ref="LogToFile"/>
             <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="ERROR-FILE"/>
+            <AppenderRef ref="INFO-FILE"/>
         </Logger>
-        <Root level="info">
+        <Root level="all">
             <AppenderRef ref="LogToFile"/>
-            <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="ERROR-FILE"/>
+            <AppenderRef ref="INFO-FILE"/>
         </Root>
     </Loggers>
 

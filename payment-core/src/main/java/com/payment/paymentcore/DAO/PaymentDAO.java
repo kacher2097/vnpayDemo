@@ -2,17 +2,18 @@ package com.payment.paymentcore.DAO;
 
 import com.payment.paymentcore.config.HikariCPResource;
 import com.payment.paymentcore.model.PaymentRequest;
+import com.payment.paymentcore.service.RabbitMQService;
 import com.payment.paymentcore.util.ErrorCode;
 import com.payment.paymentcore.util.PaymentException;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@Slf4j
 public class PaymentDAO {
-
+    private static final Logger log = LogManager.getLogger(RabbitMQService.class);
     private static PaymentDAO instance;
 
     public PaymentDAO() {
@@ -25,7 +26,7 @@ public class PaymentDAO {
         return instance;
     }
 
-    public boolean addPaymentRequest(PaymentRequest paymentRequest) throws PaymentException, SQLException {
+    public boolean addPaymentRequest(PaymentRequest paymentRequest) {
         log.info("Begin add payment request into database with data: {}", paymentRequest);
         String sqlAdd = SQLQuery.addRequestQuery();
         try (Connection conn = HikariCPResource.getConnection();
@@ -55,11 +56,14 @@ public class PaymentDAO {
 
             prepareStatement.execute();
             log.info("Execute query success");
+            return true;
         } catch (ExceptionInInitializerError e) {
             log.error("Insert into DB has exception: {}", e);
             throw new PaymentException(ErrorCode.CONNECT_DB_FAIL);
+        } catch (SQLException e){
+            log.error("SQL exception", e);
+            throw new PaymentException(ErrorCode.SQL_EXCEPTION);
         }
-        return true;
     }
 
 }

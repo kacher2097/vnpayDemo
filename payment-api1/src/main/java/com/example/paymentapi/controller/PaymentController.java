@@ -28,16 +28,7 @@ public class PaymentController {
     @PostMapping
     public ResponseEntity<ResponseObject> sendRequest(@RequestBody @Valid PaymentRequest paymentRequest,
                                                       BindingResult bindingResult) {
-//        try {
-//            log.info("Begin sendRequest() with data {}", paymentRequest);
-            return ipaymentService.setDataRequestToRedis(paymentRequest, bindingResult);
-            //log.info("Send request success with code: {}", "00");
-//            return new MessageResponse().bodyResponse("00", "Send request and put data to Redis success");
-//
-//
-//        } catch (RequestException e) {
-//            log.error("Send request fail with code: {}", e.getCode());
-//            return new MessageResponse().bodyResponse(e.getCode(), e.getMessage());
-//        }
+
+        return ipaymentService.setDataRequestToRedis(paymentRequest, bindingResult);
     }
 }

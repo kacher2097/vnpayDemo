@@ -14,31 +14,33 @@ public class MessageResponse {
     public MessageResponse() {
 
     }
+
     public MessageResponse(ErrorCode errorCode) {
         this.errorCode = errorCode;
     }
 
-    public ResponseEntity<ResponseObject> bodyResponse(String responseId, String response) {
+    public ResponseEntity<ResponseObject> bodyResponse(String responseId, String response, String checkSum,
+                                                       String addValue) {
         try {
-            if(response != null && !response.isEmpty()){
+            if (response != null && !response.isEmpty()) {
                 log.info("Send request success and receive response success with result: {}", response);
                 RequestException requestException = Convert.convertJsonMessageToObject2(response);
 
                 return ResponseEntity.status(HttpStatus.OK).body(
                         new ResponseObject(requestException.getCode(), requestException.getMessage()
-                                , responseId, "", ""));
+                                , responseId, checkSum, addValue));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     new ResponseObject(ErrorCode.SYSTEM_MAINTENANCE,
-                            errorCode.readErrorDescriptionFile(ErrorCode.SYSTEM_MAINTENANCE)
-                            , responseId, "", "")
+                            errorCode.getDescription(ErrorCode.SYSTEM_MAINTENANCE)
+                            , responseId, checkSum, addValue)
             );
         }
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                new ResponseObject(ErrorCode.NULL_RESPONSE, errorCode.readErrorDescriptionFile(ErrorCode.NULL_RESPONSE)
-                        , responseId, "", "")
+                new ResponseObject(ErrorCode.NULL_RESPONSE, errorCode.getDescription(ErrorCode.NULL_RESPONSE)
+                        , responseId, checkSum, addValue)
         );
     }
 
@@ -48,6 +50,5 @@ public class MessageResponse {
                 new ResponseObject(code, message, responseId, checkSum, addValue)
         );
     }
-
 
 }

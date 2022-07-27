@@ -21,7 +21,7 @@ public class RMQPool {
     private List<Channel> channels;
     private static RMQPool instance;
 
-    public RMQPool() throws IOException, TimeoutException {
+    public RMQPool(){
         awakeConnection();
     }
 
@@ -32,7 +32,7 @@ public class RMQPool {
         return instance;
     }
 
-    public RabbitMQModel readConfigFile() throws PaymentException{
+    public RabbitMQModel readConfigFile() throws PaymentException {
         Properties properties = new Properties();
         InputStream inputStream = null;
         RabbitMQModel rabbitMQModel = new RabbitMQModel();
@@ -53,8 +53,6 @@ public class RMQPool {
             rabbitMQModel.setTimeOut(Integer.parseInt(properties.getProperty("timeout")));
 
         } catch (IOException e) {
-            e.printStackTrace();
-        }catch (PaymentException e){
             throw new PaymentException(ErrorCode.READ_CONFIG_RABBITMQ_FAIL);
         } finally {
             // close objects
@@ -69,9 +67,9 @@ public class RMQPool {
         return rabbitMQModel;
     }
 
-    private boolean awakeConnection() throws IOException, TimeoutException {
-        try{
-            RabbitMQModel rabbitMQModel = new RabbitMQModel();
+    private boolean awakeConnection(){
+        try {
+            RabbitMQModel rabbitMQModel;
             rabbitMQModel = readConfigFile();
             ConnectionFactory factory = new ConnectionFactory();
             factory.setUsername(rabbitMQModel.getUserName());
@@ -84,15 +82,15 @@ public class RMQPool {
                 channels.clear();
 
             } else {
-                channels = new ArrayList<Channel>();
+                channels = new ArrayList<>();
             }
-            for (int i = 0; i < readConfigFile().getMaxChannel() ; i++) {
+            for (int i = 0; i < readConfigFile().getMaxChannel(); i++) {
                 spawnChannel();
             }
 
             return true;
-        }catch (PaymentException e){
-            throw new PaymentException("46", "Awake Connection fail");
+        } catch (Exception e) {
+            throw new PaymentException(ErrorCode.AWAKE_CONNECT_RABBITMQ_FAIL);
         }
 
     }
@@ -103,14 +101,14 @@ public class RMQPool {
         channels.add(channel);
     }
 
-    public Channel getChannel() throws IOException, TimeoutException {
+    public Channel getChannel() throws IOException{
         if (this.connection.isOpen()) {
             while (channels.size() == 0) {
                 try {
                     channels.wait(readConfigFile().getTimeOut());
 
                 } catch (InterruptedException e) {
-                    throw new PaymentException("78", "Get channel is time out");
+                    throw new PaymentException(ErrorCode.CHANNEL_RABBITMQ_TIMEOUT);
                 }
                 if (channels.size() == 0) {
                     spawnChannel();

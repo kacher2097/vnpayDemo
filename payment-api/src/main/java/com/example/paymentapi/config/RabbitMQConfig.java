@@ -21,7 +21,6 @@ public class RabbitMQConfig {
     private Connection connection;
     private List<Channel> channels;
 
-    //TODO phai co connection pool đã có channel pool
     public RabbitMQConfig() throws IOException, TimeoutException {
         awakeConnection();
     }

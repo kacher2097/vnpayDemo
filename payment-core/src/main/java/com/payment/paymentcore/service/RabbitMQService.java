@@ -42,7 +42,7 @@ public class RabbitMQService {
         }
     }
 
-    public Channel connectToRabbitMQ() throws IOException, TimeoutException, PaymentException {
+    public Channel connectToRabbitMQ() throws IOException, PaymentException {
         String rpcQueue = rmqPool.readConfigFile().getQueue();
         try {
             Channel channel = rmqPool.getChannel();
@@ -51,11 +51,11 @@ public class RabbitMQService {
             return channel;
         } catch (PaymentException e) {
             log.error("Create channel fail");
-            throw new PaymentException(ErrorCode.CREATE_CHANNEL_RABBITMQ_FAIL, "Create channel RabbitMQ fail");
+            throw new PaymentException(ErrorCode.CREATE_CHANNEL_RABBITMQ_FAIL);
         }
     }
 
-    public void sendAndReceiveMessage() {
+    public void consumeAndPublishMessage() {
         try {
             Channel channel = this.connectToRabbitMQ();
             log.info(" [x] Awaiting RPC requests");

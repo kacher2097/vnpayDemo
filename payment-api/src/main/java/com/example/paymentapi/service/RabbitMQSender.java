@@ -20,54 +20,55 @@ import java.util.concurrent.TimeoutException;
 @Service
 @Slf4j
 public class RabbitMQSender {
-    private final RabbitMQConfig rabbitMQConfig;
-
-    public RabbitMQSender(RabbitMQConfig rabbitMQConfig) {
-        this.rabbitMQConfig = rabbitMQConfig;
-    }
-
-    public String call(PaymentRequest paymentRequest) throws IOException, InterruptedException, TimeoutException {
-        try{
-            log.info("Begin call to rabbitmq with data {} ", paymentRequest);
-            Channel channel = rabbitMQConfig.getChannel();
-            String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
-
-            final String corrId = UUID.randomUUID().toString();
-
-            String replyQueueName = channel.queueDeclare().getQueue();
-            AMQP.BasicProperties props = new AMQP.BasicProperties
-                    .Builder()
-                    .correlationId(corrId)
-                    .replyTo(replyQueueName)
-                    .build();
-
-            log.info("correlationId {} ", corrId);
-            String message = Convert.convertObjToString(paymentRequest);
-
-            log.info("Send message to queue {} with data: {}", rpcQueue, message);
-            channel.basicPublish("", rpcQueue, props, message.getBytes(StandardCharsets.UTF_8));
-            final BlockingQueue<String> response = new ArrayBlockingQueue<>(1);
-            DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-                try {
-                    if (delivery.getProperties().getCorrelationId().equals(corrId)) {
-                        response.offer(new String(delivery.getBody(), StandardCharsets.UTF_8));
-                    }
-
-                } catch (RuntimeException e) {
-                    throw new RequestException("010", "RabbitMQ fail");
-                }
-            };
-
-            String ctag = channel.basicConsume(replyQueueName, false, deliverCallback, consumerTag -> {
-            });
-
-            String result = response.take();
-            channel.basicCancel(ctag);
-            return result;
-        } catch (RequestException e){
-            throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
-        }
-
-    }
+//    private final RabbitMQConfig rabbitMQConfig;
+//
+//    public RabbitMQSender(RabbitMQConfig rabbitMQConfig) {
+//        this.rabbitMQConfig = rabbitMQConfig;
+//    }
+//
+//    public String call(PaymentRequest paymentRequest) throws IOException, InterruptedException, TimeoutException {
+//        try{
+//            log.info("Begin call to rabbitmq with data {} ", paymentRequest);
+//            Channel channel = rabbitMQConfig.getChannel();
+//            String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
+//
+//            final String corrId = UUID.randomUUID().toString();
+//
+//            String replyQueueName = channel.queueDeclare().getQueue();
+//            AMQP.BasicProperties props = new AMQP.BasicProperties
+//                    .Builder()
+//                    .correlationId(corrId)
+//                    .replyTo(replyQueueName)
+//                    .build();
+//
+//            log.info("correlationId with message {} ", corrId);
+//            String message = Convert.convertObjToString(paymentRequest);
+//
+//            log.info("Send message to queue {} with data: {}", rpcQueue, message);
+//            channel.basicPublish("", rpcQueue, props, message.getBytes(StandardCharsets.UTF_8));
+//            final BlockingQueue<String> response = new ArrayBlockingQueue<>(1);
+//            DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+//                try {
+//                    if (delivery.getProperties().getCorrelationId().equals(corrId)) {
+//                        response.offer(new String(delivery.getBody(), StandardCharsets.UTF_8));
+//                    }
+//
+//                } catch (RuntimeException e) {
+//                    throw new RequestException("010", "RabbitMQ fail");
+//                }
+//            };
+//
+//            String ctag = channel.basicConsume(replyQueueName, false, deliverCallback, consumerTag -> {
+//            });
+//
+//            String result = response.take();
+//            log.info("Get result from server: {} ", result);
+//            channel.basicCancel(ctag);
+//            return result;
+//        } catch (RequestException e){
+//            throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
+//        }
+//
+//    }
 
 }

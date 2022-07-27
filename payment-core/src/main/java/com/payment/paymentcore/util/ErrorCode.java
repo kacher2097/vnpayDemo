@@ -9,8 +9,8 @@ public class ErrorCode {
 
     public static ErrorCode instance;
 
-    public static ErrorCode getInstance(){
-        if(instance == null){
+    public static ErrorCode getInstance() {
+        if (instance == null) {
             instance = new ErrorCode();
         }
         return instance;
@@ -21,19 +21,21 @@ public class ErrorCode {
     public static final String SYSTEM_MAINTENANCE = "96";
     public static final String DOUBT_TRANSACTION = "08";
     public static final String NULL_RESPONSE = "09";
-    public static final String NULL_REQUEST = "03";
+    public static final String READ_CONFIG_RABBITMQ_FAIL = "30";
+    public static final String CONNECT_RABBITMQ_FAIL = "31";
+    public static final String CHANNEL_RABBITMQ_TIMEOUT = "32";
+    public static final String AWAKE_CONNECT_RABBITMQ_FAIL = "33";
 
-    public static final String READ_CONFIG_REDIS_FAIL = "31";
-    public static final String READ_CONFIG_RABBITMQ_FAIL = "32";
-    public static final String CONNECT_REDIS_FAIL = "33";
-    public static final String CONNECT_RABBITMQ_FAIL = "34";
     public static final String CREATE_CHANNEL_RABBITMQ_FAIL = "35";
+    public static final String READ_DESCRIPTION_FAIL = "40";
+
     public static final String CONNECT_DB_FAIL = "53";
     public static final String SQL_EXCEPTION = "55";
     public static final String INSERT_INTO_DB_FAIL = "56";
 
     private static final String FILE_CONFIG = "\\config\\error-description.properties";
-    public String readErrorDescriptionFile(String code){
+
+    public String readErrorDescriptionFile(String code) {
         Properties properties = new Properties();
         InputStream inputStream = null;
         try {
@@ -46,7 +48,8 @@ public class ErrorCode {
             return properties.getProperty(code);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL, "Read error code description file fail");
+
         } finally {
             // close objects
             try {
@@ -57,7 +60,6 @@ public class ErrorCode {
                 e.printStackTrace();
             }
         }
-        return null;
     }
 }
 

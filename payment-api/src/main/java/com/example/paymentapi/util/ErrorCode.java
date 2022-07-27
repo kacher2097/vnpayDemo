@@ -1,16 +1,18 @@
 package com.example.paymentapi.util;
 
+import com.example.paymentapi.exception.RequestException;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
 import java.util.Properties;
 
 @Component
 public class ErrorCode {
-    public static final String SEND_BAD_REQUEST = "01";
     public static final String REQUEST_SUCCESS = "00";
+    public static final String SEND_BAD_REQUEST = "01";
     public static final String DUPLICATE_TOKEN_KEY = "02";
     public static final String SYSTEM_MAINTENANCE = "96";
     public static final String DOUBT_TRANSACTION = "08";
@@ -23,10 +25,12 @@ public class ErrorCode {
     public static final String READ_CONFIG_RABBITMQ_FAIL = "32";
     public static final String CONNECT_REDIS_FAIL = "33";
     public static final String CONNECT_RABBITMQ_FAIL = "34";
+    public static final String READ_DESCRIPTION_FAIL = "40";
     public static final String CODE_EXCEPTION = "54";
 
     private static final String FILE_CONFIG = "\\config\\error-description.properties";
-    public String readErrorDescriptionFile(String code){
+
+    public String getDescription(String code) {
         Properties properties = new Properties();
         InputStream inputStream = null;
         try {
@@ -39,7 +43,7 @@ public class ErrorCode {
             return properties.getProperty(code);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RequestException(ErrorCode.READ_DESCRIPTION_FAIL, "Read description error code file fail");
         } finally {
             // close objects
             try {
@@ -50,7 +54,6 @@ public class ErrorCode {
                 e.printStackTrace();
             }
         }
-        return null;
     }
 }
 

@@ -18,8 +18,8 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws IOException, TimeoutException {
-        rabbitMQService.sendAndReceiveMessage();
+    public static void main(String[] args){
+        rabbitMQService.consumeAndPublishMessage();
     }
 }
 

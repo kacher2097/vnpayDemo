@@ -1,6 +1,8 @@
 package com.example.paymentapi.config;
 
+import com.example.paymentapi.exception.RequestException;
 import com.example.paymentapi.model.RedisPropertiesObject;
+import com.example.paymentapi.util.ErrorCode;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -56,6 +58,8 @@ public class RedisPool {
             redisPropertiesObject.setRedisPort(Integer.parseInt(properties.getProperty("redis_port")));
 
         } catch (IOException e) {
+
+            //TODO khong ghi print trace ghi log error
             e.printStackTrace();
         } finally {
             // close objects
@@ -71,12 +75,12 @@ public class RedisPool {
     }
 
     public Jedis getJedis() {
-        return pool.getResource();
-    }
-
-    public static void jedisPoolClose(Jedis jedis) {
-        if (jedis != null) {
-            jedis.close();
+        try {
+            return pool.getResource();
+        } catch (Exception e){
+            throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
         }
+
     }
+    
 }
