@@ -3,6 +3,7 @@ package com.example.paymentapi.config;
 import com.example.paymentapi.exception.RequestException;
 import com.example.paymentapi.model.RedisPropertiesObject;
 import com.example.paymentapi.util.ErrorCode;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+@Slf4j
 @Configuration
 public class RedisPool {
 
@@ -58,9 +60,7 @@ public class RedisPool {
             redisPropertiesObject.setRedisPort(Integer.parseInt(properties.getProperty("redis_port")));
 
         } catch (IOException e) {
-
-            //TODO khong ghi print trace ghi log error
-            e.printStackTrace();
+            log.error("IOException read file redis config file error {}", e);
         } finally {
             // close objects
             try {
@@ -68,7 +68,7 @@ public class RedisPool {
                     inputStream.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("IOException read file redis config file error {}", e);
             }
         }
         return redisPropertiesObject;
@@ -78,6 +78,7 @@ public class RedisPool {
         try {
             return pool.getResource();
         } catch (Exception e){
+            log.info("Get resource Redis fail");
             throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
         }
 

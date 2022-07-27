@@ -25,11 +25,9 @@ import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -68,11 +66,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
             return new MessageResponse().bodyResponse(responseId, response, "", "");
         } catch (RequestException e) {
-            log.info(" error code: {}", e.getCode());
-            if (errorCode.getDescription(e.getCode()) == null) {
-                return new MessageResponse().bodyErrorResponse(e.getCode(), e.getMessage(),
-                        responseId, "", "");
-            }
+            log.info(" Error code: {}", e.getCode());
             return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
                     responseId, "", "");
         } catch (Exception e) {
@@ -121,7 +115,7 @@ public class PaymentServiceImpl implements IPaymentService {
                 }
 
             } catch (Exception e) {
-                throw new RequestException("010", "RabbitMQ fail");
+                throw new RequestException(ErrorCode.GET_RESPONSE_FAIL);
             }
         };
 
@@ -151,6 +145,13 @@ public class PaymentServiceImpl implements IPaymentService {
             throw new RequestException(ErrorCode.INVALID_DATE_FORMAT);
         }
 
+        checkValidPromotionCode(paymentRequest);
+
+        if (!checkValidAmount(paymentRequest)) {
+            log.info("Real amount is invalid (amount > debit amount)");
+            throw new RequestException(ErrorCode.INVALID_AMOUNT);
+        }
+
         //True if checksum success
         if (!checkSumSHA256(paymentRequest, privateKey)) {
             throw new RequestException(ErrorCode.CHECK_SUM_ERROR);
@@ -159,12 +160,6 @@ public class PaymentServiceImpl implements IPaymentService {
         //True if Token key not exist on day
         if (!checkTokenKey(paymentRequest)) {
             throw new RequestException(ErrorCode.DUPLICATE_TOKEN_KEY);
-        }
-
-        //True if real amount <= debit amount
-        if (!checkValidAmount(paymentRequest)) {
-            log.info("Real amount is invalid (amount > debit amount)");
-            throw new RequestException(ErrorCode.INVALID_AMOUNT);
         }
     }
 
@@ -201,17 +196,31 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     public long getTimeExpire() {
-        LocalDateTime now1 = LocalDateTime.now();
-        LocalDateTime endOfDate = now1.toLocalDate().atTime(LocalTime.MAX);
-        return ChronoUnit.SECONDS.between(now1, endOfDate);
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime endOfDate = now.toLocalDate().atTime(LocalTime.MAX);
+        return ChronoUnit.SECONDS.between(now, endOfDate);
     }
 
     public boolean checkValidAmount(PaymentRequest paymentRequest) {
-        return paymentRequest.getRealAmount() < paymentRequest.getDebitAmount();
+        log.info("Begin check valid amount");
+        return paymentRequest.getRealAmount() <= paymentRequest.getDebitAmount();
+    }
+
+    public void checkValidPromotionCode(PaymentRequest paymentRequest){
+        String promotionCode = paymentRequest.getPromotionCode();
+        log.info("Begin check valid promotion code");
+        if (promotionCode == null || promotionCode.isEmpty() || promotionCode.isBlank()) {
+            if (paymentRequest.getRealAmount() != paymentRequest.getDebitAmount()) {
+                log.info("Real amount different debit amount but promotion code is null, empty or blank => invalid promotion code");
+                throw new RequestException(ErrorCode.INVALID_PROMOTION_CODE);
+            }
+        }
+        log.info("End check promotion code success");
+        paymentRequest.setPromotionCode("");
     }
 
     public String getPrivateKeyByBankCode(String bankCode) {
-        log.info("Begin getPrivateKey() with bank code: {}", bankCode);
+        log.info("Begin getPrivateKey() with bank code: [{}]", bankCode);
         List<Bank> lstBank = yamlConfig.getAllBanks();
         for (Bank item : lstBank) {
             if (item.getBankCode().equalsIgnoreCase(bankCode)) {
@@ -254,23 +263,6 @@ public class PaymentServiceImpl implements IPaymentService {
         }
 
         log.info("Check sum error cause one or more fields are change");
-        return false;
-    }
-
-    public boolean checkValidTimeFormat(String time){
-
-        Date date;
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-            date = dateFormat.parse(time);
-            if(time.equals(dateFormat.format(date))){
-                return true;
-            }
-        }catch (Exception e) {
-            log.info("Pay date format is invalid");
-            throw new RequestException(ErrorCode.INVALID_DATE_FORMAT);
-        }
-
         return false;
     }
 }

@@ -1,14 +1,15 @@
 package com.example.paymentapi.util;
 
 import com.example.paymentapi.exception.RequestException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.ParseException;
 import java.util.Properties;
 
+@Slf4j
 @Component
 public class ErrorCode {
     public static final String REQUEST_SUCCESS = "00";
@@ -22,9 +23,11 @@ public class ErrorCode {
     public static final String INVALID_DATE_FORMAT = "05";
     public static final String INVALID_AMOUNT = "06";
     public static final String CHECK_SUM_ERROR = "07";
+    public static final String INVALID_PROMOTION_CODE = "10";
     public static final String READ_CONFIG_RABBITMQ_FAIL = "32";
     public static final String CONNECT_REDIS_FAIL = "33";
     public static final String CONNECT_RABBITMQ_FAIL = "34";
+    public static final String GET_RESPONSE_FAIL = "35";
     public static final String READ_DESCRIPTION_FAIL = "40";
     public static final String CODE_EXCEPTION = "54";
 
@@ -43,6 +46,7 @@ public class ErrorCode {
             return properties.getProperty(code);
 
         } catch (IOException e) {
+            log.error("IOException read description error code file {}", e);
             throw new RequestException(ErrorCode.READ_DESCRIPTION_FAIL, "Read description error code file fail");
         } finally {
             // close objects

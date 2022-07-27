@@ -101,11 +101,6 @@ public class RabbitMQService {
                     responseToClient = Convert.convertObjToString(new PaymentException(e.getCode(),
                             errorCode.readErrorDescriptionFile(e.getCode())));
 
-                } catch (SQLException e) {
-                    //Convert response  & exception from api partner to JSON string for send response to client
-                    log.error("SQL exception {}", e);
-                    responseToClient = Convert.convertObjToString(new PaymentException(ErrorCode.SQL_EXCEPTION,
-                            errorCode.readErrorDescriptionFile(ErrorCode.SQL_EXCEPTION)));
                 } finally {
                     log.info("Publish response to client with data: {}", responseToClient);
                     channel.basicPublish("", delivery.getProperties().getReplyTo(), replyProps,

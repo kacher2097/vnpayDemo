@@ -79,9 +79,6 @@ public class PaymentRequest implements Serializable {
     @NotNull
     private double realAmount;
 
-    @NotBlank
-    @NotNull
-    @NotEmpty
     private String promotionCode;
 
     @NotBlank

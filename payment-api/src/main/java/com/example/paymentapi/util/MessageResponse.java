@@ -29,19 +29,21 @@ public class MessageResponse {
                 return ResponseEntity.status(HttpStatus.OK).body(
                         new ResponseObject(requestException.getCode(), requestException.getMessage()
                                 , responseId, checkSum, addValue));
+            } else {
+                log.info("Response from server is null");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                        new ResponseObject(ErrorCode.NULL_RESPONSE, errorCode.getDescription(ErrorCode.NULL_RESPONSE)
+                                , responseId, checkSum, addValue)
+                );
             }
         } catch (Exception e) {
+            log.info("The system is maintenance");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     new ResponseObject(ErrorCode.SYSTEM_MAINTENANCE,
                             errorCode.getDescription(ErrorCode.SYSTEM_MAINTENANCE)
                             , responseId, checkSum, addValue)
             );
         }
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                new ResponseObject(ErrorCode.NULL_RESPONSE, errorCode.getDescription(ErrorCode.NULL_RESPONSE)
-                        , responseId, checkSum, addValue)
-        );
     }
 
     public ResponseEntity<ResponseObject> bodyErrorResponse(String code, String message, String responseId,
