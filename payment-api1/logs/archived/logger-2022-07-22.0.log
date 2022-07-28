@@ -1,0 +1,1086 @@
+2022-07-22 16:35:42,771 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:35:42,789 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 10416 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:35:42,789 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:35:42,817 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:35:42,823 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:35:43,187 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:35:43,188 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:35:43,201 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:35:43,503 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:35:43,508 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:35:43,508 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:35:43,509 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:35:43,565 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:35:43,565 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 742 ms
+2022-07-22 16:35:44,064 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:35:44,103 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:35:44,120 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:35:44,128 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.548 seconds (JVM running for 2.445)
+2022-07-22 16:35:49,274 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:35:49,274 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:35:49,274 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 0 ms
+2022-07-22 16:35:49,385 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:35:49,386 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getPrivateKeyByBankCode() Not have bank code in YAML file
+2022-07-22 16:36:41,686 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:36:41,707 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 12560 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:36:41,708 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:36:41,738 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:36:41,738 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:36:42,150 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:36:42,151 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:36:42,164 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:36:42,479 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:36:42,484 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:36:42,484 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:36:42,485 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:36:42,544 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:36:42,544 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 806 ms
+2022-07-22 16:36:48,098 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:36:48,149 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:36:48,169 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:36:48,177 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 6.725 seconds (JVM running for 7.559)
+2022-07-22 16:36:50,748 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:36:50,748 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:36:50,749 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 0 ms
+2022-07-22 16:36:56,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:37:08,795 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getPrivateKeyByBankCode() Not have bank code in YAML file
+2022-07-22 16:38:51,171 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-4] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:38:52,531 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-4] End getPrivateKeyByBankCode() Not have bank code in YAML file
+2022-07-22 16:39:09,698 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:39:09,723 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 16476 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:39:09,724 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:39:09,761 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:39:09,761 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:39:10,183 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:39:10,184 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:39:10,197 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:39:10,525 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:39:10,530 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:39:10,530 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:39:10,530 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:39:10,598 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:39:10,598 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 836 ms
+2022-07-22 16:39:11,132 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:39:11,180 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:39:11,207 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:39:11,215 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.78 seconds (JVM running for 2.604)
+2022-07-22 16:39:17,697 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-6] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:39:17,697 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-6] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:39:17,699 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-6] Completed initialization in 2 ms
+2022-07-22 16:39:20,568 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:39:26,214 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:39:29,938 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:39:29,959 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:39:29,960 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6] Private key: nmker
+2022-07-22 16:39:29,960 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6] End getStringToHash success
+2022-07-22 16:39:29,970 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:39:29,971 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6] checkSumSHA256() Checksum success
+2022-07-22 16:39:37,914 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-6]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:40:39,053 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:56:10,034 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:56:10,055 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 11604 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:56:10,056 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:56:10,085 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:56:10,085 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:56:10,439 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:56:10,440 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:56:10,452 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:56:10,741 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:56:10,746 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:56:10,746 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:56:10,746 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:56:10,803 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:56:10,803 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 717 ms
+2022-07-22 16:56:11,274 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:56:11,311 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:56:11,329 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:56:11,336 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.515 seconds (JVM running for 2.23)
+2022-07-22 16:56:17,226 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:56:17,226 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:56:17,228 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-07-22 16:56:17,345 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:56:17,347 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:56:17,347 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:56:17,349 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:56:17,349 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Private key: nmker
+2022-07-22 16:56:17,349 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] End getStringToHash success
+2022-07-22 16:56:17,351 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:56:17,351 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] checkSumSHA256() Checksum success
+2022-07-22 16:56:17,351 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:56:17,387 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Check data put into Redis: [{"apiID":"Restpayment","mobile":"0345255630","bankCode":"11049","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17"}]
+2022-07-22 16:56:45,320 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:56:45,339 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 9456 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:56:45,340 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:56:45,370 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:56:45,370 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:56:45,775 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:56:45,777 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:56:45,790 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:56:46,105 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:56:46,111 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:56:46,111 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:56:46,111 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:56:46,172 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:56:46,172 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 801 ms
+2022-07-22 16:56:46,706 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:56:46,755 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:56:46,773 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:56:46,782 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.669 seconds (JVM running for 2.444)
+2022-07-22 16:56:49,130 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:56:49,130 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:56:49,131 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-07-22 16:56:53,785 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:56:57,275 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:56:59,696 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:56:59,705 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:56:59,706 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Private key: nmker
+2022-07-22 16:56:59,707 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] End getStringToHash success
+2022-07-22 16:56:59,716 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:56:59,717 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] checkSumSHA256() Checksum success
+2022-07-22 16:57:01,147 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:04,639 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Check data put into Redis: [{"apiID":"Restpayment","mobile":"0345255630","bankCode":"11049","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17"}]
+2022-07-22 16:57:33,880 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:57:33,897 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 13396 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:57:33,898 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:57:33,926 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:57:33,926 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:57:34,285 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:57:34,286 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:57:34,299 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:57:34,597 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:57:34,602 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:57:34,602 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:57:34,602 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:57:34,657 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:57:34,658 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 732 ms
+2022-07-22 16:57:35,137 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:57:35,178 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:57:35,196 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:57:35,205 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.568 seconds (JVM running for 2.259)
+2022-07-22 16:57:37,424 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:57:37,425 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:57:37,426 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2022-07-22 16:57:37,555 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:37,556 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:37,556 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:37,558 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:37,558 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Private key: nmker
+2022-07-22 16:57:37,558 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getStringToHash success
+2022-07-22 16:57:37,560 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:37,560 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] checkSumSHA256() Checksum success
+2022-07-22 16:57:37,560 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:37,597 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Check data put into Redis: [{"apiID":"Restpayment","mobile":"0345255630","bankCode":"11049","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17"}]
+2022-07-22 16:57:43,874 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:43,875 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:43,875 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:43,875 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:43,875 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Private key: nmker
+2022-07-22 16:57:43,876 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getStringToHash success
+2022-07-22 16:57:43,876 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:43,876 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] checkSumSHA256() Checksum success
+2022-07-22 16:57:43,876 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:43,879 WARN redis.clients.jedis.JedisFactory [http-nio-8080-exec-3] Error while close
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Connection reset by peer
+	at redis.clients.jedis.Connection.disconnect(Connection.java:256)
+	at redis.clients.jedis.BinaryClient.disconnect(BinaryClient.java:162)
+	at redis.clients.jedis.Connection.close(Connection.java:246)
+	at redis.clients.jedis.BinaryClient.close(BinaryClient.java:168)
+	at redis.clients.jedis.BinaryJedis.close(BinaryJedis.java:340)
+	at redis.clients.jedis.Jedis.close(Jedis.java:4084)
+	at redis.clients.jedis.JedisFactory.destroyObject(JedisFactory.java:166)
+	at org.apache.commons.pool2.PooledObjectFactory.destroyObject(PooledObjectFactory.java:127)
+	at org.apache.commons.pool2.impl.GenericObjectPool.destroy(GenericObjectPool.java:611)
+	at org.apache.commons.pool2.impl.GenericObjectPool.invalidateObject(GenericObjectPool.java:941)
+	at org.apache.commons.pool2.impl.GenericObjectPool.invalidateObject(GenericObjectPool.java:914)
+	at redis.clients.jedis.util.Pool.returnBrokenResourceObject(Pool.java:124)
+	at redis.clients.jedis.util.Pool.returnBrokenResource(Pool.java:103)
+	at redis.clients.jedis.Jedis.close(Jedis.java:4079)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.close(JedisConnection.java:336)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doCloseConnection(RedisConnectionUtils.java:393)
+	at org.springframework.data.redis.core.RedisConnectionUtils.releaseConnection(RedisConnectionUtils.java:267)
+	at org.springframework.data.redis.core.RedisConnectionUtils.releaseConnection(RedisConnectionUtils.java:283)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:233)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset by peer
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:417)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:437)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:823)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035)
+	at redis.clients.jedis.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:52)
+	at redis.clients.jedis.util.RedisOutputStream.flush(RedisOutputStream.java:133)
+	at redis.clients.jedis.Connection.disconnect(Connection.java:252)
+	... 71 common frames omitted
+2022-07-22 16:57:43,883 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: java.net.SocketException: Connection reset by peer; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Connection reset by peer] with root cause
+java.net.SocketException: Connection reset by peer
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:417)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:437)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:823)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035)
+	at redis.clients.jedis.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:52)
+	at redis.clients.jedis.util.RedisOutputStream.flush(RedisOutputStream.java:133)
+	at redis.clients.jedis.Connection.flush(Connection.java:339)
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:293)
+	at redis.clients.jedis.BinaryJedis.hset(BinaryJedis.java:1141)
+	at org.springframework.data.redis.connection.jedis.JedisInvoker.lambda$from$20(JedisInvoker.java:299)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.lambda$doInvoke$2(JedisConnection.java:176)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.doWithJedis(JedisConnection.java:799)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.doInvoke(JedisConnection.java:160)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.lambda$new$0(JedisConnection.java:69)
+	at org.springframework.data.redis.connection.jedis.JedisInvoker$Synchronizer.invoke(JedisInvoker.java:1027)
+	at org.springframework.data.redis.connection.jedis.JedisInvoker$DefaultSingleInvocationSpec.get(JedisInvoker.java:937)
+	at org.springframework.data.redis.connection.jedis.JedisHashCommands.hSet(JedisHashCommands.java:63)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hSet(DefaultedRedisConnection.java:1332)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$put$14(DefaultHashOperations.java:254)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:224)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:57:49,385 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:49,385 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:49,385 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:49,385 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:49,385 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5] Private key: nmker
+2022-07-22 16:57:49,386 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5] End getStringToHash success
+2022-07-22 16:57:49,386 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:49,386 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5] checkSumSHA256() Checksum success
+2022-07-22 16:57:49,386 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-5]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:49,387 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:57:50,648 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:50,648 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:50,648 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:50,649 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:50,649 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7] Private key: nmker
+2022-07-22 16:57:50,649 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7] End getStringToHash success
+2022-07-22 16:57:50,650 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:50,650 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7] checkSumSHA256() Checksum success
+2022-07-22 16:57:50,650 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-7]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:50,651 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:57:51,310 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:51,310 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:51,310 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:51,311 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:51,311 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9] Private key: nmker
+2022-07-22 16:57:51,311 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9] End getStringToHash success
+2022-07-22 16:57:51,312 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:51,312 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9] checkSumSHA256() Checksum success
+2022-07-22 16:57:51,312 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-9]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:51,313 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:57:51,843 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:51,843 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:51,843 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:51,843 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:51,843 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] Private key: nmker
+2022-07-22 16:57:51,844 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] End getStringToHash success
+2022-07-22 16:57:51,844 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:51,844 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1] checkSumSHA256() Checksum success
+2022-07-22 16:57:51,844 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-1]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:51,846 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:57:52,312 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:52,312 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Private key: nmker
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getStringToHash success
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] checkSumSHA256() Checksum success
+2022-07-22 16:57:52,313 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:57:52,314 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 16:58:24,729 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 16:58:24,747 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 14452 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 16:58:24,748 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 16:58:24,776 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 16:58:24,776 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 16:58:25,186 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 16:58:25,188 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 16:58:25,202 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2022-07-22 16:58:25,517 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 16:58:25,522 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:58:25,522 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 16:58:25,522 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 16:58:25,582 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 16:58:25,582 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 806 ms
+2022-07-22 16:58:35,105 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 16:58:35,155 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 16:58:35,174 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 16:58:35,182 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 10.672 seconds (JVM running for 11.431)
+2022-07-22 16:58:37,513 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 16:58:37,513 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-22 16:58:37,514 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2022-07-22 16:58:46,915 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:58:46,916 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:58:46,916 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:58:46,918 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:58:46,918 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Private key: nmker
+2022-07-22 16:58:46,919 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getStringToHash success
+2022-07-22 16:58:46,921 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:58:46,921 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] checkSumSHA256() Checksum success
+2022-07-22 16:58:46,921 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:58:46,957 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Check data put into Redis: [{"apiID":"Restpayment","mobile":"0345255630","bankCode":"11049","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17"}]
+2022-07-22 16:59:02,929 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:59:03,782 ERROR redis.clients.jedis.JedisFactory [commons-pool-evictor] Error while validating pooled Jedis object.
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Connection reset by peer
+	at redis.clients.jedis.Connection.flush(Connection.java:342)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:269)
+	at redis.clients.jedis.BinaryJedis.ping(BinaryJedis.java:384)
+	at redis.clients.jedis.JedisFactory.validateObject(JedisFactory.java:214)
+	at org.apache.commons.pool2.impl.GenericObjectPool.evict(GenericObjectPool.java:745)
+	at org.apache.commons.pool2.impl.BaseGenericObjectPool$Evictor.run(BaseGenericObjectPool.java:160)
+	at org.apache.commons.pool2.impl.EvictionTimer$WeakRunner.run(EvictionTimer.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:305)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset by peer
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:417)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:437)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:823)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035)
+	at redis.clients.jedis.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:52)
+	at redis.clients.jedis.util.RedisOutputStream.flush(RedisOutputStream.java:133)
+	at redis.clients.jedis.Connection.flush(Connection.java:339)
+	... 13 common frames omitted
+2022-07-22 16:59:04,510 WARN redis.clients.jedis.JedisFactory [commons-pool-evictor] Error while close
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketException: Connection reset by peer
+	at redis.clients.jedis.Connection.disconnect(Connection.java:256)
+	at redis.clients.jedis.BinaryClient.disconnect(BinaryClient.java:162)
+	at redis.clients.jedis.Connection.close(Connection.java:246)
+	at redis.clients.jedis.BinaryClient.close(BinaryClient.java:168)
+	at redis.clients.jedis.BinaryJedis.close(BinaryJedis.java:340)
+	at redis.clients.jedis.Jedis.close(Jedis.java:4084)
+	at redis.clients.jedis.JedisFactory.destroyObject(JedisFactory.java:166)
+	at org.apache.commons.pool2.PooledObjectFactory.destroyObject(PooledObjectFactory.java:127)
+	at org.apache.commons.pool2.impl.GenericObjectPool.destroy(GenericObjectPool.java:611)
+	at org.apache.commons.pool2.impl.GenericObjectPool.evict(GenericObjectPool.java:751)
+	at org.apache.commons.pool2.impl.BaseGenericObjectPool$Evictor.run(BaseGenericObjectPool.java:160)
+	at org.apache.commons.pool2.impl.EvictionTimer$WeakRunner.run(EvictionTimer.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:305)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketException: Connection reset by peer
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:417)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:437)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:823)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035)
+	at redis.clients.jedis.util.RedisOutputStream.flushBuffer(RedisOutputStream.java:52)
+	at redis.clients.jedis.util.RedisOutputStream.flush(RedisOutputStream.java:133)
+	at redis.clients.jedis.Connection.disconnect(Connection.java:252)
+	... 18 common frames omitted
+2022-07-22 16:59:06,372 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 16:59:08,201 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:59:08,203 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 16:59:08,204 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Private key: nmker
+2022-07-22 16:59:08,204 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getStringToHash success
+2022-07-22 16:59:08,205 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 16:59:08,206 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] checkSumSHA256() Checksum success
+2022-07-22 16:59:09,445 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 16:59:31,969 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool] with root cause
+java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:539)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:80)
+	at redis.clients.jedis.Connection.connect(Connection.java:226)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:144)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:314)
+	at redis.clients.jedis.BinaryJedis.initializeFromClientConfig(BinaryJedis.java:92)
+	at redis.clients.jedis.BinaryJedis.<init>(BinaryJedis.java:297)
+	at redis.clients.jedis.Jedis.<init>(Jedis.java:169)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:177)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at redis.clients.jedis.util.Pool.getResource(Pool.java:75)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:377)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:15)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:283)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:515)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:211)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:191)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:253)
+	at com.example.paymentapi.service.impl.PaymentServiceImpl.setDataRequestToRedis(PaymentServiceImpl.java:44)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-22 17:04:19,397 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-22 17:04:19,417 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 10176 (D:\Git\demoVNPAY\vnpayDemo\payment-api1\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api1)
+2022-07-22 17:04:19,418 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-22 17:04:19,452 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-22 17:04:19,452 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-22 17:04:19,885 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-22 17:04:19,887 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-22 17:04:19,900 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2022-07-22 17:04:20,211 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-07-22 17:04:20,216 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-07-22 17:04:20,216 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-22 17:04:20,216 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-22 17:04:20,289 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-22 17:04:20,289 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 836 ms
+2022-07-22 17:04:22,954 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-07-22 17:04:22,998 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-07-22 17:04:23,017 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-22 17:04:23,025 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 3.841 seconds (JVM running for 4.605)
+2022-07-22 17:04:29,329 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-22 17:04:29,329 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-22 17:04:29,330 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2022-07-22 17:04:31,960 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 17:04:31,962 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 17:04:31,963 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 17:04:31,965 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 17:04:31,966 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Private key: nmker
+2022-07-22 17:04:31,966 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] End getStringToHash success
+2022-07-22 17:04:31,967 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 17:04:31,968 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] checkSumSHA256() Checksum success
+2022-07-22 17:04:31,968 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 17:04:32,008 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-2] Check data put into Redis: [{"apiID":"Restpayment","mobile":"0345255630","bankCode":"11049","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17"}]
+2022-07-22 17:10:25,212 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 17:10:25,212 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-22 17:10:25,213 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 17:10:25,213 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17)
+2022-07-22 17:10:25,213 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Private key: nmker
+2022-07-22 17:10:25,213 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] End getStringToHash success
+2022-07-22 17:10:25,213 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  SHA256 from request: [e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1] 
+2022-07-22 17:10:25,214 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] checkSumSHA256() Checksum success
+2022-07-22 17:10:25,214 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3]  Hset to Redis with data: PaymentRequest(apiID=Restpayment, mobile=0345255630, bankCode=11049, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1, orderCode=FT19310RH6P1, userName=cntest001, realAmount=11100.0, promotionCode=11, tokenKey=1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17) 
+2022-07-22 17:10:25,217 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-8080-exec-3] Check data put into Redis: [{"apiID":"Restpayment","mobile":"0345255630","bankCode":"11049","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"e6257092d4cfe2497a31d1c13481a169477f865cf9542977a85c78efb1caa8c1","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":11100.0,"promotionCode":"11","tokenKey":"1601353776839FT1931dsfdsfsdf0dfdsfsdrh6P17"}]

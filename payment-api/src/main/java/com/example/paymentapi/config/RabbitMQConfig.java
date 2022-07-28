@@ -60,7 +60,6 @@ public class RabbitMQConfig {
         return rabbitMQProperties;
     }
 
-    //TODO giai phong channel neu khong dung den
     private void awakeConnection() throws IOException, TimeoutException {
         RabbitMQProperties rabbitMQProperties = readConfigFile();
         com.rabbitmq.client.ConnectionFactory factory = new ConnectionFactory();

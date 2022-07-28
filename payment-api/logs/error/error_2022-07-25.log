@@ -1,0 +1,274 @@
+14:55:04.392 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Code have exception java.lang.InterruptedException :
+14:55:04.392 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Code have exception java.lang.InterruptedException :
+14:57:06.323 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+14:57:06.323 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+14:59:24.172 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+14:59:24.172 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+14:59:32.452 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+14:59:32.452 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:00:40.035 [] [http-nio-9091-exec-8] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:00:40.035 [] [http-nio-9091-exec-8] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:01:21.208 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:01:21.208 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:01:55.331 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-10] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-10] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-5] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:01:55.331 [] [http-nio-9091-exec-5] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:03:07.402 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:03:07.402 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:08:29.518 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:08:29.518 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:11:45.727 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:11:45.727 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:19:59.961 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:19:59.961 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:21:12.542 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:21:12.542 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:24:44.378 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:24:44.378 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:25:03.475 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:25:03.475 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:25:54.008 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:25:54.008 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:31:09.056 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:31:09.056 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:31:09.056 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:31:09.056 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:31:54.465 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:31:54.465 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:32:28.837 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:32:28.837 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:34:06.654 [] [http-nio-9091-exec-10] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:34:06.654 [] [http-nio-9091-exec-10] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:34:27.370 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:34:27.370 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:35:59.078 [] [http-nio-9091-exec-3] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:35:59.078 [] [http-nio-9091-exec-3] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:38:30.815 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:38:30.815 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:41:18.386 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:41:18.386 [] [http-nio-9091-exec-4] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:43:22.043 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:43:22.043 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:43:40.546 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:43:40.546 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:50:14.072 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:50:14.072 [] [http-nio-9091-exec-6] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 77
+15:51:38.484 [] [http-nio-9091-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null
+	at com.example.paymentapi.util.MessageResponse.bodyResponse(MessageResponse.java:34)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+15:53:19.199 [] [http-nio-9091-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null
+	at com.example.paymentapi.util.MessageResponse.bodyResponse(MessageResponse.java:34)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+15:54:40.695 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:54:40.695 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+15:54:53.043 [] [http-nio-9091-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null
+	at com.example.paymentapi.util.MessageResponse.bodyResponse(MessageResponse.java:34)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+15:59:40.049 [] [http-nio-9091-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.readErrorDescriptionFile(String)" because "this.errorCode" is null
+	at com.example.paymentapi.util.MessageResponse.bodyResponse(MessageResponse.java:34)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+16:00:27.527 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+16:00:27.527 [] [http-nio-9091-exec-2] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+16:26:40.094 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02
+16:26:40.094 [] [http-nio-9091-exec-1] ERROR c.e.p.controller.PaymentController - Send request fail with error code: 02

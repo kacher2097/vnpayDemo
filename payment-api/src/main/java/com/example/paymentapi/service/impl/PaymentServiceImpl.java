@@ -105,8 +105,6 @@ public class PaymentServiceImpl implements IPaymentService {
         } catch (Exception e) {
             throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         }
-
-
     }
 
     public String receiveMessageRabbitMQ(String corrId, String replyQueueName, Channel channel) throws

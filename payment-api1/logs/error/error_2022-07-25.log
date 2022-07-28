@@ -1,0 +1,2 @@
+10:48:03.398 [] [http-nio-8080-exec-1] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to Redis fail
+10:48:03.398 [] [http-nio-8080-exec-1] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to Redis fail

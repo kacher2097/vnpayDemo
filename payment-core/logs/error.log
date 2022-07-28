@@ -1,0 +1,44 @@
+[ERROR] 27-07-2022 14:35:59 [pool-2-thread-5] RabbitMQService - SQL exception
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Incorrect datetime value: '2020092911292356' for column 'pay_date' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.0.jar:?]
+	at com.payment.paymentcore.DAO.PaymentDAO.addPaymentRequest(PaymentDAO.java:57) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.lambda$consumeAndPublishMessage$0(RabbitMQService.java:81) ~[classes/:?]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:587) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+[ERROR] 27-07-2022 14:35:59 [pool-2-thread-5] RabbitMQService - Payment exception with error code : 55
+[ERROR] 27-07-2022 16:05:23 [pool-2-thread-9] RabbitMQService - SQL exception
+java.sql.SQLIntegrityConstraintViolationException: Column 'promotion_code' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.17.jar:8.0.17]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.0.jar:?]
+	at com.payment.paymentcore.DAO.PaymentDAO.addPaymentRequest(PaymentDAO.java:57) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.lambda$consumeAndPublishMessage$0(RabbitMQService.java:81) ~[classes/:?]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel$2.handleDelivery(AutorecoveringChannel.java:587) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:149) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:104) ~[amqp-client-5.12.0.jar:5.12.0]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+[ERROR] 27-07-2022 16:05:23 [pool-2-thread-9] RabbitMQService - Payment exception with error code : 55
+[ERROR] 28-07-2022 14:44:16 [main] RabbitMQService - Have exception on RabbitMQ {} 
+com.rabbitmq.client.AlreadyClosedException: channel is already closed due to clean channel shutdown; protocol method: #method<channel.close>(reply-code=200, reply-text=OK, class-id=0, method-id=0)
+	at com.rabbitmq.client.impl.AMQChannel.ensureIsOpen(AMQChannel.java:258) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.AMQChannel.rpc(AMQChannel.java:341) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.ChannelN.basicConsume(ChannelN.java:1371) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel.basicConsume(AutorecoveringChannel.java:542) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel.basicConsume(AutorecoveringChannel.java:496) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.rabbitmq.client.impl.recovery.AutorecoveringChannel.basicConsume(AutorecoveringChannel.java:479) ~[amqp-client-5.12.0.jar:5.12.0]
+	at com.payment.paymentcore.service.RabbitMQService.consumeAndPublishMessage(RabbitMQService.java:123) ~[classes/:?]
+	at com.payment.paymentcore.Main.main(Main.java:22) ~[classes/:?]

@@ -1,0 +1,273 @@
+2022-07-18 15:22:35,927 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 14652 (D:\Git\demoVNPAY\vnpayDemo\payment-api\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api)
+2022-07-18 15:22:35,930 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-18 15:22:35,931 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-18 15:22:35,957 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 15:22:35,958 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 15:22:36,326 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-18 15:22:36,327 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-18 15:22:36,340 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2022-07-18 15:22:36,651 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9091 (http)
+2022-07-18 15:22:36,656 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9091"]
+2022-07-18 15:22:36,656 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-18 15:22:36,656 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-18 15:22:36,711 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-18 15:22:36,712 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 754 ms
+2022-07-18 15:22:37,294 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-18 15:22:37,331 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9091"]
+2022-07-18 15:22:37,349 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9091 (http) with context path ''
+2022-07-18 15:22:37,356 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.658 seconds (JVM running for 2.323)
+2022-07-18 15:22:49,272 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 15:22:49,272 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9091-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-07-18 15:22:49,274 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9091-exec-1] Completed initialization in 2 ms
+2022-07-18 15:22:49,389 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-1] Begin sendRequest() 
+2022-07-18 15:22:49,390 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghd70, addValue=com.example.paymentapi.model.AddValue@71730045)
+2022-07-18 15:22:49,398 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:22:49,399 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghd70, addValue=com.example.paymentapi.model.AddValue@71730045)
+2022-07-18 15:22:49,403 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghd70, addValue=com.example.paymentapi.model.AddValue@71730045)
+2022-07-18 15:22:49,403 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Private key: lkjlk
+2022-07-18 15:22:49,403 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Append to String to HASH
+2022-07-18 15:22:49,403 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] End getStringToHash success
+2022-07-18 15:22:49,406 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:22:49,407 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Checksum success
+2022-07-18 15:22:49,416 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Check Valid of Token key with payment request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghd70, addValue=com.example.paymentapi.model.AddValue@71730045)
+2022-07-18 15:22:49,448 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Key exist? false
+2022-07-18 15:22:49,449 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Expire time is: 31030 
+2022-07-18 15:22:49,450 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-1]  Requesting data payment to RabbitMQ PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghd70, addValue=com.example.paymentapi.model.AddValue@71730045)
+2022-07-18 15:22:49,459 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-1] correlationId 7712eb01-882e-4a79-8388-2bec1c7da83f 
+2022-07-18 15:22:49,460 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-1] Send message to queue queue.rpc with data: {"apiID":"Restpayment9","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hd1hjf9f1970H8ghd70","addValue":{"payMethod":"01","payMethodMMS":1}}
+2022-07-18 15:22:49,649 INFO com.example.paymentapi.service.RabbitMQSender [pool-2-thread-4] get body from server: 
+2022-07-18 15:22:49,656 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-1] Send request success and receive response success with result: {"code":"67","message":"Connect to MySQL fail!","stackTrace":[],"suppressedExceptions":[]}
+2022-07-18 15:25:30,869 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-5] Begin sendRequest() 
+2022-07-18 15:25:30,870 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghfd70, addValue=com.example.paymentapi.model.AddValue@127b3531)
+2022-07-18 15:25:30,870 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:25:30,870 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghfd70, addValue=com.example.paymentapi.model.AddValue@127b3531)
+2022-07-18 15:25:30,870 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghfd70, addValue=com.example.paymentapi.model.AddValue@127b3531)
+2022-07-18 15:25:30,871 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Private key: lkjlk
+2022-07-18 15:25:30,871 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Append to String to HASH
+2022-07-18 15:25:30,871 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] End getStringToHash success
+2022-07-18 15:25:30,871 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:25:30,871 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Checksum success
+2022-07-18 15:25:30,871 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Check Valid of Token key with payment request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghfd70, addValue=com.example.paymentapi.model.AddValue@127b3531)
+2022-07-18 15:25:30,874 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Key exist? false
+2022-07-18 15:25:30,874 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] Expire time is: 30869 
+2022-07-18 15:25:30,875 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-5]  Requesting data payment to RabbitMQ PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970H8ghfd70, addValue=com.example.paymentapi.model.AddValue@127b3531)
+2022-07-18 15:25:30,881 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-5] correlationId 718943d0-314c-478e-bdd3-eba936c13d91 
+2022-07-18 15:25:30,882 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-5] Send message to queue queue.rpc with data: {"apiID":"Restpayment9","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hd1hjf9f1970H8ghfd70","addValue":{"payMethod":"01","payMethodMMS":1}}
+2022-07-18 15:25:31,051 INFO com.example.paymentapi.service.RabbitMQSender [pool-2-thread-7] get body from server: 
+2022-07-18 15:25:31,066 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-5] Send request success and receive response success with result: {"code":"67","message":"Connect to MySQL fail!","stackTrace":[],"suppressedExceptions":[]}
+2022-07-18 15:26:57,077 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-6] Begin sendRequest() 
+2022-07-18 15:26:57,079 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@401379dd)
+2022-07-18 15:26:57,079 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:26:57,079 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@401379dd)
+2022-07-18 15:26:57,079 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@401379dd)
+2022-07-18 15:26:57,080 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Private key: lkjlk
+2022-07-18 15:26:57,080 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Append to String to HASH
+2022-07-18 15:26:57,080 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] End getStringToHash success
+2022-07-18 15:26:57,080 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:26:57,080 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Checksum success
+2022-07-18 15:26:57,080 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Check Valid of Token key with payment request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@401379dd)
+2022-07-18 15:26:57,083 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Key exist? false
+2022-07-18 15:26:57,083 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-6] Expire time is: 30782 
+2022-07-18 15:26:57,083 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-6]  Requesting data payment to RabbitMQ PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9f1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@401379dd)
+2022-07-18 15:26:57,089 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-6] correlationId 93f33be0-5613-4b0a-a41c-f40dd47b69c0 
+2022-07-18 15:26:57,090 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-6] Send message to queue queue.rpc with data: {"apiID":"Restpayment9","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hd1hjf9f1970fH8ghfd70","addValue":{"payMethod":"01","payMethodMMS":1}}
+2022-07-18 15:26:57,094 INFO com.example.paymentapi.service.RabbitMQSender [pool-2-thread-10] get body from server: 
+2022-07-18 15:26:57,110 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-6] Send request success and receive response success with result: 
+2022-07-18 15:26:57,115 ERROR com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-6] has ex:
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (String)""; line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4765)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at com.example.paymentapi.util.Convert.convertJsonMessageToObject2(Convert.java:31)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-18 15:27:01,898 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-10] Begin sendRequest() 
+2022-07-18 15:27:01,898 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@10ad0d72)
+2022-07-18 15:27:01,899 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:27:01,899 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@10ad0d72)
+2022-07-18 15:27:01,899 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@10ad0d72)
+2022-07-18 15:27:01,899 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Private key: lkjlk
+2022-07-18 15:27:01,899 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Append to String to HASH
+2022-07-18 15:27:01,899 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] End getStringToHash success
+2022-07-18 15:27:01,900 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:27:01,900 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Checksum success
+2022-07-18 15:27:01,900 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Check Valid of Token key with payment request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@10ad0d72)
+2022-07-18 15:27:01,901 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Key exist? false
+2022-07-18 15:27:01,902 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-10] Expire time is: 30778 
+2022-07-18 15:27:01,902 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-10]  Requesting data payment to RabbitMQ PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@10ad0d72)
+2022-07-18 15:27:01,905 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-10] correlationId ba7b1c1f-214b-4f13-90aa-da6b1d56af05 
+2022-07-18 15:27:01,906 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-10] Send message to queue queue.rpc with data: {"apiID":"Restpayment9","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hd1hjf9fs1970fH8ghfd70","addValue":{"payMethod":"01","payMethodMMS":1}}
+2022-07-18 15:27:39,150 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-1] Begin sendRequest() 
+2022-07-18 15:27:39,151 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@36ea1cba)
+2022-07-18 15:27:39,151 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:27:39,151 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@36ea1cba)
+2022-07-18 15:27:39,151 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@36ea1cba)
+2022-07-18 15:27:39,152 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Private key: lkjlk
+2022-07-18 15:27:39,152 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Append to String to HASH
+2022-07-18 15:27:39,152 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] End getStringToHash success
+2022-07-18 15:27:39,153 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:27:39,153 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Checksum success
+2022-07-18 15:27:39,153 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Check Valid of Token key with payment request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs1970fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@36ea1cba)
+2022-07-18 15:27:39,156 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Key exist? true
+2022-07-18 15:27:39,157 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-1] Expire time is: 30740 
+2022-07-18 15:27:39,157 ERROR com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-1] Send request fail
+2022-07-18 15:32:05,269 ERROR com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-10] has ex:
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1638)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.example.paymentapi.service.RabbitMQSender.call(RabbitMQSender.java:62)
+	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-18 15:34:05,091 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentApiApplication using Java 18.0.1.1 on tuanlt2 with PID 16792 (D:\Git\demoVNPAY\vnpayDemo\payment-api\target\classes started by tuanlt2 in D:\Git\demoVNPAY\vnpayDemo\payment-api)
+2022-07-18 15:34:05,093 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-07-18 15:34:05,095 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-07-18 15:34:05,122 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-18 15:34:05,122 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-18 15:34:05,544 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-07-18 15:34:05,547 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-07-18 15:34:05,560 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2022-07-18 15:34:05,858 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9091 (http)
+2022-07-18 15:34:05,863 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9091"]
+2022-07-18 15:34:05,863 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-07-18 15:34:05,863 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-18 15:34:05,918 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-07-18 15:34:05,918 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 796 ms
+2022-07-18 15:34:06,504 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-07-18 15:34:06,561 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9091"]
+2022-07-18 15:34:06,580 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9091 (http) with context path ''
+2022-07-18 15:34:06,589 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentApiApplication in 1.736 seconds (JVM running for 2.447)
+2022-07-18 15:34:29,044 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9091-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-18 15:34:29,045 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9091-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-07-18 15:34:29,045 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9091-exec-2] Completed initialization in 0 ms
+2022-07-18 15:34:29,209 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-2] Begin sendRequest() 
+2022-07-18 15:34:29,210 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@6cf6f56c)
+2022-07-18 15:34:29,222 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:34:29,223 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@6cf6f56c)
+2022-07-18 15:34:29,225 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@6cf6f56c)
+2022-07-18 15:34:29,225 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Private key: lkjlk
+2022-07-18 15:34:29,225 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Append to String to HASH
+2022-07-18 15:34:29,225 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] End getStringToHash success
+2022-07-18 15:34:29,227 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:34:29,228 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Checksum success
+2022-07-18 15:34:29,245 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Check Valid of Token key with payment request: PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@6cf6f56c)
+2022-07-18 15:34:29,292 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Key exist? false
+2022-07-18 15:34:29,294 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-2] Expire time is: 30330 
+2022-07-18 15:34:29,294 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-2]  Requesting data payment to RabbitMQ PaymentRequest(apiID=Restpayment9, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@6cf6f56c)
+2022-07-18 15:34:29,300 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-2] correlationId 28a60f2c-91f4-4b6a-a0ff-bd737933c9cd 
+2022-07-18 15:34:29,301 INFO com.example.paymentapi.service.RabbitMQSender [http-nio-9091-exec-2] Send message to queue queue.rpc with data: {"apiID":"Restpayment9","mobile":"0345225630","bankCode":"11055","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11200.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"11","tokenKey":"160hd1hjf9fs19c70fH8ghfd70","addValue":{"payMethod":"01","payMethodMMS":1}}
+2022-07-18 15:34:29,434 INFO com.example.paymentapi.service.RabbitMQSender [pool-2-thread-4] get body from server: 
+2022-07-18 15:34:29,440 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-2] Send request success and receive response success with result: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+2022-07-18 15:36:33,459 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-5] Begin sendRequest() 
+2022-07-18 15:36:33,459 ERROR com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-5] One or more field request is empty or null
+2022-07-18 15:36:33,459 ERROR com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-5] Send request fail
+2022-07-18 15:40:19,164 INFO com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-8] Begin sendRequest() 
+2022-07-18 15:40:19,164 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Begin getPrivateKey() with Data Payment Request: PaymentRequest(apiID=, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@7f1eb5fd)
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] End getPrivateKeyByBankCode() Have Bank Code in YAML file
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8]  Begin checkSumSHA256() with data payment request PaymentRequest(apiID=, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@7f1eb5fd)
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Begin getStringToHash with data PaymentRequest PaymentRequest(apiID=, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@7f1eb5fd)
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Private key: lkjlk
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Append to String to HASH
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] End getStringToHash success
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Check sum SHA256:[2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3] 
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Checksum success
+2022-07-18 15:40:19,165 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Check Valid of Token key with payment request: PaymentRequest(apiID=, mobile=0345225630, bankCode=11055, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11200.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=2ec7c91e26cb3a725db2a3b85da09ccfa13475850e78a8ed20d79631eead3fb3, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=11, tokenKey=160hd1hjf9fs19c70fH8ghfd70, addValue=com.example.paymentapi.model.AddValue@7f1eb5fd)
+2022-07-18 15:40:19,168 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Key exist? true
+2022-07-18 15:40:19,172 INFO com.example.paymentapi.service.impl.PaymentServiceImpl [http-nio-9091-exec-8] Expire time is: 29980 
+2022-07-18 15:40:19,173 ERROR com.example.paymentapi.controller.PaymentController [http-nio-9091-exec-8] Send request fail

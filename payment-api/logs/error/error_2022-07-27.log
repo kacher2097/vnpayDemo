@@ -1,0 +1,16 @@
+08:45:49.921 [] [http-nio-9091-exec-8] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: null 
+08:45:49.921 [] [http-nio-9091-exec-4] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: null 
+08:45:49.921 [] [http-nio-9091-exec-8] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: null 
+08:45:49.921 [] [http-nio-9091-exec-4] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: null 
+14:23:52.012 [] [http-nio-9091-exec-8] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.isEmpty()" because "promotionCode" is null 
+14:23:52.012 [] [http-nio-9091-exec-8] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.isEmpty()" because "promotionCode" is null 
+14:26:31.960 [] [http-nio-9091-exec-1] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.isEmpty()" because "promotionCode" is null 
+14:26:31.960 [] [http-nio-9091-exec-1] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.isEmpty()" because "promotionCode" is null 
+14:40:45.004 [] [http-nio-9091-exec-4] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.isEmpty()" because the return value of "com.example.paymentapi.model.PaymentRequest.getPromotionCode()" is null 
+14:40:45.004 [] [http-nio-9091-exec-4] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.isEmpty()" because the return value of "com.example.paymentapi.model.PaymentRequest.getPromotionCode()" is null 
+14:41:17.321 [] [http-nio-9091-exec-1] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.equals(Object)" because the return value of "com.example.paymentapi.model.PaymentRequest.getPromotionCode()" is null 
+14:41:17.321 [] [http-nio-9091-exec-1] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.equals(Object)" because the return value of "com.example.paymentapi.model.PaymentRequest.getPromotionCode()" is null 
+14:42:03.051 [] [http-nio-9091-exec-2] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.equals(Object)" because the return value of "com.example.paymentapi.model.PaymentRequest.getPromotionCode()" is null 
+14:42:03.051 [] [http-nio-9091-exec-2] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "String.equals(Object)" because the return value of "com.example.paymentapi.model.PaymentRequest.getPromotionCode()" is null 
+16:05:25.499 [] [http-nio-9091-exec-4] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "com.example.paymentapi.util.ErrorCode.getDescription(String)" because "this.errorCode" is null 
+16:05:25.499 [] [http-nio-9091-exec-4] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: Cannot invoke "com.example.paymentapi.util.ErrorCode.getDescription(String)" because "this.errorCode" is null 
