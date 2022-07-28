@@ -26,6 +26,7 @@ public class MessageResponse {
                 log.info("Send request success and receive response success with result: {}", response);
                 RequestException requestException = Convert.convertJsonMessageToObject2(response);
 
+                log.info("---- End request -----");
                 return ResponseEntity.status(HttpStatus.OK).body(
                         new ResponseObject(requestException.getCode(), requestException.getMessage()
                                 , responseId, checkSum, addValue));

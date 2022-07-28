@@ -1,6 +1,7 @@
 package com.payment.paymentcore.service;
 
 import com.payment.paymentcore.DAO.PaymentDAO;
+import com.payment.paymentcore.config.ChannelPool;
 import com.payment.paymentcore.config.RMQPool;
 import com.payment.paymentcore.model.PaymentRequest;
 import com.payment.paymentcore.util.Convert;
@@ -14,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
 import java.util.concurrent.TimeoutException;
 
 public class RabbitMQService {
@@ -42,14 +42,16 @@ public class RabbitMQService {
         }
     }
 
-    public Channel connectToRabbitMQ() throws IOException, PaymentException {
+    public Channel connectToRabbitMQ() {
+        final ChannelPool channelPool = new ChannelPool();
+        Channel channel = channelPool.getChannel();
         String rpcQueue = rmqPool.readConfigFile().getQueue();
         try {
-            Channel channel = rmqPool.getChannel();
+//            Channel channel = rmqPool.getChannel();
             channel.queueDeclare(rpcQueue, true, false, false, null);
             channel.basicQos(1);
             return channel;
-        } catch (PaymentException e) {
+        } catch (Exception e) {
             log.error("Create channel fail");
             throw new PaymentException(ErrorCode.CREATE_CHANNEL_RABBITMQ_FAIL);
         }
@@ -75,6 +77,7 @@ public class RabbitMQService {
                     String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
                     log.info("Receive Message from queue: " + message);
 
+                    //Convert json data from client to object -> insert into database
                     PaymentRequest paymentRequest = Convert.convertJsonMessageToObject(message);
 
                     //true if execute query success
@@ -105,8 +108,10 @@ public class RabbitMQService {
                     log.info("Publish response to client with data: {}", responseToClient);
                     channel.basicPublish("", delivery.getProperties().getReplyTo(), replyProps,
                             responseToClient.getBytes(StandardCharsets.UTF_8));
-                    channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
 
+                    //Acknowledge receive message
+                    channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
+                    log.info("----- End publish response to client -----");
                     // RabbitMq consumer worker thread notifies the RPC server owner thread
 //                    synchronized (monitor) {
 //                        monitor.notify();
@@ -115,7 +120,7 @@ public class RabbitMQService {
             };
             channel.basicConsume(rmqPool.readConfigFile().getQueue(), false, deliverCallback, (consumerTag -> {
             }));
-
+            //Return channel to pool
             // Wait and be prepared to consume the message from RPC client.
 //            while (true) {
 //                synchronized (monitor) {
@@ -126,6 +131,8 @@ public class RabbitMQService {
 //                    }
 //                }
 //            }
+
+
         } catch (Exception e) {
             log.error("Have exception on RabbitMQ {} ", e);
             e.printStackTrace();

@@ -11,7 +11,6 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
 public class PaymentService {
     private static final Logger log = LogManager.getLogger(PaymentService.class);
     private static final String URI = "https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay";

@@ -22,7 +22,7 @@ public class RMQPool {
     private static RMQPool instance;
 
     public RMQPool(){
-        awakeConnection();
+        //awakeConnection();
     }
 
     public static RMQPool getInstance() throws IOException, TimeoutException {

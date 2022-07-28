@@ -22,7 +22,7 @@ public class RabbitMQConfig {
     private List<Channel> channels;
 
     public RabbitMQConfig() throws IOException, TimeoutException {
-        awakeConnection();
+        //awakeConnection();
     }
 
     public RabbitMQProperties readConfigFile(){
