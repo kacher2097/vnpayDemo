@@ -27,6 +27,8 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
             if (uri != null) {
                 factory.setUri(uri);
             }
+
+            //TODO dang tao nguoc channel -> connection can sua lai
             connection = factory.newConnection();
         } catch (Exception e) {
             throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);

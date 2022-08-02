@@ -26,7 +26,7 @@ public class MessageResponse {
                 log.info("Send request success and receive response success with result: {}", response);
                 RequestException requestException = Convert.convertJsonMessageToObject2(response);
 
-                log.info("---- End request -----");
+                log.info("----- End request -----");
                 return ResponseEntity.status(HttpStatus.OK).body(
                         new ResponseObject(requestException.getCode(), requestException.getMessage()
                                 , responseId, checkSum, addValue));
@@ -49,6 +49,7 @@ public class MessageResponse {
 
     public ResponseEntity<ResponseObject> bodyErrorResponse(String code, String message, String responseId,
                                                             String checkSum, String addValue) {
+        log.info("------ End send request result fail -------");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                 new ResponseObject(code, message, responseId, checkSum, addValue)
         );

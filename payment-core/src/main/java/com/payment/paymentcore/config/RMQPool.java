@@ -32,7 +32,7 @@ public class RMQPool {
         return instance;
     }
 
-    public RabbitMQModel readConfigFile() throws PaymentException {
+    public static RabbitMQModel readConfigFile() throws PaymentException {
         Properties properties = new Properties();
         InputStream inputStream = null;
         RabbitMQModel rabbitMQModel = new RabbitMQModel();

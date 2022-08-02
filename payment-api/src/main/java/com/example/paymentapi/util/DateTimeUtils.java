@@ -7,7 +7,6 @@ public class DateTimeUtils {
 //    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
     public static final DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
-
     public static boolean isPayDateValid(String time){
         try {
             DateTimeUtils.format.parse(time);

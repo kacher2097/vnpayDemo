@@ -28,25 +28,21 @@ public class RabbitMQService {
         return instance;
     }
 
-    private static final RMQPool rmqPool;
+    private static final ChannelPool channelPool;
     private static final PaymentDAO paymentDao;
     private static final ErrorCode errorCode;
 
     static {
-        try {
-            rmqPool = RMQPool.getInstance();
-            paymentDao = PaymentDAO.getInstance();
-            errorCode = ErrorCode.getInstance();
-        } catch (IOException | TimeoutException e) {
-            throw new RuntimeException(e);
-        }
+        channelPool = ChannelPool.getInstance();
+        paymentDao = PaymentDAO.getInstance();
+        errorCode = ErrorCode.getInstance();
+
     }
 
     public Channel connectToRabbitMQ() {
-        final ChannelPool channelPool = new ChannelPool();
-        Channel channel = channelPool.getChannel();
-        String rpcQueue = rmqPool.readConfigFile().getQueue();
+        String rpcQueue = RMQPool.readConfigFile().getQueue();
         try {
+            Channel channel = channelPool.getChannel();
 //            Channel channel = rmqPool.getChannel();
             channel.queueDeclare(rpcQueue, true, false, false, null);
             channel.basicQos(1);
@@ -70,7 +66,8 @@ public class RabbitMQService {
                         .correlationId(correlationIdFromClient)
                         .build();
 
-                String responseToClient = "";
+                //TODO tim cach khac xu li String
+                String responseToClient = null;
                 log.info("getCorrelationId from client: {}", correlationIdFromClient);
                 try {
                     PaymentService paymentService = new PaymentService();
@@ -84,24 +81,25 @@ public class RabbitMQService {
                     if (paymentDao.addPaymentRequest(paymentRequest)) {
 
                         log.info("insert to DB success => send to api and get response");
+
                         String response = " Status response " + paymentService.sendApi(paymentRequest);
                         log.info("response from partner api: {}", response);
 
                         //Convert response from api partner to JSON string for send response to client
-                        responseToClient = Convert.convertObjToString(new PaymentException(ErrorCode.REQUEST_SUCCESS,
+                        responseToClient = Convert.convertObjToJson(new PaymentException(ErrorCode.REQUEST_SUCCESS,
                                 "Response from partner api:" + response));
 
                     } else {
-                        log.info("Insert into DB fail");
+                        log.info("Insert into DB fail => response to client");
                         //Convert response  & exception from api partner to JSON string for send response to client
-                        responseToClient = Convert.convertObjToString(new PaymentException(ErrorCode.INSERT_INTO_DB_FAIL,
+                        responseToClient = Convert.convertObjToJson(new PaymentException(ErrorCode.INSERT_INTO_DB_FAIL,
                                 "Insert into DB fail"));
                     }
 
                 } catch (PaymentException e) {
-                    log.error("Payment exception with error code : {}", e.getCode());
+                    log.info("Payment exception with error code : {}", e.getCode());
                     //Convert response & exception from api partner to JSON string for send response to client
-                    responseToClient = Convert.convertObjToString(new PaymentException(e.getCode(),
+                    responseToClient = Convert.convertObjToJson(new PaymentException(e.getCode(),
                             errorCode.readErrorDescriptionFile(e.getCode())));
 
                 } finally {
@@ -118,7 +116,9 @@ public class RabbitMQService {
 //                    }
                 }
             };
-            channel.basicConsume(rmqPool.readConfigFile().getQueue(), false, deliverCallback, (consumerTag -> {
+
+
+            channel.basicConsume(RMQPool.readConfigFile().getQueue(), false, deliverCallback, (consumerTag -> {
             }));
             //Return channel to pool
             // Wait and be prepared to consume the message from RPC client.

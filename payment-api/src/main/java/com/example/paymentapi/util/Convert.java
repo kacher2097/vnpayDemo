@@ -14,23 +14,25 @@ public class Convert {
         return new Gson().toJson(clsObj);
     }
 
+    //TODO su dung chung thu vien nhan gui giong nhau
     public static RequestException convertJsonMessageToObject2(String messageResponse) throws IOException {
         if (messageResponse == null) {
             return new RequestException("93", "Message response is null");
-        } else {
-
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            objectMapper.readValue(messageResponse, RequestException.class);
-            JsonNode jsonNodeRoot = objectMapper.readTree(messageResponse);
-            JsonNode jsonCode = jsonNodeRoot.get("code");
-            JsonNode jsonMessage = jsonNodeRoot.get("message");
-
-            String code = jsonCode.asText();
-            String message = jsonMessage.asText();
-
-            return new RequestException(code, message);
         }
+
+        //TODO han che khoi tao moi
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.readValue(messageResponse, RequestException.class);
+        JsonNode jsonNodeRoot = objectMapper.readTree(messageResponse);
+        JsonNode jsonCode = jsonNodeRoot.get("code");
+        JsonNode jsonMessage = jsonNodeRoot.get("message");
+
+        String code = jsonCode.asText();
+        String message = jsonMessage.asText();
+
+        return new RequestException(code, message);
+
     }
 }

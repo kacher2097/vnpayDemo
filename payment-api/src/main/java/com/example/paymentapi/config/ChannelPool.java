@@ -18,7 +18,6 @@ public class ChannelPool {
         defaultConfig.setMaxTotal(10);
         defaultConfig.setMinIdle(2);
         defaultConfig.setMaxIdle(9);
-        defaultConfig.setBlockWhenExhausted(false);
     }
 
     public ChannelPool() {

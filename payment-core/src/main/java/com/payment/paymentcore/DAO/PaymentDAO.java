@@ -29,8 +29,12 @@ public class PaymentDAO {
     public boolean addPaymentRequest(PaymentRequest paymentRequest) {
         log.info("Begin add payment request into database with data: {}", paymentRequest);
         String sqlAdd = SQLQuery.addRequestQuery();
-        try (Connection conn = HikariCPResource.getConnection();
-             PreparedStatement prepareStatement = conn.prepareStatement(sqlAdd)) {
+        Connection conn = null;
+        PreparedStatement prepareStatement = null;
+        try {
+            conn = HikariCPResource.getConnection();
+            conn.setAutoCommit(false);
+            prepareStatement = conn.prepareStatement(sqlAdd);
 
             prepareStatement.setString(1, paymentRequest.getApiID());
             prepareStatement.setString(2, paymentRequest.getTokenKey());
@@ -54,15 +58,34 @@ public class PaymentDAO {
             prepareStatement.setString(18, paymentRequest.getAddValue().getPayMethod());
             prepareStatement.setInt(19, paymentRequest.getAddValue().getPayMethodMMS());
 
-            prepareStatement.execute();
+            prepareStatement.executeUpdate();
+            conn.commit();
             log.info("Execute query success");
             return true;
         } catch (ExceptionInInitializerError e) {
             log.error("Insert into DB has exception: {}", e);
             throw new PaymentException(ErrorCode.CONNECT_DB_FAIL);
-        } catch (SQLException e){
-            log.error("SQL exception", e);
+        } catch (SQLException e) {
+            log.error("SQL exception ", e);
             throw new PaymentException(ErrorCode.SQL_EXCEPTION);
+        } finally {
+            try {
+                if (prepareStatement != null) {
+                    prepareStatement.close();
+                }
+            } catch (SQLException e) {
+                log.error("Error when close prepared statement {}", e);
+            } finally {
+                try {
+                    if(conn != null){
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    log.error("Error when close connection {}", e);
+                }
+            }
+
+
         }
     }
 

@@ -33,7 +33,6 @@ public class RedisPool {
         config.setTestOnBorrow(true);
         config.setBlockWhenExhausted(true);
         config.setMaxWaitMillis(redisPropertiesObject.getMaxWait());
-
         pool = new JedisPool(config, redisPropertiesObject.getRedisHost(),
                 redisPropertiesObject.getRedisPort(), 1000 * 2);
     }

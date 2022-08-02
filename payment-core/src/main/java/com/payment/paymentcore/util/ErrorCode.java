@@ -1,10 +1,13 @@
 package com.payment.paymentcore.util;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+@Slf4j
 public class ErrorCode {
 
     public static ErrorCode instance;
@@ -20,12 +23,12 @@ public class ErrorCode {
     public static final String REQUEST_SUCCESS = "00";
     public static final String SYSTEM_MAINTENANCE = "96";
     public static final String DOUBT_TRANSACTION = "08";
-    public static final String NULL_RESPONSE = "09";
     public static final String READ_CONFIG_RABBITMQ_FAIL = "30";
     public static final String CONNECT_RABBITMQ_FAIL = "31";
     public static final String CHANNEL_RABBITMQ_TIMEOUT = "32";
     public static final String AWAKE_CONNECT_RABBITMQ_FAIL = "33";
 
+    public static final String DESTROY_CHANNEL_RABBITMQ_FAIL = "34";
     public static final String CREATE_CHANNEL_RABBITMQ_FAIL = "35";
     public static final String READ_DESCRIPTION_FAIL = "40";
 
@@ -48,6 +51,7 @@ public class ErrorCode {
             return properties.getProperty(code);
 
         } catch (IOException e) {
+            log.error("Read file fail {} ", e);
             throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL, "Read error code description file fail");
 
         } finally {
@@ -57,7 +61,8 @@ public class ErrorCode {
                     inputStream.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("Close input stream fail {} ", e);
+                throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL, "Close input stream fail");
             }
         }
     }

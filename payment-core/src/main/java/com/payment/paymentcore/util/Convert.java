@@ -6,7 +6,7 @@ import com.payment.paymentcore.model.PaymentRequest;
 public class Convert {
     private static final Gson gson = new Gson();
 
-    public static String convertObjToString(Object clsObj) {
+    public static String convertObjToJson(Object clsObj) {
         //convert object to string json
         return gson.toJson(clsObj);
     }

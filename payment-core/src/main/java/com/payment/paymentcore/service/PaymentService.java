@@ -18,7 +18,7 @@ public class PaymentService {
     public WebTarget getWebTarget() {
         ClientConfig config = new ClientConfig();
         Client client = ClientBuilder.newClient(config);
-
+        log.info("Web target send request {}", client.target(URI));
         return client.target(URI);
     }
 
