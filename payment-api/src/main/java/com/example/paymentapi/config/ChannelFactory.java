@@ -31,6 +31,7 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
             //TODO dang tao nguoc channel -> connection can sua lai
             connection = factory.newConnection();
         } catch (Exception e) {
+            log.error("Get connect to rabbitMQ fail");
             throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         }
     }
@@ -45,7 +46,7 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
             try {
                 channel.close();
             } catch (Exception e) {
-                log.info("Destroy object fail");
+                log.error("Destroy object fail");
             }
         }
     }

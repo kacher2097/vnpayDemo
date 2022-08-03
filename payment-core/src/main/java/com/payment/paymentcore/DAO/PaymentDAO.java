@@ -75,6 +75,7 @@ public class PaymentDAO {
                 }
             } catch (SQLException e) {
                 log.error("Error when close prepared statement {}", e);
+                throw new PaymentException();
             } finally {
                 try {
                     if(conn != null){

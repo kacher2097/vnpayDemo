@@ -9,7 +9,7 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import java.util.NoSuchElementException;
 
 @Slf4j
-public class ChannelPool {
+public class ChannelPool implements Cloneable{
 
     private static ChannelPool instance;
 
@@ -27,7 +27,7 @@ public class ChannelPool {
         defaultConfig = new GenericObjectPoolConfig();
         defaultConfig.setMaxTotal(10);
         defaultConfig.setMaxIdle(9);
-        defaultConfig.setMinIdle(2);
+        defaultConfig.setMinIdle(3);
     }
 
     public ChannelPool() {

@@ -28,12 +28,17 @@ public class ErrorCode {
     public static final String CONNECT_REDIS_FAIL = "33";
     public static final String CONNECT_RABBITMQ_FAIL = "34";
     public static final String GET_RESPONSE_FAIL = "35";
+    public static final String CLOSE_REDIS_FAIL = "36";
+    public static final String CLOSE_CHANNEL_FAIL = "37";
     public static final String READ_DESCRIPTION_FAIL = "40";
+    public static final String CLOSE_DESCRIPTION_FILE_FAIL = "41";
     public static final String CODE_EXCEPTION = "54";
+    public static final String GET_RESULT_TIME_OUT = "55";
 
     private static final String FILE_CONFIG = "\\config\\error-description.properties";
 
     public String getDescription(String code) {
+        log.info("Begin get description error code with code {}", code);
         Properties properties = new Properties();
         InputStream inputStream = null;
         try {
@@ -43,6 +48,7 @@ public class ErrorCode {
             // load properties from file
             properties.load(inputStream);
 
+            log.info("End get description error code success");
             return properties.getProperty(code);
 
         } catch (IOException e) {
@@ -52,10 +58,12 @@ public class ErrorCode {
             // close objects
             try {
                 if (inputStream != null) {
+                    log.info("Close input stream");
                     inputStream.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("Close input stream fail");
+                throw new RequestException(ErrorCode.CLOSE_DESCRIPTION_FILE_FAIL);
             }
         }
     }

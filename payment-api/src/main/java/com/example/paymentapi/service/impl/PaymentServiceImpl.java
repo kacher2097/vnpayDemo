@@ -9,7 +9,7 @@ import com.example.paymentapi.model.Bank;
 import com.example.paymentapi.model.PaymentRequest;
 import com.example.paymentapi.model.ResponseObject;
 import com.example.paymentapi.service.IPaymentService;
-import com.example.paymentapi.util.Convert;
+import com.example.paymentapi.util.ConvertUtils;
 import com.example.paymentapi.util.DateTimeUtils;
 import com.example.paymentapi.util.ErrorCode;
 import com.example.paymentapi.util.MessageResponse;
@@ -26,9 +26,6 @@ import redis.clients.jedis.Jedis;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -44,15 +41,18 @@ public class PaymentServiceImpl implements IPaymentService {
     private final RabbitMQConfig rabbitMQConfig;
     private final RedisPool redisPool;
     private final ErrorCode errorCode;
+    private final ChannelPool channelPool;
+
 
     //Constructor Injection
     public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool, RabbitMQConfig rabbitMQConfig,
-                              ErrorCode errorCode) {
+                              ErrorCode errorCode, ChannelPool channelPool) {
         this.yamlConfig = yamlConfig;
         this.gson = gson;
         this.redisPool = redisPool;
         this.rabbitMQConfig = rabbitMQConfig;
         this.errorCode = errorCode;
+        this.channelPool = channelPool;
     }
 
     @Override
@@ -60,41 +60,57 @@ public class PaymentServiceImpl implements IPaymentService {
                                                       String responseId) {
 
         log.info("Begin send request with data: {}", paymentRequest);
-
+        String response = null;
         try {
+            log.info("Begin validate request");
             validateRequest(paymentRequest, bindingResult);
-            String response = callRabbitMQ(paymentRequest);
-
-            return new MessageResponse().bodyResponse(responseId, response, "", "");
         } catch (RequestException e) {
             log.info(" Send request have error code: {}", e.getCode());
             return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
                     responseId, "", "");
-        } catch (Exception e) {
+        }
+
+        try {
+            log.info("Request is valid => send message to RabbitMQ");
+            response = sendMessage(paymentRequest);
+        } catch (Exception e){
             log.error("Got exception {}", e.getMessage());
             return new MessageResponse().bodyErrorResponse(ErrorCode.CONNECT_RABBITMQ_FAIL, errorCode.
                     getDescription(ErrorCode.CONNECT_RABBITMQ_FAIL), responseId, "", "");
         }
 
+        return new MessageResponse().bodyResponse(responseId, response, "", "");
+//        try {
+//            log.info("Begin validate request");
+//            validateRequest(paymentRequest, bindingResult);
+//            log.info("Request is valid => send message to RabbitMQ");
+//            String response = sendMessage(paymentRequest);
+//
+//            return new MessageResponse().bodyResponse(responseId, response, "", "");
+//        } catch (RequestException e) {
+//            log.info(" Send request have error code: {}", e.getCode());
+//            return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
+//                    responseId, "", "");
+//        } catch (Exception e) {
+//            log.error("Got exception {}", e.getMessage());
+//            return new MessageResponse().bodyErrorResponse(ErrorCode.CONNECT_RABBITMQ_FAIL, errorCode.
+//                    getDescription(ErrorCode.CONNECT_RABBITMQ_FAIL), responseId, "", "");
+//        }
+
     }
 
-    //TODO ten ham
-    public String callRabbitMQ(PaymentRequest paymentRequest) {
+    public String sendMessage(PaymentRequest paymentRequest) {
         log.info("Begin publish message to queue with data {} ", paymentRequest);
 
-        //TODO khong khoi tao channel pool trong ham
-        final ChannelPool channelPool = new ChannelPool();
-        log.info("Get channel {} ", channelPool);
-
-        //TODO kiem tra channel co tra ve pool k?
-        try (Channel channel = channelPool.getChannel()) {
-            //        Channel channel = rabbitMQConfig.getChannel();
-
+        Channel channel = null;
+        String message;
+        try {
+            channel = channelPool.getChannel();
             //TODO doc 1 lan lay config
             String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
             final String corrId = UUID.randomUUID().toString();
 
-            //TODO tao 1 queue ring de nhan tin
+            //TODO tao 1 queue rieng de nhan tin
             String replyQueueName = channel.queueDeclare().getQueue();
             AMQP.BasicProperties props = new AMQP.BasicProperties
                     .Builder()
@@ -105,37 +121,44 @@ public class PaymentServiceImpl implements IPaymentService {
             log.info("correlationId with message {} ", corrId);
             //Convert payment request to String to publish message
             //TODO su dung singleton + ten ham
-            String message = Convert.convertObjToString(paymentRequest);
+            message = ConvertUtils.convertObjToString(paymentRequest);
             log.info("Send message to queue {} with data: {}", rpcQueue, message);
             //Send request to queue
             channel.basicPublish("", rpcQueue, props, message.getBytes(StandardCharsets.UTF_8));
 
-            //Result receive from server
-            //log.info("Result from server {} ", result);
-
-            return receiveMessageRabbitMQ(corrId, replyQueueName, channel);
+            log.info("End send message to server => wait result response from server");
+            return receiveMessage(corrId, replyQueueName, channel);
         } catch (Exception e) {
-            //TODO ghi log
+            log.error("Connect to RabbitMQ fail!");
             throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
+        } finally {
+            try {
+                if (channelPool != null) {
+                    log.info("Return channel to pool");
+                    channelPool.returnChannel(channel);
+                }
+            } catch (Exception e) {
+                log.error("Return channel to pool fail");
+                throw new RequestException(ErrorCode.CLOSE_CHANNEL_FAIL);
+            }
+
         }
     }
 
-    public String receiveMessageRabbitMQ(String corrId, String replyQueueName, Channel channel) throws
-            InterruptedException, IOException {
+    public String receiveMessage(String corrId, String replyQueueName, Channel channel) throws IOException {
 
-        //TODO du lieu dau vao can co trong log
-        log.info("Begin receive message RabbitMQ from server");
+        log.info("Begin receive message RabbitMQ from server with Correlation Id: {}", corrId);
         final BlockingQueue<String> response = new ArrayBlockingQueue<>(1);
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
 
             try {
                 if (corrId.equals(delivery.getProperties().getCorrelationId())) {
                     //Chèn phần tử được chỉ định vào ArrayBlockingQueue. Nó trả về false nếu queue đã đầy.
-                    response.offer(new String(delivery.getBody(), StandardCharsets.UTF_8), 100, TimeUnit.SECONDS);
+                    response.offer(new String(delivery.getBody(), StandardCharsets.UTF_8), 50, TimeUnit.SECONDS);
                 }
 
             } catch (Exception e) {
-                //TODO thieu ghi log
+                log.error("Get result from server fail");
                 throw new RequestException(ErrorCode.GET_RESPONSE_FAIL);
             }
         };
@@ -143,19 +166,23 @@ public class PaymentServiceImpl implements IPaymentService {
         String ctag = channel.basicConsume(replyQueueName, false, deliverCallback, consumerTag -> {
         });
 
-        log.info("basic consume {}", ctag);
+        log.info("Ctag {}", ctag);
 
-        //Take and remove element in blocking queue
-        //TODO xu li time out
-//       Thay vi su dung take su dung poll Message response = applicationResponse.poll(1, TimeUnit.SECONDS);
-        String result = response.take();
-        log.info("Get result from server: {} ", result);
-        channel.basicCancel(ctag);
+        String result2;
+        try {
+            result2 = response.poll(30, TimeUnit.SECONDS);
+            log.info("Get result from server: {} ", result2);
+            channel.basicCancel(ctag);
+        } catch (Exception e) {
+            log.error("Get result from server is time out");
+            throw new RequestException(ErrorCode.GET_RESULT_TIME_OUT);
+        }
 
-        return result;
+        log.info("Get result from server success");
+        return result2;
     }
 
-    public void validateRequest(PaymentRequest paymentRequest, BindingResult bindingResult){
+    public void validateRequest(PaymentRequest paymentRequest, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             log.error("One or more field request is empty or null");
             throw new RequestException(ErrorCode.NULL_REQUEST);
@@ -192,42 +219,32 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     public boolean checkTokenKey(PaymentRequest paymentRequest) {
-        String bankCode = paymentRequest.getBankCode();
         String tokenKey = paymentRequest.getTokenKey();
         log.info("Begin check valid of Token key {}", tokenKey);
 
+        String jsonValue;
         try (Jedis jedis = redisPool.getJedis()) {
-            String jsonValue = gson.toJson(paymentRequest);
-
+            jsonValue = gson.toJson(paymentRequest);
             boolean checkKeyExist = jedis.exists(tokenKey);
-            //get TTL of tokenKey
-            long ttl = jedis.ttl(tokenKey);
-            log.info("Expire time is: {} seconds", ttl);
             log.info("Token key exist? {}", checkKeyExist);
 
-            if (ttl > 0 && checkKeyExist) {
+            if (checkKeyExist) {
                 log.info("Token key exist on day");
                 return false;
             }
 
             log.info("Token key can use on day");
-            log.info("Data put to redis: {}", jsonValue);
-            //TODO su dung setnx
-            jedis.hset(tokenKey, bankCode, jsonValue);
-            jedis.expire(tokenKey, this.getTimeExpire());
+            log.info("Setnx to redis with data: {}", jsonValue);
 
+            jedis.setnx(tokenKey, jsonValue);
+            jedis.expire(tokenKey, DateTimeUtils.getTimeExpire());
+
+            log.info("End check Token Key success");
             return true;
         } catch (RequestException e) {
             log.error("Connect to Redis fail! ");
             throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
         }
-    }
-
-    //TODO thay doi de su dung lai
-    public long getTimeExpire() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime endOfDate = now.toLocalDate().atTime(LocalTime.MAX);
-        return ChronoUnit.SECONDS.between(now, endOfDate);
     }
 
     public boolean checkValidAmount(PaymentRequest paymentRequest) {
@@ -237,7 +254,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
     public void checkValidPromotionCode(PaymentRequest paymentRequest) {
         String promotionCode = paymentRequest.getPromotionCode();
-        log.info("Begin check valid promotion code");
+        log.info("Begin check valid promotion code with promotionCode {}", promotionCode);
         if (promotionCode == null || promotionCode.isEmpty() || promotionCode.isBlank()) {
             if (paymentRequest.getRealAmount() != paymentRequest.getDebitAmount()) {
                 log.info("Real amount different debit amount but promotion code is null, empty or blank => invalid promotion code");
@@ -245,9 +262,6 @@ public class PaymentServiceImpl implements IPaymentService {
             }
         }
         log.info("End check promotion code success");
-
-        //TODO khong tu set gia tri
-        paymentRequest.setPromotionCode("");
     }
 
     public String getPrivateKeyByBankCode(String bankCode) {

@@ -32,11 +32,13 @@ public class RabbitMQService {
     private static final PaymentDAO paymentDao;
     private static final ErrorCode errorCode;
 
+    private static final PaymentService paymentService;
+
     static {
         channelPool = ChannelPool.getInstance();
         paymentDao = PaymentDAO.getInstance();
         errorCode = ErrorCode.getInstance();
-
+        paymentService = PaymentService.getInstance();
     }
 
     public Channel connectToRabbitMQ() {
@@ -56,7 +58,7 @@ public class RabbitMQService {
     public void consumeAndPublishMessage() {
         try {
             Channel channel = this.connectToRabbitMQ();
-            log.info(" [x] Awaiting RPC requests");
+            log.info("[x] Awaiting RPC requests");
 
 //            Object monitor = new Object();
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
@@ -70,7 +72,6 @@ public class RabbitMQService {
                 String responseToClient = null;
                 log.info("getCorrelationId from client: {}", correlationIdFromClient);
                 try {
-                    PaymentService paymentService = new PaymentService();
                     String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
                     log.info("Receive Message from queue: " + message);
 

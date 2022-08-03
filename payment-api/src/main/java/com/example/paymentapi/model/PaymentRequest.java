@@ -33,7 +33,7 @@ public class PaymentRequest implements Serializable {
     @NotBlank
     private String payDate;
 
-    @NotBlank
+
     @NotNull
     @NotEmpty
     private String additionalData;

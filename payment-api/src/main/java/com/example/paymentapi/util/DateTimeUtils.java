@@ -1,6 +1,10 @@
 package com.example.paymentapi.util;
 import lombok.extern.slf4j.Slf4j;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 @Slf4j
 public class DateTimeUtils {
@@ -15,5 +19,20 @@ public class DateTimeUtils {
             log.info("Pay date have invalid format");
             return false;
         }
+    }
+
+    public static long getTimeExpire() {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime endOfDate = now.toLocalDate().atTime(LocalTime.MAX);
+        return ChronoUnit.SECONDS.between(now, endOfDate);
+    }
+
+
+    public long getTimeExpire(String time) {
+        LocalDateTime dateTime = LocalDateTime.parse(time, format);
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime endOfDate = now.toLocalDate().atTime(LocalTime.MAX);
+        return ChronoUnit.SECONDS.between(now, endOfDate);
     }
 }
