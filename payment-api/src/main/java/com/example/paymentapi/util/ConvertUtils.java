@@ -9,17 +9,23 @@ import com.google.gson.Gson;
 import java.io.IOException;
 
 public class ConvertUtils {
-    public static String convertObjToString(Object clsObj) {
+
+    private static ConvertUtils instance;
+
+    public static ConvertUtils getInstance(){
+        if(instance == null){
+            instance = new ConvertUtils();
+        }
+        return instance;
+    }
+
+    public static String convertObjToJson(Object clsObj) {
         //convert object  to string json
         return new Gson().toJson(clsObj);
     }
 
     //TODO su dung chung thu vien nhan gui giong nhau
-    public static RequestException convertJsonMessageToObject(String messageResponse) throws IOException {
-        if (messageResponse == null) {
-            return new RequestException("93", "Message response is null");
-        }
-
+    public RequestException convertJsonToObj(String messageResponse) throws IOException {
         //TODO han che khoi tao moi
         ObjectMapper objectMapper = new ObjectMapper();
 

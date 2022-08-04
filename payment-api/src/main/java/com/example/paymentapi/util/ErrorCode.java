@@ -27,9 +27,11 @@ public class ErrorCode {
     public static final String READ_CONFIG_RABBITMQ_FAIL = "32";
     public static final String CONNECT_REDIS_FAIL = "33";
     public static final String CONNECT_RABBITMQ_FAIL = "34";
+
     public static final String GET_RESPONSE_FAIL = "35";
     public static final String CLOSE_REDIS_FAIL = "36";
     public static final String CLOSE_CHANNEL_FAIL = "37";
+    public static final String READ_CONFIG_REDIS_FAIL = "38";
     public static final String READ_DESCRIPTION_FAIL = "40";
     public static final String CLOSE_DESCRIPTION_FILE_FAIL = "41";
     public static final String CODE_EXCEPTION = "54";
@@ -37,9 +39,17 @@ public class ErrorCode {
 
     private static final String FILE_CONFIG = "\\config\\error-description.properties";
 
+    private static ErrorCode instance;
+    public static ErrorCode getInstance(){
+        if(instance == null){
+            instance = new ErrorCode();
+        }
+        return instance;
+    }
+
     public String getDescription(String code) {
         log.info("Begin get description error code with code {}", code);
-        Properties properties = new Properties();
+        Properties properties = PropertiesUtils.getInstance();
         InputStream inputStream = null;
         try {
             String currentDir = System.getProperty("user.dir");

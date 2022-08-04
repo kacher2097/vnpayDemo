@@ -56,6 +56,7 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
         if (channel.isOpen()) {
             try {
                 channel.close();
+                log.info("Destroy object success");
             } catch (Exception e) {
                 log.error("Destroy object fail");
             }

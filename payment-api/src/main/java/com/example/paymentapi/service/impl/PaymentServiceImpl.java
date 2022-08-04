@@ -36,35 +36,31 @@ import java.util.concurrent.TimeUnit;
 public class PaymentServiceImpl implements IPaymentService {
 
     private static final String RPC_QUEUE = "queue.rpc";
-
     private final YAMLConfig yamlConfig;
     private final Gson gson;
     private final RedisPool redisPool;
-    private final ErrorCode errorCode;
     private final ChannelPool channelPool;
 
 
     //Constructor Injection
-    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool,
-                              ErrorCode errorCode, ChannelPool channelPool) {
+    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool, ChannelPool channelPool) {
         this.yamlConfig = yamlConfig;
         this.gson = gson;
         this.redisPool = redisPool;
-        this.errorCode = errorCode;
         this.channelPool = channelPool;
     }
 
     @Override
     public ResponseEntity<ResponseObject> sendRequest(PaymentRequest paymentRequest, BindingResult bindingResult,
                                                       String responseId) {
-
+        ErrorCode errorCode = ErrorCode.getInstance();
         log.info("Begin send request with data: {}", paymentRequest);
         String response;
         try {
             log.info("Begin validate request");
             validateRequest(paymentRequest, bindingResult);
         } catch (RequestException e) {
-            log.info(" Send request have error code: {}", e.getCode());
+            log.info("Send request have error code: {}", e.getCode());
             return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
                     responseId, "", "");
         }
@@ -86,6 +82,7 @@ public class PaymentServiceImpl implements IPaymentService {
         log.info("Begin publish message to queue with data {} ", paymentRequest);
         Channel channel = null;
         String message;
+        ConvertUtils convertUtils = ConvertUtils.getInstance();
 
         try {
             channel = channelPool.getChannel();
@@ -104,7 +101,7 @@ public class PaymentServiceImpl implements IPaymentService {
             log.info("correlationId with message {} ", corrId);
             //Convert payment request to String to publish message
             //TODO su dung singleton + ten ham
-            message = ConvertUtils.convertObjToString(paymentRequest);
+            message = convertUtils.convertObjToJson(paymentRequest);
             log.info("Send message to queue {} with data: {}", RPC_QUEUE, message);
             //Send request to queue
             channel.basicPublish("", RPC_QUEUE, props, message.getBytes(StandardCharsets.UTF_8));
@@ -150,10 +147,10 @@ public class PaymentServiceImpl implements IPaymentService {
 
         log.info("Ctag {}", ctag);
 
-        String result2;
+        String result;
         try {
-            result2 = response.poll(30, TimeUnit.SECONDS);
-            log.info("Get result from server: {} ", result2);
+            result = response.poll(30, TimeUnit.SECONDS);
+            log.info("Get result from server: {} ", result);
             channel.basicCancel(ctag);
         } catch (Exception e) {
             log.error("Get result from server is time out");
@@ -161,7 +158,7 @@ public class PaymentServiceImpl implements IPaymentService {
         }
 
         log.info("Get result from server success");
-        return result2;
+        return result;
     }
 
     public void validateRequest(PaymentRequest paymentRequest, BindingResult bindingResult) {

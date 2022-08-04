@@ -12,11 +12,13 @@ public class DateTimeUtils {
     public static final DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
     public static boolean isPayDateValid(String time){
+        log.info("Begin check valid of pay date with data {}", time);
         try {
             DateTimeUtils.format.parse(time);
+            log.info("End check --- Pay date is valid ");
             return true;
         } catch (Exception e) {
-            log.info("Pay date have invalid format");
+            log.info("End check --- Pay date is invalid format");
             return false;
         }
     }

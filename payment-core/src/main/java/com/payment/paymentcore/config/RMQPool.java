@@ -47,7 +47,7 @@ public class RMQPool {
             rabbitMQModel.setUserName(properties.getProperty("username"));
             rabbitMQModel.setPassword(properties.getProperty("password"));
             rabbitMQModel.setHost(properties.getProperty("host"));
-            rabbitMQModel.setQueue(properties.getProperty("queue"));
+            //rabbitMQModel.setQueue(properties.getProperty("queue"));
             rabbitMQModel.setPort(Integer.parseInt(properties.getProperty("port")));
             rabbitMQModel.setMaxChannel(Integer.parseInt(properties.getProperty("max_channel")));
             rabbitMQModel.setTimeOut(Integer.parseInt(properties.getProperty("timeout")));

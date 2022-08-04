@@ -4,7 +4,7 @@ import com.payment.paymentcore.DAO.PaymentDAO;
 import com.payment.paymentcore.config.ChannelPool;
 import com.payment.paymentcore.config.RMQPool;
 import com.payment.paymentcore.model.PaymentRequest;
-import com.payment.paymentcore.util.Convert;
+import com.payment.paymentcore.util.ConvertUtils;
 import com.payment.paymentcore.util.ErrorCode;
 import com.payment.paymentcore.util.PaymentException;
 import com.rabbitmq.client.AMQP;
@@ -59,8 +59,11 @@ public class RabbitMQService {
     }
 
     public void consumeAndPublishMessage() {
+
+        ConvertUtils convertUtils = ConvertUtils.getInstance();
         try {
             Channel channel = this.connectToRabbitMQ();
+            log.info("Begin receive message from queue open channel {}", channel);
             log.info("[x] Awaiting RPC requests");
 
 //            Object monitor = new Object();
@@ -71,15 +74,15 @@ public class RabbitMQService {
                         .correlationId(correlationIdFromClient)
                         .build();
 
-                //TODO tim cach khac xu li String
+
                 String responseToClient = null;
                 log.info("getCorrelationId from client: {}", correlationIdFromClient);
                 try {
                     String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
-                    log.info("Receive Message from queue: " + message);
+                    log.info("Message receive from queue: " + message);
 
                     //Convert json data from client to object -> insert into database
-                    PaymentRequest paymentRequest = Convert.convertJsonMessageToObject(message);
+                    PaymentRequest paymentRequest = convertUtils.convertJsonToObj(message);
 
                     //true if execute query success
                     if (paymentDao.addPaymentRequest(paymentRequest)) {
@@ -90,20 +93,20 @@ public class RabbitMQService {
                         log.info("response from partner api: {}", response);
 
                         //Convert response from api partner to JSON string for send response to client
-                        responseToClient = Convert.convertObjToJson(new PaymentException(ErrorCode.REQUEST_SUCCESS,
+                        responseToClient = convertUtils.convertObjToJson(new PaymentException(ErrorCode.REQUEST_SUCCESS,
                                 "Response from partner api:" + response));
 
                     } else {
                         log.info("Insert into DB fail => response to client");
                         //Convert response  & exception from api partner to JSON string for send response to client
-                        responseToClient = Convert.convertObjToJson(new PaymentException(ErrorCode.INSERT_INTO_DB_FAIL,
+                        responseToClient = convertUtils.convertObjToJson(new PaymentException(ErrorCode.INSERT_INTO_DB_FAIL,
                                 "Insert into DB fail"));
                     }
 
                 } catch (PaymentException e) {
                     log.info("Payment exception with error code : {}", e.getCode());
                     //Convert response & exception from api partner to JSON string for send response to client
-                    responseToClient = Convert.convertObjToJson(new PaymentException(e.getCode(),
+                    responseToClient = convertUtils.convertObjToJson(new PaymentException(e.getCode(),
                             errorCode.readErrorDescriptionFile(e.getCode())));
 
                 } finally {
@@ -122,7 +125,7 @@ public class RabbitMQService {
             };
 
 
-            channel.basicConsume(RMQPool.readConfigFile().getQueue(), false, deliverCallback, (consumerTag -> {
+            channel.basicConsume(RPC_QUEUE, false, deliverCallback, (consumerTag -> {
             }));
             //Return channel to pool
             // Wait and be prepared to consume the message from RPC client.

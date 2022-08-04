@@ -9,22 +9,18 @@ import org.springframework.http.ResponseEntity;
 @Slf4j
 public class MessageResponse {
 
-    private ErrorCode errorCode;
-
     public MessageResponse() {
 
     }
 
-    public MessageResponse(ErrorCode errorCode) {
-        this.errorCode = errorCode;
-    }
-
     public ResponseEntity<ResponseObject> bodyResponse(String responseId, String response, String checkSum,
                                                        String addValue) {
+        ErrorCode errorCode = ErrorCode.getInstance();
+        ConvertUtils convertUtils = ConvertUtils.getInstance();
         try {
             if (response != null && !response.isEmpty()) {
                 log.info("Send request success and receive response success with result: {}", response);
-                RequestException requestException = ConvertUtils.convertJsonMessageToObject(response);
+                RequestException requestException = convertUtils.convertJsonToObj(response);
 
                 log.info("----- End request -----");
                 return ResponseEntity.status(HttpStatus.OK).body(

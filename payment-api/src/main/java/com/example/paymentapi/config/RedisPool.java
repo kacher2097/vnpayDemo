@@ -61,10 +61,12 @@ public class RedisPool {
 
         } catch (IOException e) {
             log.error("IOException read file redis config file error {}", e);
+            throw new RequestException(ErrorCode.READ_CONFIG_REDIS_FAIL);
         } finally {
             // close objects
             try {
                 if (inputStream != null) {
+                    log.info("Close input stream of read redis config file ");
                     inputStream.close();
                 }
             } catch (IOException e) {
@@ -80,7 +82,7 @@ public class RedisPool {
         try {
             return pool.getResource();
         } catch (Exception e){
-            log.info("Get resource Redis fail");
+            log.error("Get resource Redis fail {}", e);
             throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
         }
 
