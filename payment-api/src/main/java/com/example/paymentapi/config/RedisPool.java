@@ -3,6 +3,7 @@ package com.example.paymentapi.config;
 import com.example.paymentapi.exception.RequestException;
 import com.example.paymentapi.model.RedisPropertiesObject;
 import com.example.paymentapi.util.ErrorCode;
+import com.example.paymentapi.util.PropertiesUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.Jedis;
@@ -39,7 +40,7 @@ public class RedisPool {
 
     public static RedisPropertiesObject readConfigFile(){
         final String FILE_CONFIG = "\\config\\redis-config.properties";
-        Properties properties = new Properties();
+        Properties properties = PropertiesUtils.getInstance();
         InputStream inputStream = null;
         RedisPropertiesObject redisPropertiesObject = new RedisPropertiesObject();
         try {
@@ -72,6 +73,8 @@ public class RedisPool {
         }
         return redisPropertiesObject;
     }
+
+
 
     public Jedis getJedis() {
         try {

@@ -1,32 +1,31 @@
 package com.example.paymentapi.config;
 
-import com.example.paymentapi.exception.RequestException;
 import com.example.paymentapi.model.RabbitMQProperties;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.example.paymentapi.util.PropertiesUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeoutException;
 
+@Slf4j
 @Configuration
 public class RabbitMQConfig {
     private static final String FILE_CONFIG = "\\config\\rabbitmq-config.properties";
-    private Connection connection;
-    private List<Channel> channels;
 
-    public RabbitMQConfig() throws IOException, TimeoutException {
-        //awakeConnection();
+    private static RabbitMQConfig instance;
+    public static RabbitMQConfig getInstance(){
+        if(instance == null){
+            instance = new RabbitMQConfig();
+        }
+        return instance;
     }
 
     public RabbitMQProperties readConfigFile(){
-        Properties properties = new Properties();
+        log.info("Begin read config rabbitmq file ");
+        Properties properties = PropertiesUtils.getInstance();
         InputStream inputStream = null;
         RabbitMQProperties rabbitMQProperties = new RabbitMQProperties();
         try {
@@ -44,78 +43,22 @@ public class RabbitMQConfig {
             rabbitMQProperties.setPort(Integer.parseInt(properties.getProperty("port")));
             rabbitMQProperties.setMaxChannel(Integer.parseInt(properties.getProperty("max_channel")));
             rabbitMQProperties.setTimeOut(Integer.parseInt(properties.getProperty("timeout")));
-
+            log.info("Get properties success");
         } catch (IOException e) {
+            log.error("Read file config fail {}", e);
             e.printStackTrace();
         } finally {
             // close objects
             try {
                 if (inputStream != null) {
+                    log.info("Close input stream");
                     inputStream.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+               log.error("Close input stream fail");
             }
         }
         return rabbitMQProperties;
     }
 
-    private void awakeConnection() throws IOException, TimeoutException {
-        RabbitMQProperties rabbitMQProperties = readConfigFile();
-        com.rabbitmq.client.ConnectionFactory factory = new ConnectionFactory();
-        factory.setUsername(rabbitMQProperties.getUserName());
-        factory.setPassword(rabbitMQProperties.getPassword());
-        factory.setHost(rabbitMQProperties.getHost());
-        factory.setPort(rabbitMQProperties.getPort());
-
-        connection = factory.newConnection();
-
-        if (channels != null) {
-            channels.clear();
-
-        } else {
-            channels = new ArrayList<>();
-        }
-        for (int i = 0; i < readConfigFile().getMaxChannel() ; i++) {
-            spawnChannel();
-        }
-    }
-
-    private void spawnChannel() throws IOException {
-        Channel channel = connection.createChannel();
-        channel.queueDeclare(readConfigFile().getQueue(), true, false, false, null);
-        channels.add(channel);
-
-    }
-
-    public Channel getChannel() throws IOException, TimeoutException {
-        if (this.connection.isOpen()) {
-            while (channels.size() == 0) {
-                try {
-                    channels.wait(readConfigFile().getTimeOut());
-
-                } catch (InterruptedException e) {
-                    throw new RequestException("29", "Get channel is time out");
-                }
-                if (channels.size() == 0) {
-                    spawnChannel();
-                }
-            }
-            return channels.remove(0);
-
-        } else {
-            awakeConnection();
-            return getChannel();
-        }
-    }
-
-    public void releaseChannel(Channel channel) throws IOException {
-        if (channel.isOpen()) {
-            channels.add(channel);
-            channels.notifyAll();
-
-        } else if (channels.size() < readConfigFile().getMaxChannel()) {
-            spawnChannel();
-        }
-    }
 }

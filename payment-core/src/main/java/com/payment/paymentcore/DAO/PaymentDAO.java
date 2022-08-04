@@ -28,13 +28,13 @@ public class PaymentDAO {
 
     public boolean addPaymentRequest(PaymentRequest paymentRequest) {
         log.info("Begin add payment request into database with data: {}", paymentRequest);
-        String sqlAdd = SQLQuery.addRequestQuery();
+//        String sqlAdd = SQLQuery.addRequestQuery();
         Connection conn = null;
         PreparedStatement prepareStatement = null;
         try {
             conn = HikariCPResource.getConnection();
             conn.setAutoCommit(false);
-            prepareStatement = conn.prepareStatement(sqlAdd);
+            prepareStatement = conn.prepareStatement(SQLQuery.addRequestQuery());
 
             prepareStatement.setString(1, paymentRequest.getApiID());
             prepareStatement.setString(2, paymentRequest.getTokenKey());
@@ -71,6 +71,7 @@ public class PaymentDAO {
         } finally {
             try {
                 if (prepareStatement != null) {
+                    log.info("Close Prepared statement");
                     prepareStatement.close();
                 }
             } catch (SQLException e) {
@@ -79,6 +80,7 @@ public class PaymentDAO {
             } finally {
                 try {
                     if(conn != null){
+                        log.info("Close connection");
                         conn.close();
                     }
                 } catch (SQLException e) {

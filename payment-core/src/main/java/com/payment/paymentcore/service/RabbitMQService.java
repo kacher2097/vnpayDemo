@@ -18,8 +18,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
 
 public class RabbitMQService {
+
+    private static final String RPC_QUEUE = "queue.rpc";
     private static RabbitMQService instance;
     private static final Logger log = LogManager.getLogger(RabbitMQService.class);
+
 
     public static RabbitMQService getInstance() throws IOException, TimeoutException {
         if (instance == null) {
@@ -42,11 +45,11 @@ public class RabbitMQService {
     }
 
     public Channel connectToRabbitMQ() {
-        String rpcQueue = RMQPool.readConfigFile().getQueue();
+//        String rpcQueue = RMQPool.readConfigFile().getQueue();
         try {
             Channel channel = channelPool.getChannel();
 //            Channel channel = rmqPool.getChannel();
-            channel.queueDeclare(rpcQueue, true, false, false, null);
+            channel.queueDeclare(RPC_QUEUE, true, false, false, null);
             channel.basicQos(1);
             return channel;
         } catch (Exception e) {

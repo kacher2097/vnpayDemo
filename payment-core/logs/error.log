@@ -139,3 +139,22 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81) ~[HikariCP-3.4.0.jar:?]
 	at com.payment.paymentcore.config.HikariCPResource.<clinit>(HikariCPResource.java:26) ~[classes/:?]
 	... 8 more
+[ERROR] 04-08-2022 10:18:21 [main] RabbitMQService - Create channel fail
+[ERROR] 04-08-2022 10:18:21 [main] RabbitMQService - Return channel to pool fail
+[ERROR] 04-08-2022 10:18:21 [main] RabbitMQService - Have exception on RabbitMQ {} 
+com.payment.paymentcore.util.PaymentException: null
+	at com.payment.paymentcore.service.RabbitMQService.connectToRabbitMQ(RabbitMQService.java:64) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.consumeAndPublishMessage(RabbitMQService.java:71) ~[classes/:?]
+	at com.payment.paymentcore.Main.main(Main.java:25) ~[classes/:?]
+[ERROR] 04-08-2022 10:23:31 [main] RabbitMQService - Create channel fail
+[ERROR] 04-08-2022 10:23:31 [main] RabbitMQService - Have exception on RabbitMQ {} 
+com.payment.paymentcore.util.PaymentException: null
+	at com.payment.paymentcore.service.RabbitMQService.connectToRabbitMQ(RabbitMQService.java:55) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.consumeAndPublishMessage(RabbitMQService.java:61) ~[classes/:?]
+	at com.payment.paymentcore.Main.main(Main.java:25) ~[classes/:?]
+[ERROR] 04-08-2022 10:24:14 [main] RabbitMQService - Create channel fail
+[ERROR] 04-08-2022 10:24:14 [main] RabbitMQService - Have exception on RabbitMQ {} 
+com.payment.paymentcore.util.PaymentException: null
+	at com.payment.paymentcore.service.RabbitMQService.connectToRabbitMQ(RabbitMQService.java:55) ~[classes/:?]
+	at com.payment.paymentcore.service.RabbitMQService.consumeAndPublishMessage(RabbitMQService.java:61) ~[classes/:?]
+	at com.payment.paymentcore.Main.main(Main.java:25) ~[classes/:?]

@@ -12,7 +12,7 @@ import org.apache.commons.pool2.impl.DefaultPooledObject;
 
 @Slf4j
 public class ChannelFactory implements PooledObjectFactory<Channel> {
-    private final Connection connection;
+    private static Connection connection;
 
     public ChannelFactory() {
         this(null);
@@ -22,23 +22,23 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
         try {
             ConnectionFactory factory = new ConnectionFactory();
 //            factory.setUsername("guest");
+            factory.setAutomaticRecoveryEnabled(true);
             factory.setHost("localhost");
             factory.setPort(5672);
             log.info("Create Connection {}", factory);
-
-            //TODO khong su dung != null + logic code xu ly == null ()
-            if (uri != null) {
-                factory.setUri(uri);
-            }
-
-            //TODO mat connection neu bi ngat ket noi -> khoi tao lai connection
             connection = factory.newConnection();
             log.info("Create Connection {}", connection);
         } catch (Exception e) {
+
             log.error("Exception when create connection factory {}", e);
             throw new PaymentException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         }
     }
+    /**
+     * 44 * Initialize a connection factory
+     * 45 * @param rabbitMqName
+     * 46
+     */
 
     public PooledObject<Channel> makeObject() throws Exception {
         return new DefaultPooledObject<>(connection.createChannel());

@@ -17,7 +17,7 @@ public class ChannelPool {
 
     static {
         defaultConfig = new GenericObjectPoolConfig();
-        defaultConfig.setMaxTotal(10);
+        defaultConfig.setMaxTotal(13);
         defaultConfig.setMinIdle(4);
         defaultConfig.setMaxIdle(9);
     }

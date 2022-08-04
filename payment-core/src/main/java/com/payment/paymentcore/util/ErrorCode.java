@@ -30,6 +30,7 @@ public class ErrorCode {
 
     public static final String DESTROY_CHANNEL_RABBITMQ_FAIL = "34";
     public static final String CREATE_CHANNEL_RABBITMQ_FAIL = "35";
+    public static final String CLOSE_CHANNEL_FAIL = "36";
     public static final String READ_DESCRIPTION_FAIL = "40";
 
     public static final String CONNECT_DB_FAIL = "53";
@@ -58,11 +59,12 @@ public class ErrorCode {
             // close objects
             try {
                 if (inputStream != null) {
+                    log.info("Close input stream error code file");
                     inputStream.close();
                 }
             } catch (IOException e) {
-                log.error("Close input stream fail {} ", e);
-                throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL, "Close input stream fail");
+                log.error("Close input stream error code file fail {} ", e);
+                throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL);
             }
         }
     }

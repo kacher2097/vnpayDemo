@@ -21,6 +21,7 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
     public ChannelFactory(String uri) {
         try {
             ConnectionFactory factory = new ConnectionFactory();
+            factory.setAutomaticRecoveryEnabled(true);
             //factory.setUsername("guest");
             factory.setHost("localhost");
             factory.setPort(5672);
@@ -34,6 +35,16 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
             log.error("Get connect to rabbitMQ fail");
             throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         }
+    }
+
+    public static void reConnect() {
+        log.error("Reconnect after waiting 5s");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+        }
+        //Get connection
+//        initClient();
     }
 
     public PooledObject<Channel> makeObject() throws Exception {

@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.payment.paymentcore.model.PaymentRequest;
 
 public class Convert {
-    private static final Gson gson = new Gson();
+    private static final Gson gson = GsonUtils.getInstance();
 
     public static String convertObjToJson(Object clsObj) {
         //convert object to string json

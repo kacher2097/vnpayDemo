@@ -1,7 +1,6 @@
 package com.example.paymentapi.service.impl;
 
 import com.example.paymentapi.config.ChannelPool;
-import com.example.paymentapi.config.RabbitMQConfig;
 import com.example.paymentapi.config.RedisPool;
 import com.example.paymentapi.config.YAMLConfig;
 import com.example.paymentapi.exception.RequestException;
@@ -36,21 +35,21 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class PaymentServiceImpl implements IPaymentService {
 
+    private static final String RPC_QUEUE = "queue.rpc";
+
     private final YAMLConfig yamlConfig;
     private final Gson gson;
-    private final RabbitMQConfig rabbitMQConfig;
     private final RedisPool redisPool;
     private final ErrorCode errorCode;
     private final ChannelPool channelPool;
 
 
     //Constructor Injection
-    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool, RabbitMQConfig rabbitMQConfig,
+    public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool,
                               ErrorCode errorCode, ChannelPool channelPool) {
         this.yamlConfig = yamlConfig;
         this.gson = gson;
         this.redisPool = redisPool;
-        this.rabbitMQConfig = rabbitMQConfig;
         this.errorCode = errorCode;
         this.channelPool = channelPool;
     }
@@ -60,7 +59,7 @@ public class PaymentServiceImpl implements IPaymentService {
                                                       String responseId) {
 
         log.info("Begin send request with data: {}", paymentRequest);
-        String response = null;
+        String response;
         try {
             log.info("Begin validate request");
             validateRequest(paymentRequest, bindingResult);
@@ -73,41 +72,25 @@ public class PaymentServiceImpl implements IPaymentService {
         try {
             log.info("Request is valid => send message to RabbitMQ");
             response = sendMessage(paymentRequest);
-        } catch (Exception e){
+        } catch (RequestException e) {
             log.error("Got exception {}", e.getMessage());
-            return new MessageResponse().bodyErrorResponse(ErrorCode.CONNECT_RABBITMQ_FAIL, errorCode.
-                    getDescription(ErrorCode.CONNECT_RABBITMQ_FAIL), responseId, "", "");
+            return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
+                    responseId, "", "");
         }
 
+        log.info("Receive message from queue success");
         return new MessageResponse().bodyResponse(responseId, response, "", "");
-//        try {
-//            log.info("Begin validate request");
-//            validateRequest(paymentRequest, bindingResult);
-//            log.info("Request is valid => send message to RabbitMQ");
-//            String response = sendMessage(paymentRequest);
-//
-//            return new MessageResponse().bodyResponse(responseId, response, "", "");
-//        } catch (RequestException e) {
-//            log.info(" Send request have error code: {}", e.getCode());
-//            return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
-//                    responseId, "", "");
-//        } catch (Exception e) {
-//            log.error("Got exception {}", e.getMessage());
-//            return new MessageResponse().bodyErrorResponse(ErrorCode.CONNECT_RABBITMQ_FAIL, errorCode.
-//                    getDescription(ErrorCode.CONNECT_RABBITMQ_FAIL), responseId, "", "");
-//        }
-
     }
 
     public String sendMessage(PaymentRequest paymentRequest) {
         log.info("Begin publish message to queue with data {} ", paymentRequest);
-
         Channel channel = null;
         String message;
+
         try {
             channel = channelPool.getChannel();
-            //TODO doc 1 lan lay config
-            String rpcQueue = rabbitMQConfig.readConfigFile().getQueue();
+
+//            String rpcQueue = config.readConfigFile().getQueue();
             final String corrId = UUID.randomUUID().toString();
 
             //TODO tao 1 queue rieng de nhan tin
@@ -122,24 +105,23 @@ public class PaymentServiceImpl implements IPaymentService {
             //Convert payment request to String to publish message
             //TODO su dung singleton + ten ham
             message = ConvertUtils.convertObjToString(paymentRequest);
-            log.info("Send message to queue {} with data: {}", rpcQueue, message);
+            log.info("Send message to queue {} with data: {}", RPC_QUEUE, message);
             //Send request to queue
-            channel.basicPublish("", rpcQueue, props, message.getBytes(StandardCharsets.UTF_8));
+            channel.basicPublish("", RPC_QUEUE, props, message.getBytes(StandardCharsets.UTF_8));
 
             log.info("End send message to server => wait result response from server");
             return receiveMessage(corrId, replyQueueName, channel);
         } catch (Exception e) {
-            log.error("Connect to RabbitMQ fail!");
+            log.error("Connect to RabbitMQ fail! {}", e);
             throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         } finally {
             try {
-                if (channelPool != null) {
+                if (channel != null) {
                     log.info("Return channel to pool");
                     channelPool.returnChannel(channel);
                 }
             } catch (Exception e) {
                 log.error("Return channel to pool fail");
-                throw new RequestException(ErrorCode.CLOSE_CHANNEL_FAIL);
             }
 
         }

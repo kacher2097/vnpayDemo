@@ -63,7 +63,6 @@ public class ErrorCode {
                 }
             } catch (IOException e) {
                 log.error("Close input stream fail");
-                throw new RequestException(ErrorCode.CLOSE_DESCRIPTION_FILE_FAIL);
             }
         }
     }

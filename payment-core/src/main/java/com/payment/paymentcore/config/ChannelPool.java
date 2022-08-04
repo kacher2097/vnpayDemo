@@ -25,9 +25,9 @@ public class ChannelPool implements Cloneable{
 
     static {
         defaultConfig = new GenericObjectPoolConfig();
-        defaultConfig.setMaxTotal(10);
+        defaultConfig.setMaxTotal(13);
+        defaultConfig.setMinIdle(4);
         defaultConfig.setMaxIdle(9);
-        defaultConfig.setMinIdle(3);
     }
 
     public ChannelPool() {
@@ -37,32 +37,38 @@ public class ChannelPool implements Cloneable{
     public ChannelPool(final GenericObjectPoolConfig poolConfig, ChannelFactory factory) {
         if (this.internalPool != null) {
             try {
+                log.info("Close pool");
                 closeInternalPool();
             } catch (Exception e) {
-                log.error("Exception internalPool {}", e);
+                log.info("Error closeInternalPool");
             }
         }
-
-        this.internalPool = new GenericObjectPool<Channel>(factory, poolConfig);
+        log.info("Generate new pool ");
+        this.internalPool = new GenericObjectPool<>(factory, poolConfig);
     }
 
     private void closeInternalPool() {
         try {
+            log.info("Close pool");
             internalPool.close();
         } catch (Exception e) {
-            throw new PaymentException("71", "Could not destroy the pool on server");
+            log.error("Close pool fail");
+            throw new PaymentException("61", "Could not destroy the pool");
         }
     }
 
     public void returnChannel(Channel channel) {
         try {
             if (channel.isOpen()) {
+                log.info(" Close channel ");
                 internalPool.returnObject(channel);
             } else {
+                log.info("Invalid channel");
                 internalPool.invalidateObject(channel);
             }
         } catch (Exception e) {
-            throw new PaymentException("72", "Could not return the resource to the pool on server");
+            log.error("Close channel fail!");
+            throw new PaymentException("62", "Could not return the resource to the pool");
         }
     }
 
@@ -71,12 +77,12 @@ public class ChannelPool implements Cloneable{
             return internalPool.borrowObject();
         } catch (NoSuchElementException nse) {
             if (null == nse.getCause()) { // The exception was caused by an exhausted pool
-                throw new PaymentException("73", "Could not get a resource since the pool is exhausted on server");
+                throw new PaymentException("63", "Could not get a resource since the pool is exhausted");
             }
             // Otherwise, the exception was caused by the implemented activateObject() or ValidateObject()
-            throw new PaymentException("74", "Could not get a resource from the pool on server");
+            throw new PaymentException("64", "Could not get a resource from the pool");
         } catch (Exception e) {
-            throw new PaymentException("75", "Could not get a resource from the pool on server");
+            throw new PaymentException("65", "Could not get a resource from the pool");
         }
     }
 }
