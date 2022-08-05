@@ -29,22 +29,22 @@ public class ChannelPool {
     public ChannelPool(final GenericObjectPoolConfig poolConfig, ChannelFactory factory) {
         if (this.internalPool != null) {
             try {
-                log.info("Close pool");
+                log.info("Close pool rabbitmq");
                 closeInternalPool();
             } catch (Exception e) {
-                log.info("Error closeInternalPool");
+                log.info("Error closeInternalPool rabbitmq");
             }
         }
-        log.info("Generate new pool ");
+        log.info("Generate new pool rabbitmq");
         this.internalPool = new GenericObjectPool<>(factory, poolConfig);
     }
 
     private void closeInternalPool() {
         try {
-            log.info("Close pool");
+            log.info("Close pool rabbitmq");
             internalPool.close();
         } catch (Exception e) {
-            log.error("Close pool fail");
+            log.error("Close pool rabbitmq fail");
             throw new RequestException("61", "Could not destroy the pool");
         }
     }
@@ -52,28 +52,32 @@ public class ChannelPool {
     public void returnChannel(Channel channel) {
         try {
             if (channel.isOpen()) {
-                log.info(" Close channel ");
+                log.info(" Close channel rabbitmq {}" , channel);
                 internalPool.returnObject(channel);
             } else {
-                log.info("Invalid channel");
+                log.info("Invalid channel rabbitmq");
                 internalPool.invalidateObject(channel);
             }
         } catch (Exception e) {
-            log.error("Close channel fail!");
+            log.error("Close channel rabbitmq fail!");
             throw new RequestException("62", "Could not return the resource to the pool");
         }
     }
 
     public Channel getChannel() {
         try {
+            log.info("Get channel() ");
             return internalPool.borrowObject();
         } catch (NoSuchElementException nse) {
             if (null == nse.getCause()) { // The exception was caused by an exhausted pool
+                log.error("Could not get a resource since the pool is exhausted {}", nse);
                 throw new RequestException("63", "Could not get a resource since the pool is exhausted");
             }
             // Otherwise, the exception was caused by the implemented activateObject() or ValidateObject()
+            log.error("Could not get a resource from the pool");
             throw new RequestException("64", "Could not get a resource from the pool");
         } catch (Exception e) {
+            log.error("Could not get a resource from the pool {}", e);
             throw new RequestException("65", "Could not get a resource from the pool");
         }
     }

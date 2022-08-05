@@ -1,6 +1,7 @@
 package com.example.paymentapi.config;
 
 import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.util.ConnectionFRMQ;
 import com.example.paymentapi.util.ErrorCode;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -20,16 +21,14 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
 
     public ChannelFactory(String uri) {
         try {
-            ConnectionFactory factory = new ConnectionFactory();
+            RabbitMQConfig rabbitMQConfig = RabbitMQConfig.getInstance();
+
+            ConnectionFactory factory = ConnectionFRMQ.getInstance();
             factory.setAutomaticRecoveryEnabled(true);
             //factory.setUsername("guest");
-            factory.setHost("localhost");
-            factory.setPort(5672);
-            if (uri != null) {
-                factory.setUri(uri);
-            }
+            factory.setHost(rabbitMQConfig.readConfigFile().getHost());
+            factory.setPort(rabbitMQConfig.readConfigFile().getPort());
 
-            //TODO dang tao nguoc channel -> connection can sua lai
             connection = factory.newConnection();
         } catch (Exception e) {
             log.error("Get connect to rabbitMQ fail");
@@ -38,10 +37,11 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
     }
 
     public static void reConnect() {
-        log.error("Reconnect after waiting 5s");
+        log.info("Reconnect after waiting 5s");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
+            log.error("Have exception when waiting {}", e);
         }
         //Get connection
 //        initClient();

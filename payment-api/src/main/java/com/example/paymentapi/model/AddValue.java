@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Data
-public class AddValue implements Serializable {
+public class AddValue {
 
     @NotNull
     @NotEmpty

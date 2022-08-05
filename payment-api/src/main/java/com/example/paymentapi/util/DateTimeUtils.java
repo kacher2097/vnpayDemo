@@ -11,7 +11,16 @@ public class DateTimeUtils {
 //    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
     public static final DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
-    public static boolean isPayDateValid(String time){
+    private static DateTimeUtils instance;
+    private DateTimeUtils(){}
+    public static DateTimeUtils getInstance(){
+        if(instance == null){
+            instance = new DateTimeUtils();
+        }
+        return instance;
+    }
+
+    public boolean isPayDateValid(String time){
         log.info("Begin check valid of pay date with data {}", time);
         try {
             DateTimeUtils.format.parse(time);
@@ -23,7 +32,7 @@ public class DateTimeUtils {
         }
     }
 
-    public static long getTimeExpire() {
+    public long getTimeExpire() {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime endOfDate = now.toLocalDate().atTime(LocalTime.MAX);
         return ChronoUnit.SECONDS.between(now, endOfDate);
@@ -33,8 +42,8 @@ public class DateTimeUtils {
     public long getTimeExpire(String time) {
         LocalDateTime dateTime = LocalDateTime.parse(time, format);
 
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime endOfDate = now.toLocalDate().atTime(LocalTime.MAX);
-        return ChronoUnit.SECONDS.between(now, endOfDate);
+        //LocalDateTime now = LocalDateTime.now();
+        LocalDateTime endOfDate = dateTime.toLocalDate().atTime(LocalTime.MAX);
+        return ChronoUnit.SECONDS.between(dateTime, endOfDate);
     }
 }

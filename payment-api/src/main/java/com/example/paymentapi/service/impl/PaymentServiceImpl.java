@@ -41,6 +41,7 @@ public class PaymentServiceImpl implements IPaymentService {
     private final RedisPool redisPool;
     private final ChannelPool channelPool;
 
+    private final DateTimeUtils dateTimeUtils = DateTimeUtils.getInstance();
 
     //Constructor Injection
     public PaymentServiceImpl(YAMLConfig yamlConfig, Gson gson, RedisPool redisPool, ChannelPool channelPool) {
@@ -69,7 +70,7 @@ public class PaymentServiceImpl implements IPaymentService {
             log.info("Request is valid => send message to RabbitMQ");
             response = sendMessage(paymentRequest);
         } catch (RequestException e) {
-            log.error("Got exception {}", e.getMessage());
+            log.error("Got exception when send message {}", e.getMessage());
             return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
                     responseId, "", "");
         }
@@ -92,6 +93,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
             //TODO tao 1 queue rieng de nhan tin
             String replyQueueName = channel.queueDeclare().getQueue();
+            log.info("Create a queue temp {} ", replyQueueName);
             AMQP.BasicProperties props = new AMQP.BasicProperties
                     .Builder()
                     .correlationId(corrId)
@@ -100,7 +102,6 @@ public class PaymentServiceImpl implements IPaymentService {
 
             log.info("correlationId with message {} ", corrId);
             //Convert payment request to String to publish message
-            //TODO su dung singleton + ten ham
             message = convertUtils.convertObjToJson(paymentRequest);
             log.info("Send message to queue {} with data: {}", RPC_QUEUE, message);
             //Send request to queue
@@ -157,11 +158,13 @@ public class PaymentServiceImpl implements IPaymentService {
             throw new RequestException(ErrorCode.GET_RESULT_TIME_OUT);
         }
 
-        log.info("Get result from server success");
+        log.info("End Receive message from server success");
         return result;
     }
 
     public void validateRequest(PaymentRequest paymentRequest, BindingResult bindingResult) {
+
+
         if (bindingResult.hasErrors()) {
             log.error("One or more field request is empty or null");
             throw new RequestException(ErrorCode.NULL_REQUEST);
@@ -173,7 +176,7 @@ public class PaymentServiceImpl implements IPaymentService {
         }
 
         //True if pay date have right format
-        if (!DateTimeUtils.isPayDateValid(paymentRequest.getPayDate())) {
+        if (!dateTimeUtils.isPayDateValid(paymentRequest.getPayDate())) {
             throw new RequestException(ErrorCode.INVALID_DATE_FORMAT);
         }
 
@@ -213,10 +216,10 @@ public class PaymentServiceImpl implements IPaymentService {
             }
 
             log.info("Token key can use on day");
-            log.info("Setnx to redis with data: {}", jsonValue);
 
             jedis.setnx(tokenKey, jsonValue);
-            jedis.expire(tokenKey, DateTimeUtils.getTimeExpire());
+
+            jedis.expire(tokenKey, dateTimeUtils.getTimeExpire());
 
             log.info("End check Token Key success");
             return true;
@@ -227,8 +230,10 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     public boolean checkValidAmount(PaymentRequest paymentRequest) {
-        log.info("Begin check valid amount");
-        return paymentRequest.getRealAmount() <= paymentRequest.getDebitAmount();
+        double realAmount = paymentRequest.getRealAmount();
+        double debitAmount = paymentRequest.getDebitAmount();
+        log.info("Begin check valid amount with real amount value {} and debit amount value {} ", realAmount, debitAmount);
+        return  realAmount <= debitAmount;
     }
 
     public void checkValidPromotionCode(PaymentRequest paymentRequest) {
@@ -257,10 +262,10 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     public StringBuilder getStringToHash(PaymentRequest paymentRequest, String privateKey) {
-        log.info("Begin getStringToHash with data PaymentRequest {}", paymentRequest);
+        log.info("Begin getStringToHash with data PaymentRequest {} and private key value [{}]", paymentRequest, privateKey);
         StringBuilder stringBuilder = new StringBuilder();
-        log.info("Private key: {}", privateKey);
-        log.info("Append to String to HASH");
+        log.info("Append payment request and private key to HASH");
+
         stringBuilder.append(paymentRequest.getBankCode())
                 .append(paymentRequest.getMobile())
                 .append(paymentRequest.getAccountNo())
@@ -270,6 +275,7 @@ public class PaymentServiceImpl implements IPaymentService {
                 .append(paymentRequest.getTraceTransfer())
                 .append(paymentRequest.getMessageType())
                 .append(privateKey);
+
         log.info("End getStringToHash success");
         return stringBuilder;
     }

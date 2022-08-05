@@ -43,19 +43,19 @@ public class RabbitMQConfig {
             rabbitMQProperties.setPort(Integer.parseInt(properties.getProperty("port")));
             rabbitMQProperties.setMaxChannel(Integer.parseInt(properties.getProperty("max_channel")));
             rabbitMQProperties.setTimeOut(Integer.parseInt(properties.getProperty("timeout")));
-            log.info("Get properties success");
+            log.info("Get properties rabbitmq config success");
         } catch (IOException e) {
-            log.error("Read file config fail {}", e);
+            log.error("Read file rabbitmq config fail {}", e);
             e.printStackTrace();
         } finally {
             // close objects
             try {
                 if (inputStream != null) {
-                    log.info("Close input stream");
+                    log.info("Close input stream of rabbitmq config file");
                     inputStream.close();
                 }
             } catch (IOException e) {
-               log.error("Close input stream fail");
+               log.error("Close input stream of rabbitmq config file fail");
             }
         }
         return rabbitMQProperties;

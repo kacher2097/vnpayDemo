@@ -5,9 +5,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-
+@Slf4j
 public class ConvertUtils {
 
     private static ConvertUtils instance;
@@ -19,8 +20,13 @@ public class ConvertUtils {
         return instance;
     }
 
-    public static String convertObjToJson(Object clsObj) {
+    private ConvertUtils(){
+
+    }
+
+    public String convertObjToJson(Object clsObj) {
         //convert object  to string json
+        log.info("Return Object to Json");
         return new Gson().toJson(clsObj);
     }
 
@@ -28,7 +34,7 @@ public class ConvertUtils {
     public RequestException convertJsonToObj(String messageResponse) throws IOException {
         //TODO han che khoi tao moi
         ObjectMapper objectMapper = new ObjectMapper();
-
+        log.info("Begin convert message response to object, message data {} ", messageResponse);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         objectMapper.readValue(messageResponse, RequestException.class);
         JsonNode jsonNodeRoot = objectMapper.readTree(messageResponse);
@@ -37,7 +43,7 @@ public class ConvertUtils {
 
         String code = jsonCode.asText();
         String message = jsonMessage.asText();
-
+        log.info("End convert and get code [{}], message [{}]", code, message);
         return new RequestException(code, message);
 
     }

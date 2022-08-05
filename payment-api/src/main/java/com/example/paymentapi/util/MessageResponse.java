@@ -22,19 +22,19 @@ public class MessageResponse {
                 log.info("Send request success and receive response success with result: {}", response);
                 RequestException requestException = convertUtils.convertJsonToObj(response);
 
-                log.info("----- End request -----");
+                log.info("----- End request success -----");
                 return ResponseEntity.status(HttpStatus.OK).body(
                         new ResponseObject(requestException.getCode(), requestException.getMessage()
                                 , responseId, checkSum, addValue));
             } else {
-                log.info("Response from server is null");
+                log.info("------ End send request ------ Response from server is null");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                         new ResponseObject(ErrorCode.NULL_RESPONSE, errorCode.getDescription(ErrorCode.NULL_RESPONSE)
                                 , responseId, checkSum, addValue)
                 );
             }
         } catch (Exception e) {
-            log.info("The system is maintenance");
+            log.info("------ End send request ------ The system is maintenance");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                     new ResponseObject(ErrorCode.SYSTEM_MAINTENANCE,
                             errorCode.getDescription(ErrorCode.SYSTEM_MAINTENANCE)

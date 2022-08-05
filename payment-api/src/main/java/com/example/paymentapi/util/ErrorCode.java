@@ -40,8 +40,13 @@ public class ErrorCode {
     private static final String FILE_CONFIG = "\\config\\error-description.properties";
 
     private static ErrorCode instance;
-    public static ErrorCode getInstance(){
-        if(instance == null){
+
+    private ErrorCode() {
+
+    }
+
+    public static ErrorCode getInstance() {
+        if (instance == null) {
             instance = new ErrorCode();
         }
         return instance;
@@ -54,13 +59,15 @@ public class ErrorCode {
         try {
             String currentDir = System.getProperty("user.dir");
             inputStream = new FileInputStream(currentDir + FILE_CONFIG);
-
+            if(inputStream == null){
+                log.error("Cant find description code file");
+                throw new RequestException(ErrorCode.READ_DESCRIPTION_FAIL, "File description code not found on client");
+            }
             // load properties from file
             properties.load(inputStream);
 
             log.info("End get description error code success");
             return properties.getProperty(code);
-
         } catch (IOException e) {
             log.error("IOException read description error code file {}", e);
             throw new RequestException(ErrorCode.READ_DESCRIPTION_FAIL, "Read description error code file fail");
@@ -68,11 +75,11 @@ public class ErrorCode {
             // close objects
             try {
                 if (inputStream != null) {
-                    log.info("Close input stream");
+                    log.info("Close input stream description error code file");
                     inputStream.close();
                 }
             } catch (IOException e) {
-                log.error("Close input stream fail");
+                log.error("Close input stream description error code fail");
             }
         }
     }

@@ -1033,3 +1033,234 @@ com.payment.paymentcore.model.PaymentRequest: null
 [INFO ] 04-08-2022 11:18:00 [pool-2-thread-5] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
 [INFO ] 04-08-2022 11:18:00 [pool-2-thread-5] RabbitMQService - ----- End publish response to client -----
 [INFO ] 04-08-2022 11:22:41 [main] RabbitMQService - [x] Awaiting RPC requests
+[INFO ] 05-08-2022 08:31:55 [main] RabbitMQService - Begin receive message from queue open channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+[INFO ] 05-08-2022 08:31:55 [main] RabbitMQService - [x] Awaiting RPC requests
+[INFO ] 05-08-2022 08:32:15 [pool-2-thread-4] RabbitMQService - getCorrelationId from client: 660b09dd-1849-4bbc-8f3b-233cf3db659e
+[INFO ] 05-08-2022 08:32:15 [pool-2-thread-4] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"5643455689cd9lccd90dfo","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 08:32:15 [pool-2-thread-4] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=5643455689cd9lccd90dfo, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 08:32:16 [pool-2-thread-4] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 08:32:16 [pool-2-thread-4] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 08:32:16 [pool-2-thread-4] RabbitMQService - Close connection
+[INFO ] 05-08-2022 08:32:16 [pool-2-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 08:32:16 [pool-2-thread-4] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 08:32:16 [pool-2-thread-4] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 08:32:17 [pool-2-thread-4] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 08:32:17 [pool-2-thread-4] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 08:32:17 [pool-2-thread-4] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 08:32:17 [pool-2-thread-4] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:20:01 [main] RabbitMQService - Begin receive message from queue open channel AMQChannel(amqp://guest@0:0:0:0:0:0:0:1:5672/,1)
+[INFO ] 05-08-2022 15:20:01 [main] RabbitMQService - [x] Awaiting RPC requests
+[INFO ] 05-08-2022 15:22:03 [pool-2-thread-4] RabbitMQService - getCorrelationId from client: 6e0d848e-5bbd-44a3-96b8-fc27d0980a48
+[INFO ] 05-08-2022 15:22:03 [pool-2-thread-4] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"5643455689cd9lcccd90dfo","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:22:03 [pool-2-thread-4] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=5643455689cd9lcccd90dfo, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:22:04 [pool-2-thread-4] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:22:04 [pool-2-thread-4] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:22:04 [pool-2-thread-4] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:22:04 [pool-2-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:22:04 [pool-2-thread-4] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:22:04 [pool-2-thread-4] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:22:05 [pool-2-thread-4] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:22:05 [pool-2-thread-4] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:22:05 [pool-2-thread-4] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:22:05 [pool-2-thread-4] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - getCorrelationId from client: 9ce7ea53-4f66-4723-bb00-4c5dd6b4c62b
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"5643455689cd9lccccd90dfo","addValue":{"payMethodMMS":1}}
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=5643455689cd9lccccd90dfo, addValue=AddValue(payMethod=null, payMethodMMS=1))
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - Payment exception with error code : 55
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - Publish response to client with data: {"code":"55","message":"SQL exception","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:22:30 [pool-2-thread-5] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - getCorrelationId from client: 75f4fc8d-52c7-45bb-a98e-daaa45f25cc4
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"5643455689cd9lcc;cd90dfo","addValue":{"payMethod":"","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=5643455689cd9lcc;cd90dfo, addValue=AddValue(payMethod=, payMethodMMS=1))
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:25:23 [pool-2-thread-6] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - getCorrelationId from client: 7eec2e1b-b66f-43dc-83b5-997889fbae23
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"5643455689cdk9lcc;cd90dfo","addValue":{"payMethodMMS":1}}
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=5643455689cdk9lcc;cd90dfo, addValue=AddValue(payMethod=null, payMethodMMS=1))
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - Payment exception with error code : 55
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - Publish response to client with data: {"code":"55","message":"SQL exception","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:26:36 [pool-2-thread-7] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - getCorrelationId from client: 4bc36599-8ffb-4e65-91c0-7addc28b03e9
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"5643455689cd9lfcc;cd90dfo","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=5643455689cd9lfcc;cd90dfo, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:41:24 [pool-2-thread-8] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:41:25 [pool-2-thread-8] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:41:25 [pool-2-thread-8] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:41:25 [pool-2-thread-8] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:41:25 [pool-2-thread-8] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - getCorrelationId from client: 5420c3f9-907c-458c-9aa6-4da3f81f5f4c
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"564345c5689cd9lfcc;cd90dfo","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=564345c5689cd9lfcc;cd90dfo, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:41:45 [pool-2-thread-9] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:44:49 [main] RabbitMQService - Begin receive message from queue open channel AMQChannel(amqp://guest@0:0:0:0:0:0:0:1:5672/,1)
+[INFO ] 05-08-2022 15:44:49 [main] RabbitMQService - [x] Awaiting RPC requests
+[INFO ] 05-08-2022 15:47:46 [main] RabbitMQService - Begin receive message from queue open channel AMQChannel(amqp://guest@0:0:0:0:0:0:0:1:5672/,1)
+[INFO ] 05-08-2022 15:47:46 [main] RabbitMQService - [x] Awaiting RPC requests
+[INFO ] 05-08-2022 15:47:46 [pool-2-thread-4] RabbitMQService - getCorrelationId from client: de1b86b3-6c18-4ac8-9afd-e9cd0313e761
+[INFO ] 05-08-2022 15:47:46 [pool-2-thread-4] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"564345c5689cd9lfccc;cd90dfo","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:47:46 [pool-2-thread-4] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=564345c5689cd9lfccc;cd90dfo, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:47:47 [pool-2-thread-4] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:47:47 [pool-2-thread-4] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:47:47 [pool-2-thread-4] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:47:47 [pool-2-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:47:47 [pool-2-thread-4] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:47:47 [pool-2-thread-4] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:47:48 [pool-2-thread-4] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:47:48 [pool-2-thread-4] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:47:48 [pool-2-thread-4] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:47:48 [pool-2-thread-4] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - getCorrelationId from client: dcd162d5-5a4e-4ae7-854d-04ee66b71e9f
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjhfoil245","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjhfoil245, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:48:06 [pool-2-thread-5] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - getCorrelationId from client: 5f0ec68b-2635-4ea3-9ee4-824634c546cb
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjhfoil24f5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjhfoil24f5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:49:14 [pool-2-thread-6] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - getCorrelationId from client: 3b73b412-a6a4-4900-aba8-7ef177efd8fd
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjhfoil2v4f5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjhfoil2v4f5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:50:43 [pool-2-thread-7] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - getCorrelationId from client: 5e780e38-9e6d-4e56-b99c-27b06f26e381
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjhfoil2v4fv5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjhfoil2v4fv5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:50:51 [pool-2-thread-8] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - getCorrelationId from client: 43fa6082-d9fb-427e-9542-2602766db1ae
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjhfoil2v4fvc5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjhfoil2v4fvc5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:51:23 [pool-2-thread-9] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - getCorrelationId from client: 12ac4c2e-5abb-48c9-8292-50d98a7196f0
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjvhfoil2v4fvc5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjvhfoil2v4fvc5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - Close connection
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 15:51:28 [pool-2-thread-10] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 15:51:29 [pool-2-thread-10] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 15:51:29 [pool-2-thread-10] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 15:51:29 [pool-2-thread-10] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 15:51:29 [pool-2-thread-10] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - getCorrelationId from client: ca566e21-94a8-46b7-969f-c35f89a4815c
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjvhfoil2v4fcvc5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjvhfoil2v4fcvc5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - Close connection
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 16:46:28 [pool-2-thread-11] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 16:46:39 [pool-2-thread-11] RabbitMQService - Publish response to client with data: null
+[INFO ] 05-08-2022 16:58:20 [main] RabbitMQService - Begin receive message from queue open channel AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+[INFO ] 05-08-2022 16:58:20 [main] RabbitMQService - [x] Awaiting RPC requests
+[INFO ] 05-08-2022 16:58:20 [pool-2-thread-4] RabbitMQService - getCorrelationId from client: ca566e21-94a8-46b7-969f-c35f89a4815c
+[INFO ] 05-08-2022 16:58:20 [pool-2-thread-4] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjvhfoil2v4fcvc5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 16:58:20 [pool-2-thread-4] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjvhfoil2v4fcvc5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 16:58:21 [pool-2-thread-4] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 16:58:21 [pool-2-thread-4] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 16:58:21 [pool-2-thread-4] RabbitMQService - Close connection
+[INFO ] 05-08-2022 16:58:21 [pool-2-thread-4] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 16:58:21 [pool-2-thread-4] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 16:58:21 [pool-2-thread-4] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-4] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-4] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-4] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-4] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - getCorrelationId from client: a051baff-85e5-450c-9064-c4e9bc146dfe
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjvhfoil2v4cfcvc5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjvhfoil2v4cfcvc5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - Close connection
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-5] RabbitMQService - ----- End publish response to client -----
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - getCorrelationId from client: 1c20c3a7-3256-4a96-9141-9a32fae6b08f
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - Message receive from queue: {"apiID":"Payment003","mobile":"0345225630","bankCode":"970445","accountNo":"0001100014211002","payDate":"20200929112923","additionalData":"11","debitAmount":11100.0,"respCode":"00","respDesc":"SUCCESS","traceTransfer":"FT19310RH6P1","messageType":"1","checkSum":"21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4","orderCode":"FT19310RH6P1","userName":"cntest001","realAmount":10100.0,"promotionCode":"tui","tokenKey":"sdkjvhfoil2v4cfccvc5","addValue":{"payMethod":"01","payMethodMMS":1}}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - Begin add payment request into database with data: PaymentRequest(apiID=Payment003, mobile=0345225630, bankCode=970445, accountNo=0001100014211002, payDate=20200929112923, additionalData=11, debitAmount=11100.0, respCode=00, respDesc=SUCCESS, traceTransfer=FT19310RH6P1, messageType=1, checkSum=21646bf2a6477ed848bc1ec009324b6b3ff7baf6b33e288d174eabdc9736fcd4, orderCode=FT19310RH6P1, userName=cntest001, realAmount=10100.0, promotionCode=tui, tokenKey=sdkjvhfoil2v4cfccvc5, addValue=AddValue(payMethod=01, payMethodMMS=1))
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - Execute query success
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - Close Prepared statement
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - Close connection
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - insert to DB success => send to api and get response
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] PaymentService - Begin send request to api partner
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] PaymentService - Send request to JerseyWebTarget { https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay }
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] PaymentService - End send request and get response InboundJaxrsResponse{context=ClientResponse{method=POST, uri=https://api.foodbook.vn/ipos/ws/xpartner/callback/vnpay, status=200, reason=OK}}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - response from partner api:  Status response 200
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - Publish response to client with data: {"code":"00","message":"Response from partner api: Status response 200","stackTrace":[],"suppressedExceptions":[]}
+[INFO ] 05-08-2022 16:58:22 [pool-2-thread-6] RabbitMQService - ----- End publish response to client -----

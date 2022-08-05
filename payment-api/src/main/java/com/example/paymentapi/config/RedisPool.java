@@ -39,6 +39,7 @@ public class RedisPool {
     }
 
     public static RedisPropertiesObject readConfigFile(){
+        log.info("Begin get redis config {}");
         final String FILE_CONFIG = "\\config\\redis-config.properties";
         Properties properties = PropertiesUtils.getInstance();
         InputStream inputStream = null;
@@ -58,7 +59,7 @@ public class RedisPool {
             redisPropertiesObject.setTestOnBorrow(Boolean.parseBoolean(properties.getProperty("test_on_borrow")));
             redisPropertiesObject.setRedisHost(properties.getProperty("redis_host"));
             redisPropertiesObject.setRedisPort(Integer.parseInt(properties.getProperty("redis_port")));
-
+            log.info("End get redis config success");
         } catch (IOException e) {
             log.error("IOException read file redis config file error {}", e);
             throw new RequestException(ErrorCode.READ_CONFIG_REDIS_FAIL);
@@ -80,6 +81,7 @@ public class RedisPool {
 
     public Jedis getJedis() {
         try {
+            log.info("Get resource from Redis pool");
             return pool.getResource();
         } catch (Exception e){
             log.error("Get resource Redis fail {}", e);

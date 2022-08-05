@@ -66,7 +66,7 @@ public class PaymentDAO {
             log.error("Insert into DB has exception: {}", e);
             throw new PaymentException(ErrorCode.CONNECT_DB_FAIL);
         } catch (SQLException e) {
-            log.error("SQL exception ", e);
+            log.error("SQL exception when execute query", e);
             throw new PaymentException(ErrorCode.SQL_EXCEPTION);
         } finally {
             try {
