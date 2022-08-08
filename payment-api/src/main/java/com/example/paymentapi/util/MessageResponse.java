@@ -1,6 +1,6 @@
 package com.example.paymentapi.util;
 
-import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.exception.PaymentException;
 import com.example.paymentapi.model.ResponseObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,12 +19,12 @@ public class MessageResponse {
         ConvertUtils convertUtils = ConvertUtils.getInstance();
         try {
             if (response != null && !response.isEmpty()) {
-                log.info("Send request success and receive response success with result: {}", response);
-                RequestException requestException = convertUtils.convertJsonToObj(response);
+                log.info("Send request and receive response success with result: {}", response);
+                PaymentException paymentException = convertUtils.convertJsonToObj(response);
 
                 log.info("----- End request success -----");
                 return ResponseEntity.status(HttpStatus.OK).body(
-                        new ResponseObject(requestException.getCode(), requestException.getMessage()
+                        new ResponseObject(paymentException.getCode(), paymentException.getMessage()
                                 , responseId, checkSum, addValue));
             } else {
                 log.info("------ End send request ------ Response from server is null");

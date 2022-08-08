@@ -14,6 +14,9 @@ import org.apache.commons.pool2.impl.DefaultPooledObject;
 public class ChannelFactory implements PooledObjectFactory<Channel> {
     private static Connection connection;
 
+    private static final String HOST = "localhost";
+    private static final int PORT = 5672;
+
     public ChannelFactory() {
         this(null);
     }
@@ -23,17 +26,17 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
             ConnectionFactory factory = new ConnectionFactory();
 //            factory.setUsername("guest");
             factory.setAutomaticRecoveryEnabled(true);
-            factory.setHost("localhost");
-            factory.setPort(5672);
+            factory.setHost(HOST);
+            factory.setPort(PORT);
             log.info("Create Connection {}", factory);
             connection = factory.newConnection();
             log.info("Create Connection {}", connection);
         } catch (Exception e) {
-
             log.error("Exception when create connection factory {}", e);
             throw new PaymentException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         }
     }
+
     /**
      * 44 * Initialize a connection factory
      * 45 * @param rabbitMqName
@@ -44,6 +47,11 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
         return new DefaultPooledObject<>(connection.createChannel());
     }
 
+    /**
+     *
+     * @param pooledObject a {@code PooledObject} wrapping the instance to be destroyed
+     *
+     */
     public void destroyObject(PooledObject<Channel> pooledObject) {
         final Channel channel = pooledObject.getObject();
         if (channel.isOpen()) {
@@ -57,6 +65,11 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
         }
     }
 
+    /**
+     *
+     * @param pooledObject a {@code PooledObject} wrapping the instance to be validated
+     *
+     */
     public boolean validateObject(PooledObject<Channel> pooledObject) {
         final Channel channel = pooledObject.getObject();
         return channel.isOpen();

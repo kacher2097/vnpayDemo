@@ -1,6 +1,6 @@
 package com.example.paymentapi.util;
 
-import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.exception.PaymentException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -61,7 +61,7 @@ public class ErrorCode {
             inputStream = new FileInputStream(currentDir + FILE_CONFIG);
             if(inputStream == null){
                 log.error("Cant find description code file");
-                throw new RequestException(ErrorCode.READ_DESCRIPTION_FAIL, "File description code not found on client");
+                throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL, "File description code not found on client");
             }
             // load properties from file
             properties.load(inputStream);
@@ -70,7 +70,7 @@ public class ErrorCode {
             return properties.getProperty(code);
         } catch (IOException e) {
             log.error("IOException read description error code file {}", e);
-            throw new RequestException(ErrorCode.READ_DESCRIPTION_FAIL, "Read description error code file fail");
+            throw new PaymentException(ErrorCode.READ_DESCRIPTION_FAIL, "Read description error code file fail");
         } finally {
             // close objects
             try {

@@ -14,6 +14,7 @@ public class ChannelPool implements Cloneable{
     private static ChannelPool instance;
 
     private GenericObjectPool<Channel> internalPool;
+
     public static GenericObjectPoolConfig defaultConfig;
 
     public static ChannelPool getInstance(){
@@ -23,6 +24,7 @@ public class ChannelPool implements Cloneable{
         return instance;
     }
 
+
     static {
         defaultConfig = new GenericObjectPoolConfig();
         defaultConfig.setMaxTotal(13);
@@ -30,7 +32,7 @@ public class ChannelPool implements Cloneable{
         defaultConfig.setMaxIdle(9);
     }
 
-    public ChannelPool() {
+    private ChannelPool() {
         this(defaultConfig, new ChannelFactory());
     }
 

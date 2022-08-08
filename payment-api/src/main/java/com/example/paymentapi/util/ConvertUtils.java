@@ -1,6 +1,6 @@
 package com.example.paymentapi.util;
 
-import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.exception.PaymentException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,12 +31,12 @@ public class ConvertUtils {
     }
 
     //TODO su dung chung thu vien nhan gui giong nhau
-    public RequestException convertJsonToObj(String messageResponse) throws IOException {
+    public PaymentException convertJsonToObj(String messageResponse) throws IOException {
         //TODO han che khoi tao moi
         ObjectMapper objectMapper = new ObjectMapper();
         log.info("Begin convert message response to object, message data {} ", messageResponse);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        objectMapper.readValue(messageResponse, RequestException.class);
+        objectMapper.readValue(messageResponse, PaymentException.class);
         JsonNode jsonNodeRoot = objectMapper.readTree(messageResponse);
         JsonNode jsonCode = jsonNodeRoot.get("code");
         JsonNode jsonMessage = jsonNodeRoot.get("message");
@@ -44,7 +44,7 @@ public class ConvertUtils {
         String code = jsonCode.asText();
         String message = jsonMessage.asText();
         log.info("End convert and get code [{}], message [{}]", code, message);
-        return new RequestException(code, message);
+        return new PaymentException(code, message);
 
     }
 }

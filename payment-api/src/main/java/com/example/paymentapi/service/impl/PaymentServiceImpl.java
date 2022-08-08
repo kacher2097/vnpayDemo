@@ -3,7 +3,7 @@ package com.example.paymentapi.service.impl;
 import com.example.paymentapi.config.ChannelPool;
 import com.example.paymentapi.config.RedisPool;
 import com.example.paymentapi.config.YAMLConfig;
-import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.exception.PaymentException;
 import com.example.paymentapi.model.Bank;
 import com.example.paymentapi.model.PaymentRequest;
 import com.example.paymentapi.model.ResponseObject;
@@ -60,7 +60,7 @@ public class PaymentServiceImpl implements IPaymentService {
         try {
             log.info("Begin validate request");
             validateRequest(paymentRequest, bindingResult);
-        } catch (RequestException e) {
+        } catch (PaymentException e) {
             log.info("Send request have error code: {}", e.getCode());
             return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
                     responseId, "", "");
@@ -69,7 +69,7 @@ public class PaymentServiceImpl implements IPaymentService {
         try {
             log.info("Request is valid => send message to RabbitMQ");
             response = sendMessage(paymentRequest);
-        } catch (RequestException e) {
+        } catch (PaymentException e) {
             log.error("Got exception when send message {}", e.getMessage());
             return new MessageResponse().bodyErrorResponse(e.getCode(), errorCode.getDescription(e.getCode()),
                     responseId, "", "");
@@ -111,7 +111,7 @@ public class PaymentServiceImpl implements IPaymentService {
             return receiveMessage(corrId, replyQueueName, channel);
         } catch (Exception e) {
             log.error("Connect to RabbitMQ fail! {}", e);
-            throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
+            throw new PaymentException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         } finally {
             try {
                 if (channel != null) {
@@ -139,7 +139,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
             } catch (Exception e) {
                 log.error("Get result from server fail");
-                throw new RequestException(ErrorCode.GET_RESPONSE_FAIL);
+                throw new PaymentException(ErrorCode.GET_RESPONSE_FAIL);
             }
         };
 
@@ -155,7 +155,7 @@ public class PaymentServiceImpl implements IPaymentService {
             channel.basicCancel(ctag);
         } catch (Exception e) {
             log.error("Get result from server is time out");
-            throw new RequestException(ErrorCode.GET_RESULT_TIME_OUT);
+            throw new PaymentException(ErrorCode.GET_RESULT_TIME_OUT);
         }
 
         log.info("End Receive message from server success");
@@ -167,36 +167,36 @@ public class PaymentServiceImpl implements IPaymentService {
 
         if (bindingResult.hasErrors()) {
             log.error("One or more field request is empty or null");
-            throw new RequestException(ErrorCode.NULL_REQUEST);
+            throw new PaymentException(ErrorCode.NULL_REQUEST);
         }
 
         String privateKey = getPrivateKeyByBankCode(paymentRequest.getBankCode());
         if (privateKey == null) {
-            throw new RequestException(ErrorCode.NOT_HAVE_PRIVATE_KEY);
+            throw new PaymentException(ErrorCode.NOT_HAVE_PRIVATE_KEY);
         }
 
         //True if pay date have right format
         if (!dateTimeUtils.isPayDateValid(paymentRequest.getPayDate())) {
-            throw new RequestException(ErrorCode.INVALID_DATE_FORMAT);
+            throw new PaymentException(ErrorCode.INVALID_DATE_FORMAT);
         }
 
         checkValidPromotionCode(paymentRequest);
 
         if (!checkValidAmount(paymentRequest)) {
             log.info("Real amount is invalid (amount > debit amount)");
-            throw new RequestException(ErrorCode.INVALID_AMOUNT);
+            throw new PaymentException(ErrorCode.INVALID_AMOUNT);
         }
 
         log.info("Check amount success");
 
         //True if checksum success
         if (!checkSumSHA256(paymentRequest, privateKey)) {
-            throw new RequestException(ErrorCode.CHECK_SUM_ERROR);
+            throw new PaymentException(ErrorCode.CHECK_SUM_ERROR);
         }
 
         //True if Token key not exist on day
         if (!checkTokenKey(paymentRequest)) {
-            throw new RequestException(ErrorCode.DUPLICATE_TOKEN_KEY);
+            throw new PaymentException(ErrorCode.DUPLICATE_TOKEN_KEY);
         }
     }
 
@@ -223,9 +223,9 @@ public class PaymentServiceImpl implements IPaymentService {
 
             log.info("End check Token Key success");
             return true;
-        } catch (RequestException e) {
+        } catch (PaymentException e) {
             log.error("Connect to Redis fail! ");
-            throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
+            throw new PaymentException(ErrorCode.CONNECT_REDIS_FAIL);
         }
     }
 
@@ -242,7 +242,7 @@ public class PaymentServiceImpl implements IPaymentService {
         if (promotionCode == null || promotionCode.isEmpty() || promotionCode.isBlank()) {
             if (paymentRequest.getRealAmount() != paymentRequest.getDebitAmount()) {
                 log.info("Real amount different debit amount but promotion code is null, empty or blank => invalid promotion code");
-                throw new RequestException(ErrorCode.INVALID_PROMOTION_CODE);
+                throw new PaymentException(ErrorCode.INVALID_PROMOTION_CODE);
             }
         }
         log.info("End check promotion code success");

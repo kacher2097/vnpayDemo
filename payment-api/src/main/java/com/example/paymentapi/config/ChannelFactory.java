@@ -1,6 +1,6 @@
 package com.example.paymentapi.config;
 
-import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.exception.PaymentException;
 import com.example.paymentapi.util.ConnectionFRMQ;
 import com.example.paymentapi.util.ErrorCode;
 import com.rabbitmq.client.Channel;
@@ -14,6 +14,8 @@ import org.apache.commons.pool2.impl.DefaultPooledObject;
 @Slf4j
 public class ChannelFactory implements PooledObjectFactory<Channel> {
     private final Connection connection;
+    private static final String HOST = "localhost";
+    private static final int PORT = 5672;
 
     public ChannelFactory() {
         this(null);
@@ -21,18 +23,16 @@ public class ChannelFactory implements PooledObjectFactory<Channel> {
 
     public ChannelFactory(String uri) {
         try {
-            RabbitMQConfig rabbitMQConfig = RabbitMQConfig.getInstance();
-
             ConnectionFactory factory = ConnectionFRMQ.getInstance();
             factory.setAutomaticRecoveryEnabled(true);
             //factory.setUsername("guest");
-            factory.setHost(rabbitMQConfig.readConfigFile().getHost());
-            factory.setPort(rabbitMQConfig.readConfigFile().getPort());
+            factory.setHost(HOST);
+            factory.setPort(PORT);
 
             connection = factory.newConnection();
         } catch (Exception e) {
             log.error("Get connect to rabbitMQ fail");
-            throw new RequestException(ErrorCode.CONNECT_RABBITMQ_FAIL);
+            throw new PaymentException(ErrorCode.CONNECT_RABBITMQ_FAIL);
         }
     }
 

@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class RequestException extends RuntimeException{
+public class PaymentException extends RuntimeException{
     private String code;
     private String message;
 
-    public RequestException(String code){
+    public PaymentException(String code){
         this.code = code;
     }
 }

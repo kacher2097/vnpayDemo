@@ -15,7 +15,7 @@
 09:12:20.218 [] [http-nio-9091-exec-3] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.getDescription(String)" because "this.errorCode" is null 
 09:12:20.218 [] [http-nio-9091-exec-3] ERROR c.e.p.s.impl.PaymentServiceImpl - Connect to RabbitMQ fail: java.lang.NullPointerException: Cannot invoke "com.example.paymentapi.util.ErrorCode.getDescription(String)" because "this.errorCode" is null 
 09:30:37.220 [] [http-nio-9091-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is RequestException(code=40, message=null)] with root cause
-com.example.paymentapi.exception.RequestException: null
+com.example.paymentapi.exception.PaymentException: null
 	at com.example.paymentapi.util.ErrorCode.getDescription(ErrorCode.java:46)
 	at com.example.paymentapi.service.impl.PaymentServiceImpl.sendRequest(PaymentServiceImpl.java:68)
 	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:46)
@@ -68,7 +68,7 @@ com.example.paymentapi.exception.RequestException: null
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 09:36:03.887 [] [http-nio-9091-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is RequestException(code=40, message=Read description error code file fail)] with root cause
-com.example.paymentapi.exception.RequestException: Read description error code file fail
+com.example.paymentapi.exception.PaymentException: Read description error code file fail
 	at com.example.paymentapi.util.ErrorCode.getDescription(ErrorCode.java:46)
 	at com.example.paymentapi.service.impl.PaymentServiceImpl.sendRequest(PaymentServiceImpl.java:68)
 	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:46)
@@ -121,7 +121,7 @@ com.example.paymentapi.exception.RequestException: Read description error code f
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 09:36:42.789 [] [http-nio-9091-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is RequestException(code=40, message=Read description error code file fail)] with root cause
-com.example.paymentapi.exception.RequestException: Read description error code file fail
+com.example.paymentapi.exception.PaymentException: Read description error code file fail
 	at com.example.paymentapi.util.ErrorCode.getDescription(ErrorCode.java:46)
 	at com.example.paymentapi.service.impl.PaymentServiceImpl.sendRequest(PaymentServiceImpl.java:68)
 	at com.example.paymentapi.controller.PaymentController.sendRequest(PaymentController.java:46)

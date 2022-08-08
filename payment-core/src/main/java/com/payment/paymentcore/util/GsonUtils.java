@@ -11,4 +11,8 @@ public class GsonUtils {
         }
         return instance;
     }
+
+    private GsonUtils(){
+
+    }
 }

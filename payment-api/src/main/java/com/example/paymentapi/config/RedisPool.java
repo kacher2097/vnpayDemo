@@ -1,6 +1,6 @@
 package com.example.paymentapi.config;
 
-import com.example.paymentapi.exception.RequestException;
+import com.example.paymentapi.exception.PaymentException;
 import com.example.paymentapi.model.RedisPropertiesObject;
 import com.example.paymentapi.util.ErrorCode;
 import com.example.paymentapi.util.PropertiesUtils;
@@ -20,33 +20,37 @@ import java.util.Properties;
 public class RedisPool {
 
     private static JedisPool pool;
+    private static final RedisPropertiesObject redisPropertiesObject = new RedisPropertiesObject();
+    private static final JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
 
-    static {
+    public RedisPool() {
+        readConfigRedisFile();
         initPool();
+        init();
     }
 
     private static void initPool() {
-        JedisPoolConfig config = new JedisPoolConfig();
-        RedisPropertiesObject redisPropertiesObject = readConfigFile();
-        config.setMinIdle(redisPropertiesObject.getMinIdle());
-        config.setMaxTotal(redisPropertiesObject.getMaxTotal());
-        config.setMaxIdle(redisPropertiesObject.getMaxIdle());
-        config.setTestOnBorrow(true);
-        config.setBlockWhenExhausted(true);
-        config.setMaxWaitMillis(redisPropertiesObject.getMaxWait());
-        pool = new JedisPool(config, redisPropertiesObject.getRedisHost(),
+        jedisPoolConfig.setMinIdle(redisPropertiesObject.getMinIdle());
+        jedisPoolConfig.setMaxTotal(redisPropertiesObject.getMaxTotal());
+        jedisPoolConfig.setMaxIdle(redisPropertiesObject.getMaxIdle());
+        jedisPoolConfig.setTestOnBorrow(true);
+        jedisPoolConfig.setBlockWhenExhausted(true);
+        jedisPoolConfig.setMaxWaitMillis(redisPropertiesObject.getMaxWait());
+    }
+
+    private static void init() {
+        pool = new JedisPool(jedisPoolConfig, redisPropertiesObject.getRedisHost(),
                 redisPropertiesObject.getRedisPort(), 1000 * 2);
     }
 
-    public static RedisPropertiesObject readConfigFile(){
-        log.info("Begin get redis config {}");
-        final String FILE_CONFIG = "\\config\\redis-config.properties";
+    public static void readConfigRedisFile() {
+        log.info("Begin read redis config file");
+        final String FILE_CONFIG = "./config/redis-config.properties";
         Properties properties = PropertiesUtils.getInstance();
         InputStream inputStream = null;
-        RedisPropertiesObject redisPropertiesObject = new RedisPropertiesObject();
         try {
-            String currentDir = System.getProperty("user.dir");
-            inputStream = new FileInputStream(currentDir + FILE_CONFIG);
+//            String currentDir = System.getProperty("user.dir");
+            inputStream = new FileInputStream( FILE_CONFIG);
 
             // load properties from file
             properties.load(inputStream);
@@ -59,10 +63,10 @@ public class RedisPool {
             redisPropertiesObject.setTestOnBorrow(Boolean.parseBoolean(properties.getProperty("test_on_borrow")));
             redisPropertiesObject.setRedisHost(properties.getProperty("redis_host"));
             redisPropertiesObject.setRedisPort(Integer.parseInt(properties.getProperty("redis_port")));
-            log.info("End get redis config success");
+            log.info("End read redis config file success");
         } catch (IOException e) {
             log.error("IOException read file redis config file error {}", e);
-            throw new RequestException(ErrorCode.READ_CONFIG_REDIS_FAIL);
+            throw new PaymentException(ErrorCode.READ_CONFIG_REDIS_FAIL);
         } finally {
             // close objects
             try {
@@ -74,20 +78,18 @@ public class RedisPool {
                 log.error("IOException read file redis config file error {}", e);
             }
         }
-        return redisPropertiesObject;
+//        return redisPropertiesObject;
     }
-
-
 
     public Jedis getJedis() {
         try {
             log.info("Get resource from Redis pool");
             return pool.getResource();
-        } catch (Exception e){
+        } catch (Exception e) {
             log.error("Get resource Redis fail {}", e);
-            throw new RequestException(ErrorCode.CONNECT_REDIS_FAIL);
+            throw new PaymentException(ErrorCode.CONNECT_REDIS_FAIL);
         }
 
     }
-    
+
 }

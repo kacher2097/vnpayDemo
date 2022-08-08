@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration>
-    <property name="LOG" value="./logs"/>
+    <property name="LOG" value="/var/logs"/>
     <timestamp key="byDay" datePattern="yyyy-MM-dd"/>
 
     <appender name="console"
